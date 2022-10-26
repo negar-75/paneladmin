@@ -62,7 +62,7 @@ function List() {
           date: "1 March",
           amount: 2000,
           method: "Online",
-          status: "Pending",
+          status: "Pending" ,
         },
       ];
   return (

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,700;1,200;1,300&display=swap');
+
+.sidebar{
+   flex: 1; 
+   border-right: 0.3px solid rgb(229, 225, 225);
+   min-height: 100vh;
+   background-color: white;
+   
+
+   .top{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid rgb(229, 225, 225);
+   
+    .logo{
+       font-size: 20px;
+       font-weight: 700; 
+       color: #6436ff;
+    }
+   }
+
+
+
+   .center{
+    padding-left: 10px;
+    ul{
+        list-style: none;
+        margin: 0;
+        padding:0;
+
+        .title{
+            font-size: 10px;
+            font-weight: bold;
+            color: #999;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        li{
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgb(233, 229, 229);
+            }
+        }
+
+        .icon{
+            font-size: 18px;
+            color:#7451f8 ;
+        }
+
+        span{
+            font-size: 13px;
+            color: #888;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    }
+   }
+
+   .bottom{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    .colorOption{
+       border-radius: 5px;
+       border: 1px solid #7451f8; 
+       width: 20px;
+       height: 20px;
+       cursor: pointer;
+       margin-right: 5px;
+
+       &:nth-child(1){
+        background-color: whitesmoke;
+       }
+
+
+       &:nth-child(2){
+        background-color: #333;
+       }
+    }
+   }
+}

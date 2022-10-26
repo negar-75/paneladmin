@@ -1,0 +1,102 @@
+.new{
+    display: flex;
+    .newContainer{
+       
+      flex: 6;
+
+      .top{
+        font-weight: 700;
+        color: lightgray;
+        font-size: 20px;
+      }
+       .top, .bottom{
+        padding: 10px;
+        box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
+        -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
+        -moz-box-shadow: 5px 6px 14px -1px rgba(190, 184, 184, 0.51);
+        border-radius: 5px;
+        margin: 20px;
+       }
+      .bottom{
+        display: flex;
+        padding: 20px;
+
+        .left{
+          
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .formImage{
+            height: 150px;
+            width:150px;
+            border-radius: 50%;
+            object-fit: cover;
+            
+          }
+          flex: 1;
+
+          
+        }
+
+        
+
+        .right{
+            flex: 2;
+            form{
+              display: flex;
+              gap:45px;
+              flex-wrap: wrap;
+              // justify-content: space-around;
+              
+
+              
+              .formElement{
+                width: 40%; 
+                
+                label{
+                  display: flex;
+                  align-items: center;
+
+                  .icon{
+                    margin-left: 10px;
+                    cursor: pointer;
+                  }
+                }
+                
+                input{
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid gray;
+                outline: none;
+                background-color: transparent;
+
+                &::placeholder{
+                  color: rgba(128, 128, 128, 0.649);
+                  
+                }
+
+                }
+              }
+
+              button{
+                width: 18%;
+                margin-top: 20px;
+                background-color: transparent;
+                border: 2px solid rgba(128, 128, 128, 0.329);
+                border-radius: 20px;
+                padding: 6px 12px;
+                font-weight: 700;
+                color: rgba(105, 96, 96, 0.849);
+                text-transform: uppercase;
+                cursor: pointer;
+                
+              }
+            }
+            
+           
+
+        }
+       
+      }
+    }
+}

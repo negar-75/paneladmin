@@ -1,0 +1,58 @@
+.widget{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    height: 100px;
+   
+    padding: 10px;
+    box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
+    -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
+    -moz-box-shadow: 5px 6px 14px -1px rgba(190, 184, 184, 0.51);
+     border-radius: 5px;
+
+    .right, .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .title{
+        font-weight: bold;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .counter{
+      font-size: 28px;
+      font-weight: 300;
+    }
+
+    .link{
+        width: max-content;
+        font-size: 12px;
+        border-bottom: 1px solid gray;
+        cursor: pointer;
+    }
+
+    .percentage{
+        display: flex;
+        font-size: 13px;
+
+      &.positive{
+        color: green;
+      }  
+
+      &.negative{
+        color: red;
+        
+      }
+    }
+
+    .widgetIcon{
+        display: flex;
+        font-size: 30px;
+        align-self: flex-end;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}

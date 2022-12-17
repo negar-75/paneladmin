@@ -2,15 +2,27 @@ import React from 'react'
 import  ReactDOM  from 'react-dom'
 import "./index.scss"
 import App from './App'
-import {DarkModeContext} from './context/darkModeContext'
+import store from './store'
+import { Provider } from 'react-redux';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import 'font-awesome/css/font-awesome.min.css';
+
+
+
 function Page() {
 
-  const[darkMode,setDarkMode] = React.useState(false)
+  
+ 
+  //  store.subscribe(() => console.log(store.getState()))
+  
+
   return (
     
-    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+    
+    <Provider store={store}>
     <App />
-    </DarkModeContext.Provider>   
+    </Provider>
+    
     
   )
 }

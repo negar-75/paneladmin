@@ -1,0 +1,22 @@
+.buttons{
+  display: flex;
+  gap:1.5em ;
+  margin-top: 1em;
+  .cancel, .save{
+    border-radius: 40px;
+    padding: 0.3em 1em;
+    text-align: center;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .save{
+    border:  2px solid #3a6b357e;
+    color:#20441b
+  }
+  .cancel{
+    color:  rgba(255, 0, 0, 1);
+    border: 2px solid rgba(255, 0, 0, 0.37) ;
+  }
+}
+

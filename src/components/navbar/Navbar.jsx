@@ -7,9 +7,14 @@ import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlin
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
-import {DarkModeContext} from '../../context/darkModeContext'
+import store from '../../store'
+import {TOGGLE} from '../../actions/type'
+
+
 function Navbar() {
- const{darkMode,setDarkMode} = React.useContext(DarkModeContext)
+ 
+ let userName = localStorage.getItem('username') 
+ 
   return (
     <div className='navbar'>
        <div className="wrapper">
@@ -22,7 +27,7 @@ function Navbar() {
                 English
                 <LanguageIcon className='icon' />
             </div>
-            <div className="item" onClick={() => setDarkMode(pre => !pre)}>
+            <div className="item" onClick={() => store.dispatch({type:TOGGLE})}>
                 <DarkModeOutlinedIcon className='icon' />
             </div>
             <div className="item">
@@ -40,6 +45,7 @@ function Navbar() {
                 <FormatListBulletedOutlinedIcon className='icon'/>
             </div>
             <div className="item">
+              {userName !==null && <span className='username'>Hey <span>{userName}</span> !</span>}
             <img
               src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt=""

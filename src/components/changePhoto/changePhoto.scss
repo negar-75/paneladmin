@@ -1,21 +1,22 @@
-.changeProfile{
-   
+.changePhoto{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     .upload{
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 15px;
+        
        
         label {
-           
             align-items: center;
-            margin-top: 25px;
+            // margin-top: 20px;
             font-weight: bold;
-            border: 2px solid rgba(128, 128, 128, 0.329);
+            border: 2px solid  #3A6B35;
             cursor: pointer;
-            padding: 8px 18px;
+            padding: 5px 10px;
             border-radius: 20px;
-            color: rgba(105, 96, 96, 0.849);
             background-color: transparent;
         }
     }

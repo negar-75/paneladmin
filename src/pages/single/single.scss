@@ -23,8 +23,8 @@
                     top: 0;
                     right:0 ;
                     padding: 5px;
-                    color: rgb(42, 14, 68);
-                    background-color:rgba(42, 14, 68, 0.082) ;
+                    color:#648048;
+                    background-color:#aecd8e5f ;
                     border-radius: 0px 0px 0px 5px;
                     cursor: pointer;
                 }
@@ -46,7 +46,7 @@
                         .itemTitle{
                             margin-bottom: 10px;
                             font-size: 25px;
-                            color: rgba(46, 44, 44, 0.882);
+                            color: #3A6B35
 
                         }
 
@@ -55,7 +55,7 @@
                             font-size: 15px;
 
                             .itemKey{
-                                color: gray;
+                                color:#E3B448;
                                 font-weight: bold;
                                 margin-right: 5px;
 
@@ -89,7 +89,7 @@
     .title{
         font-size: 15px;
         margin-bottom: 20px;
-        color: gray;
+        color: #3A6B35;
         font-weight: 600;
     }
 }

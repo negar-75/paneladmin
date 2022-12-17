@@ -62,61 +62,17 @@
         }
 
         .center{
-            .icon{
-                color: rgb(61, 127, 129);
+            
+           .accordion-menu{
+                background-color: rgb(61, 54, 54);
             }
+            
         }
 
-        ul{
-            li{
-                &:hover{
-                    background-color: rgba(233, 229, 229, 0.195);
-                }
-            }
-        }
+       
     }
 
-    .new{
-        .newContainer{
-            .left{
-                .changeProfile{
-                  
-                    .upload{
-                        label{
-                            border: 2px solid rgba(197, 196, 196, 0.329);
-                            color: rgba(210, 201, 201, 0.849);
-                        }
-                       
-                    }
-                  
-               }
-            }
-           
-          
-          .right{
-            form{
-                button{
-                    border: 2px solid rgba(197, 196, 196, 0.329);
-                    color: rgba(210, 201, 201, 0.849);
-                }
-            }
-             }
-        } 
-    }
-
-    .single{
-        .singleContainer{
-            .top{
-                .left{
-                    .details{
-                        .itemTitle{
-                           color: lightgray;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
     
 }
 

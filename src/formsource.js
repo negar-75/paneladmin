@@ -5,42 +5,36 @@ export const userInputs = [
       label: "Username",
       type: "text",
       placeholder: "john_doe",
+      name:"username"
+      
     },
     {
       id: 2,
-      label: "Name and surname",
-      type: "text",
-      placeholder: "John Doe",
-    },
-    {
-      id: 3,
       label: "Email",
       type: "mail",
       placeholder: "john_doe@gmail.com",
+      name:"email",
+      errorMessage : 'it should be a valid email address',
+      required: true
+    },
+    {
+      id: 3,
+      label: "Phone",
+      type: "tel",
+      placeholder: "+1 234 567 89",
+      name:"phone"
+      
     },
     {
       id: 4,
-      label: "Phone",
-      type: "text",
-      placeholder: "+1 234 567 89",
-    },
-    {
-      id: 5,
       label: "Password",
       type: "password",
-    },
-    {
-      id: 6,
-      label: "Address",
-      type: "text",
-      placeholder: "Elton St. 216 NewYork",
-    },
-    {
-      id: 7,
-      label: "Country",
-      type: "text",
-      placeholder: "USA",
-    },
+      name:"password",
+      errorMessage : 'it should be at least 12 characters',
+      required: true
+
+
+    }
   ];
   
   export const productInputs = [
@@ -75,4 +69,28 @@ export const userInputs = [
       placeholder: "in stock",
     },
   ];
+
+  export const createCategoryInput = [
+    { 
+      id: 1,
+      lable : "Category name",
+      variant : "standard"
+    }
+  ]
+
+  export const loginInputs =[
+    {
+     id:1,
+     lable: 'Your username',
+     variant : "standard",
+     name : "username"
+    },
+    {
+     id:2,
+     lable:"Your password",
+     variant : "standard",
+     name:"password"
+     
+    }
+  ]
   

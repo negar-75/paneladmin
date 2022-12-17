@@ -9,8 +9,8 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 
 
 function Widget(props) {
-  console.log(props)
-  console.log(props.increase ? "positive" : "negative")
+  
+ 
  let data;
  let money = 500;
  let diff = 30;
@@ -21,7 +21,7 @@ function Widget(props) {
     isMoney:false,
     link:"See all users",
     icon:<PersonOutlineOutlinedIcon className='widgetIcon' 
-    style={{color:"crimson",
+    style={{color:" #ad1111",
     backgroundColor:"rgba(255, 0, 0, 0.2)"
    }}
    />
@@ -57,8 +57,8 @@ function Widget(props) {
     isMoney:true,
     link:"See balance",
     icon:<AccountBalanceWalletOutlinedIcon className='widgetIcon'
-    style={{color:"purple",
-    backgroundColor:"rgba(218, 0, 128, 0.2)"
+    style={{color:"#FF884B",
+    backgroundColor:" #FFF9B0"
     }}
     />
   }

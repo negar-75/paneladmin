@@ -1,13 +1,33 @@
 import React from 'react'
 import "./table.scss"
+import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import TableRow from '@mui/material/TableRow';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor:'#AECD8E',
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: '#F6FEEB',
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
 function List() {
 
@@ -65,43 +85,50 @@ function List() {
           status: "Pending",
         },
       ];
+
+
+     
+
+
+
+ 
   return (
     
     <TableContainer component={Paper} className='table'>
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
-        <TableRow>
-            <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
-            <TableCell className="tableCell">Customer</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
-            <TableCell className="tableCell">Amount</TableCell>
-            <TableCell className="tableCell">Payment Method</TableCell>
-            <TableCell className="tableCell">Status</TableCell>
-        </TableRow>
+        <StyledTableRow>
+            <StyledTableCell className="StyledTableCell">Tracking ID</StyledTableCell>
+            <StyledTableCell className="StyledTableCell">Product</StyledTableCell>
+            <StyledTableCell className="StyledTableCell">Customer</StyledTableCell>
+            <StyledTableCell className="StyledTableCell">Date</StyledTableCell>
+            <StyledTableCell className="StyledTableCell">Amount</StyledTableCell>
+            <StyledTableCell className="StyledTableCell">Payment Method</StyledTableCell>
+            <StyledTableCell className="StyledTableCell">Status</StyledTableCell>
+        </StyledTableRow>
       </TableHead>
       <TableBody>
         {rows.map((row) => (
-          <TableRow
+          <StyledTableRow
             key={row.id}>
            
-            <TableCell className="tableCell">{row.id}</TableCell>
-              <TableCell className="tableCell">
+            <StyledTableCell className="StyledTableCell">{row.id}</StyledTableCell>
+              <StyledTableCell className="StyledTableCell">
                 <div className="cellWrapper">
                   <img src={row.img} alt="" className="image" 
                   style={{width:"50px",
                          height:"50px"}}/>
                   {row.product}
                 </div>
-              </TableCell>
-            <TableCell className="tableCell">{row.customer}</TableCell>
-              <TableCell className="tableCell">{row.date}</TableCell>
-              <TableCell className="tableCell">{row.amount}</TableCell>
-              <TableCell className="tableCell">{row.method}</TableCell>
-              <TableCell className="tableCell">
+              </StyledTableCell>
+            <StyledTableCell className="StyledTableCell">{row.customer}</StyledTableCell>
+              <StyledTableCell className="StyledTableCell">{row.date}</StyledTableCell>
+              <StyledTableCell className="StyledTableCell">{row.amount}</StyledTableCell>
+              <StyledTableCell className="StyledTableCell">{row.method}</StyledTableCell>
+              <StyledTableCell className="StyledTableCell">
                 <span className={`status ${row.status}`}>{row.status}</span>
-            </TableCell>
-          </TableRow>
+            </StyledTableCell>
+          </StyledTableRow>
         ))}
       </TableBody>
     </Table>

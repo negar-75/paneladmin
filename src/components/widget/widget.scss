@@ -3,7 +3,6 @@
     justify-content: space-between;
     flex: 1;
     height: 100px;
-   
     padding: 10px;
     box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
     -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
@@ -19,7 +18,7 @@
     .title{
         font-weight: bold;
         font-size: 14px;
-        color: gray;
+        color: #3A6B35;
     }
 
     .counter{
@@ -30,7 +29,8 @@
     .link{
         width: max-content;
         font-size: 12px;
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid #E3B448;
+        color: #b08b33;
         cursor: pointer;
     }
 
@@ -43,7 +43,7 @@
       }  
 
       &.negative{
-        color: red;
+        color: #ad1111;
         
       }
     }

@@ -1,15 +1,27 @@
 import React from 'react'
-import Featured from '../../components/featured/Featured'
+import Featured from '../../components/featured/featured'
 import Navbar from '../../components/navbar/Navbar'
 import Sidebar from '../../components/sidebar/Sidebar'
-import Widget from '../../components/widget/Widget'
-import Chart from '../../components/chart/Chart'
-import Table from '../../components/table/Table'
+import Widget from '../../components/widget/widget'
+import Chart from '../../components/chart/chart'
+import Table from '../../components/table/table'
 import "./home.scss"
+import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux'
+import store from '../../store';
+import {getUser} from '../../actions/auth'
+
+
+
 
 function Home() {
-  return (
-    <div className='home'>
+ 
+  const isAuth = useSelector(state => state.user.isAuth)
+  if(!isAuth && !localStorage.getItem('token') ) return <Navigate to= '/login' />
+
+ return (
+   
+      <div className='home'>
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
@@ -39,7 +51,11 @@ function Home() {
         </div>
       </div>
     </div>
+    
+   
   )
 }
 
 export default Home 
+
+

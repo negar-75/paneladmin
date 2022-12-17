@@ -1,9 +1,9 @@
 .navbar{
     height: 50px;
-    border-bottom: 0.5px solid rgb(229, 225, 225);
+    border-bottom: 0.5px solid #CBD18F;
     display: flex;
     font-size: 14px;
-    color: #555;
+    color:  #3A6B35;
     align-items: center;
     .wrapper{
         width: 100%;
@@ -36,7 +36,7 @@
                 .counter{
                     width: 13px;
                     height: 13px;
-                    background-color: red;
+                    background-color:  #ad1111;
                     color: white;
                     font-weight: bold;
                     font-size: 10px;
@@ -48,6 +48,15 @@
                     top: -5px;
                     right: -5px;
                 }
+
+                .username{
+                    margin-right: 10px;
+                    font-weight: 700;
+
+                    span{
+                        color: #E3B448;
+                    }  
+                }
             }
 
         }
@@ -56,7 +65,7 @@
     .search{
         display: flex;
         align-items: center;
-        border: 00.5px solid lightgray;
+        border: 00.5px solid #CBD18F;
         padding: 3px;
         
         input{

@@ -11,12 +11,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: gray;
+        color: #3A6B35;
 
         .title{
             font-size: 18px;
             font-weight: 600;
-            color: rgb(143, 127, 127);
+            color: #3A6B35;
         }
 
         .icon{
@@ -35,10 +35,22 @@
         .featuredChart{
             width: 100px;
             height:100px;
+            .CircularProgressbar-path {
+                stroke:  #E3B448;
+              }
+              .CircularProgressbar-trail {
+                stroke: #ccd18f6e;
+              }
+              .CircularProgressbar-text {
+                fill: #3A6B35;
+              }
+              .CircularProgressbar-background {
+                fill:#3A6B35;
+              }
         }
 
         .title{
-            color: gray;
+            color: #3A6B35;
             font-weight: bold;
             font-size: 17px;
         }
@@ -51,7 +63,7 @@
             font-weight: 300;
             text-align: center;
             font-size: 16px;
-            color: gray;
+            color: #3A6B35;
         }
 
         .summary{
@@ -66,7 +78,7 @@
                 text-align: center;
 
                 .itemTitle{
-                    color: gray;
+                    color: #3A6B35;
                     font-weight: 600;
                     font-size: 18px;
                 }
@@ -82,7 +94,7 @@
                     }
 
                     &.negative{
-                        color: red;
+                        color: #ad1111;
                     }
                 }
 

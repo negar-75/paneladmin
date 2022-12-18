@@ -1,33 +1,18 @@
-import authService from "../services/auth.service";
-import axios from "axios";
+import authService from "../services/authService";
+
 import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
     GET_USER,
-   SUCCESS_MESSAGE
+    SUCCESS_MESSAGE
   } from "./type";
 
 
 export const login = (userObj) => dispatch => {
     console.log(userObj,"userObj")
-    axios.post(
-      'http://localhost:5500/api/v1/login/access-token',
-      new URLSearchParams({
-          'grant_type': '',
-          'username': userObj.username,
-          'password': userObj.password,
-          'scope': '',
-          'client_id': '',
-          'client_secret': ''
-      }),
-      {
-          headers: {
-              'accept': 'application/json'
-          }
-      }
-  )
-  .then((response) =>{
+    authService.login(userObj)
+    .then((response) =>{
     console.log(response)
     localStorage.setItem('token',response.data.access_token)
     localStorage.setItem('username',userObj.username)

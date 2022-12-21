@@ -5,12 +5,17 @@ import {
     LOGIN_FAIL,
     LOGOUT,
     GET_USER,
-    SUCCESS_MESSAGE
+    SUCCESS_MESSAGE,
+    FAILED_MESSAGE,
+    SET_LOADING,
+    CLEAR_LOADING
   } from "./type";
 
 
 export const login = (userObj) => dispatch => {
-    console.log(userObj,"userObj")
+    dispatch({
+      type:SET_LOADING
+    })
     authService.login(userObj)
     .then((response) =>{
     console.log(response)
@@ -22,21 +27,37 @@ export const login = (userObj) => dispatch => {
         payload:userObj.username
       }
     )
+    dispatch({
+      type:CLEAR_LOADING
+    })
+
 })
 .catch((error) => {
-  
   console.log(error)
-  dispatch(
-    {
-      type:LOGIN_FAIL,
-    }
-  )
-  dispatch(
-    {
-      type:SUCCESS_MESSAGE,
-      payload:'Username or password is incorrect. All passwords at least must be 12 characters.'
-    }
-  )
+  dispatch({
+    type:LOGIN_FAIL
+  })
+  dispatch({
+    type:CLEAR_LOADING
+  })
+  if(error?.response?.status === 400 ) {
+    console.log('error 400')
+     dispatch(
+      {
+        type:FAILED_MESSAGE,
+        payload:'Username or password is incorrect. All passwords at least must be 12 characters.'
+      }
+    )
+  }else {
+    
+     dispatch(
+      {
+        type:FAILED_MESSAGE,
+        payload:'Something went wrong, please try again '
+      }
+    )
+  }
+  
 
 })
 }

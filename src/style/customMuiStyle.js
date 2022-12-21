@@ -1,15 +1,19 @@
-import { flexbox } from "@mui/system"
+import { createTheme } from "@mui/material"
 
-const textFieldStyle = {
-    "& label.Mui-focused": {
-      color: '#3A6B35' 
+export const theme = createTheme({
+  typography:{
+    fontFamily:'Nunito',
+ },
+
+ textFieldStyle :{
+  "& label.Mui-focused": {
+    color: 'green' 
     },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: '#3A6B35' 
-    }
+  "& .MuiInput-underline:after": {
+    borderBottomColor: '#3A6B35' 
   }
-
-const toggleStyle = {
+},
+toggleStyle : {
   lable:{
     "& .MuiFormControlLabel-label":{
       color:'black', 
@@ -18,7 +22,7 @@ const toggleStyle = {
     }
   }
  ,
-  swich:{
+  switch:{
     "& .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track": {
       backgroundColor: "light green"
     },
@@ -27,6 +31,11 @@ const toggleStyle = {
     }
   }
 }
+ 
+})
+
+
+
 
 const sliderStyle = {
 
@@ -46,7 +55,6 @@ const sliderStyle = {
 
 
  export {
-    textFieldStyle,
-    toggleStyle,
+    
     sliderStyle 
  }

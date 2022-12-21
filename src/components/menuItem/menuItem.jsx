@@ -3,8 +3,8 @@ import './menuItem.scss';
 import {deleteCategory,updateCategory} from '../../services/user.service';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import {toggleStyle} from '../../style/customMuiStyle';
 import {handleDelet,firstLetterToUpperCase,useDidMountEffect} from '../../services/functions';
+import { useTheme } from '@mui/material/styles';
 
 
 function MenuItem(props) {
@@ -19,14 +19,14 @@ function MenuItem(props) {
     'status': status
   })
   const[elementId,setElementId] = React.useState();
-  
+  const theme = useTheme();
    
   
  
  
      
  
-  const styles = toggleStyle;
+
   
   const fetch = async() =>{
     console.log('second function')
@@ -71,11 +71,11 @@ function MenuItem(props) {
               value={toggleMode.status}
               checked={toggleMode.status}
               onChange={toggleChange}
-              sx={styles.swich}
+              sx={theme.toggleStyle.switch}
               />}
               label={toggleMode.status ? 'Enable' : 'Disable'} 
               labelPlacement="bottom"
-              sx={styles.lable}
+              sx={theme.toggleStyle.lable}
               
             />
           </div>

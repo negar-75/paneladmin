@@ -5,7 +5,13 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const GET_USER = 'GET_USER';
 
+//loading 
+
+export const SET_LOADING = 'SET_LOADING';
+export const CLEAR_LOADING = 'CLEAR_LOADING';
+
 // darkMode type actions 
+
 export const DARK = 'DARK';
 export const LIGHT = 'LIGHT';
 export const TOGGLE = 'TOGGLE';

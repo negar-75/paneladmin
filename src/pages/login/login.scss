@@ -84,7 +84,7 @@
       
     }
                   
-  .submit{
+  .submit, .disable{
     background:transparent;
     font-family: 'Ubuntu', sans-serif;
     width: 30%;
@@ -99,9 +99,14 @@
     border-radius: 40px;
     cursor: pointer;
     overflow: hidden;
-    transition: all .35s;
+    transition: all .2s;
   }
   
+ .disable{
+  border: 2px solid #949894;
+  color: #82817f;
+  cursor:default;
+ }
                   
                   
   .submit span{

@@ -1,98 +1,124 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
+import React from "react";
+import TextField from "@mui/material/TextField";
 import "./login.scss";
-import store from '../../store';
-import {login} from "../../actions/auth";
-import { useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/fontawesome-free-solid';
+import store from "../../store";
+import { login } from "../../actions/auth";
+import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/fontawesome-free-solid";
 import { useNavigate } from "react-router-dom";
-import {textFieldStyle} from '../../style/customMuiStyle';
-import {loginInputs} from  '../../formsource';
-
-
-
-
+import { loginInputs } from "../../formsource";
+import ReactLoading from "react-loading";
+import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
+import { useTheme } from "@mui/material/styles";
 
 function Login() {
-   
-  const[person,setPerson] = React.useState({
-    username:'',
-    password:''
-  })
+  const [person, setPerson] = React.useState({
+    username: "",
+    password: "",
+  });
 
-  const [isActive,setIsActive] = React.useState(false)
-  const message = useSelector (state => state.message.message)
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+  const [formValid, setFormValid] = React.useState(false);
+  const [isActive, setIsActive] = React.useState(false);
+  const message = useSelector((state) => state.message.message);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const loading = useSelector((state) => state.loading.loading);
+  const theme = useTheme();
+
   let navigate = useNavigate();
- 
-  const inputhandler = (e) =>{
-   
+
+  const inputhandler = (e) => {
     setPerson(() => {
-      return{
+      return {
         ...person,
-        [e.target.name] : e.target.value
-      }
-    })
-  }
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
 
+  React.useEffect(() => {
+    if (person.username.length > 0 && person.password.length >= 12) {
+      console.log("valid");
+      setFormValid(true);
+    } else {
+      setFormValid(false);
+    }
+  }, [person]);
 
- 
+  React.useEffect(() => {
+    if (isLoggedIn) {
+      setIsActive(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
+  }, [isLoggedIn]);
 
- if (isLoggedIn) {
-  setTimeout(() => {
-    navigate("/");
-  }, 2000);
- }
-
- React.useEffect(() =>{
-  if (isLoggedIn) return setIsActive(true)
- },[isLoggedIn])
- 
- 
- 
-
- 
- 
-
-
-  
   return (
-  <div className='login'>
+    <div className="login">
       <div className="loginContainer">
-        <h2><span className='first-section'>fast</span><span className='second-section'>Foo</span></h2>
+        <h2>
+          <span className="first-section">fast</span>
+          <span className="second-section">Foo</span>
+        </h2>
         <div className="loginForm">
           <div className="title">Login</div>
           {loginInputs.map((item) => {
-            return(
-              <TextField 
-               id={item.id}
-               name = {item.name}
-               label = {item.lable}
-               variant ={item.variant}
-               onChange={inputhandler}
-               sx={textFieldStyle}
-               />
-            )
+            return (
+              <TextField
+                id={item.id}
+                name={item.name}
+                label={item.lable}
+                variant={item.variant}
+                onChange={inputhandler}
+                sx={theme.textFieldStyle}
+                value={person.name}
+              />
+            );
           })}
-          {message && <span className='message'>{message}</span>}
-          <div className= 'wrapper '  >
-            <button className={`submit ${ isActive ? "active": " "}` } type='button' onClick={() =>store.dispatch(login(person))}>
-            <span>Submit</span>
-            <div className="success">
-            <FontAwesomeIcon icon={faCheck} className='icon' />
-            </div>
-            </button>
+          <div className="wrapper ">
+            {loading ? (
+              <div className="loading">
+                <ReactLoading
+                  type="spinningBubbles"
+                  color="green"
+                  height={20}
+                  width={20}
+                />
+              </div>
+            ) : (
+              <button
+                className={
+                  formValid ? `submit ${isActive ? "active" : " "}` : "disable"
+                }
+                type="button"
+                onClick={() => {
+                  store.dispatch(login(person));
+                }}
+                disabled={!formValid}
+              >
+                <span>Submit</span>
+                <div className="success">
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    className="icon"
+                  />
+                </div>
+              </button>
+            )}
           </div>
         </div>
       </div>
       <div className="imageContainer">
-        <img className='hero-img' src={require('../../assets/images/pizza.jpg')}/>
+        <img
+          className="hero-img"
+          src={require("../../assets/images/pizza.jpg")}
+        />
       </div>
-     
-      
-  </div>
-  )
+
+      <ErrorPopUp message={message} />
+    </div>
+  );
 }
 
-export default Login
+export default Login;

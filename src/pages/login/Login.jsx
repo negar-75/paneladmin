@@ -50,7 +50,7 @@ function Login() {
       setIsActive(true);
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 1500);
     }
   }, [isLoggedIn]);
 

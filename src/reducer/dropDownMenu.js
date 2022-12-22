@@ -3,7 +3,7 @@ import {DROP_DOWN}from '../actions/type';
 
 const initialState = {
     open:false,
-    dropdowmMenuName : null
+    menuItemName : null
 }
 
 
@@ -12,8 +12,8 @@ const dropDownReducer = (state = initialState ,action) =>{
         case DROP_DOWN :
             return{
                 ...state,
-                dropdowmMenuName: action.payload,
-                open:state.dropdowmMenuName === action.payload ? !state.open : true
+                menuItemName: action.payload,
+                open:state.menuItemName === action.payload ? !state.open : true
             }
         default:
             return state    

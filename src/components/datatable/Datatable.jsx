@@ -55,9 +55,8 @@ function Datatable() {
     getData(page - 1);
   };
 
-  const actionColumn = [
+  const actionCol = [
     {
-      selector: "actionColumn",
       name: "Action",
 
       cell: (row) => (
@@ -97,7 +96,7 @@ function Datatable() {
 
       <DataTable
         title="Users"
-        columns={userColumns.concat(actionColumn)}
+        columns={userColumns.concat(actionCol)}
         data={data}
         selectableRows
         customStyles={customStyles}

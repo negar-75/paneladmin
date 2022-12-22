@@ -5,39 +5,7 @@ import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { getAllUsers, deletUser } from "../../services/user.service";
 import { handleDelet } from "../../services/functions";
-const customStyles = {
-  header: {
-    style: {
-      minHeight: "56px",
-      color: " #3A6B35 ",
-    },
-  },
-  headRow: {
-    style: {
-      borderTopStyle: "solid",
-      borderTopWidth: "1px",
-      color: " #3A6B35 ",
-    },
-  },
-  headCells: {
-    style: {
-      "&:not(:last-of-type)": {
-        borderRightStyle: "solid",
-        borderRightWidth: "1px",
-        color: "#3A6B35 ",
-      },
-    },
-  },
-  cells: {
-    style: {
-      "&:not(:last-of-type)": {
-        borderRightStyle: "solid",
-        borderRightWidth: "1px",
-        borderRightColor: "#dcd9de",
-      },
-    },
-  },
-};
+import { theme, customStyles } from "../../style/customDataTableStyle";
 
 function Datatable() {
   const [data, setData] = React.useState([]);
@@ -100,10 +68,8 @@ function Datatable() {
         data={data}
         selectableRows
         customStyles={customStyles}
-        pagination
-        paginationServer
+        theme="solarized"
         onChangePage={handlePageChange}
-        paginationTotalRows={14}
       />
     </div>
   );

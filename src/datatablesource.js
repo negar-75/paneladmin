@@ -19,28 +19,7 @@ export const userColumns =[
     },
   
    
-    // {
-    //   field:'username',
-    //   headerName : 'User',
-    //   width: 230 
     
-    // },
-    
-    // {
-    //     field:'email',
-    //     headerName:'Email',
-    //     width:300,
-    //     sortable: false,
-        
-    // },
-    // {
-    //   field:'phone',
-    //   headerName:'Phone',
-    //   width:300,
-    //   sortable: false,
-      
-    // }
-  
 ]
 
 export const productColumns =[

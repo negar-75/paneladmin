@@ -27,8 +27,8 @@ function Menu() {
     const initialIndex =
       window.location.pathname === "/menu/menuCatalogue"
         ? "/menu"
-        : window.location.pathname === "/invoice"
-        ? "/invoice"
+        : window.location.pathname === "/staffs"
+        ? "/staffs"
         : window.location.pathname === "/customers"
         ? "/customers"
         : " ";
@@ -36,7 +36,7 @@ function Menu() {
   });
   console.log(activePage, "avtivePage");
   const open = useSelector((state) => state.dropDown.open);
-  const dropdownName = useSelector((state) => state.dropDown.dropdowmMenuName);
+  const menuItemName = useSelector((state) => state.dropDown.menuItemName);
 
   return (
     <div className="menu">
@@ -46,7 +46,7 @@ function Menu() {
           if (item.subMenu) {
             return (
               <li
-                className="sidebar-menu-item"
+                className="sidebar-menu-accordion"
                 id={item.name}
               >
                 <a
@@ -59,7 +59,7 @@ function Menu() {
                   {item.name}
                   <ExpandMoreIcon
                     className={
-                      dropdownName === `${item.name}` && open
+                      menuItemName === `${item.name}` && open
                         ? "fa-chevron-down open"
                         : "fa-chevron-down"
                     }
@@ -67,13 +67,14 @@ function Menu() {
                 </a>
                 <ul
                   className={`collapse ${
-                    dropdownName === `${item.name}` && open ? "show" : " "
+                    menuItemName === `${item.name}` && open ? "show" : " "
                   }`}
                 >
                   {item.subItems.map((sub) => {
+                    console.log(sub);
                     return (
                       <Link
-                        to="/menu/menuCatalogue"
+                        to={sub.url}
                         className="link"
                       >
                         <li
@@ -91,15 +92,26 @@ function Menu() {
             );
           } else if (!item.subMenu && !item.logOut) {
             return (
-              <a href={item.url}>
+              <Link
+                to={item.url}
+                className="link"
+              >
                 <li
-                  className="sidebar-menu-item"
+                  className={`sidebar-menu-item ${
+                    activePage === item.url ? "active" : " "
+                  }`}
                   id={item.name}
                 >
                   {item.icon}
-                  <span>{item.name}</span>
+                  <span
+                    onClick={() =>
+                      store.dispatch(handleDropDown(`${item.name}`))
+                    }
+                  >
+                    {item.name}
+                  </span>
                 </li>
-              </a>
+              </Link>
             );
           } else {
             return (

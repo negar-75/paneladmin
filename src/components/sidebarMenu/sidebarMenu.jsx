@@ -21,8 +21,6 @@ function Menu() {
     return initialIndex;
   });
 
-  console.log(window.location.pathname, "path name");
-
   const [activePage, setActivePage] = React.useState(() => {
     const initialIndex =
       window.location.pathname === "/menu/menuCatalogue"
@@ -34,7 +32,7 @@ function Menu() {
         : " ";
     return initialIndex;
   });
-  console.log(activePage, "avtivePage");
+
   const open = useSelector((state) => state.dropDown.open);
   const menuItemName = useSelector((state) => state.dropDown.menuItemName);
 
@@ -42,12 +40,11 @@ function Menu() {
     <div className="menu">
       <ul className="sidebar-menu">
         {sidebarMenuItems.map((item) => {
-          console.log(item.url, "item.url");
           if (item.subMenu) {
             return (
               <li
                 className="sidebar-menu-accordion"
-                id={item.name}
+                id={item.id}
               >
                 <a
                   className={`dropdownlink  ${
@@ -71,7 +68,6 @@ function Menu() {
                   }`}
                 >
                   {item.subItems.map((sub) => {
-                    console.log(sub);
                     return (
                       <Link
                         to={sub.url}

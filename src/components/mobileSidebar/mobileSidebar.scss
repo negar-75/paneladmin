@@ -1,0 +1,44 @@
+.mobileSidebar{
+    transform: translateX(-100%);
+    transition: all 0.4s;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100vh;
+    background-color:#3A6B35;
+    
+    .sidebar-nav{
+        color: #ffffff;
+        margin-top: 2.5em;
+        padding: 0;
+        
+        .sidebar-item{
+          margin-bottom: 0.7em;
+            .title{
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+               
+            }
+            .icon{
+                margin: 0em 0.4em;
+            }
+    
+            .sub-menu{
+                font-size: 1.2rem;
+                li{
+                    margin-top: 0.9em;   
+                }
+            }
+        }
+    }
+    
+    .link{
+        color: #ffffff;
+    }
+    
+}
+ .mobileSidebar.open{
+    transform: translateX(0%);
+}

@@ -2,7 +2,6 @@
     display: flex;
     .homeContainer{
         flex: 6;
-       
     }
 
     .charts, .widgets{
@@ -33,4 +32,36 @@
             
         }
     }
+}
+
+
+@media only screen and (max-width:600px) {
+
+    html, body {
+        overflow-x: hidden;
+      }
+    .home{
+         
+         height: 100vh;
+         flex-direction: column;
+         position: relative;
+         
+         .homeContainer{
+          flex:15;
+          .widgets{
+            display: flex;
+            flex-direction: column;
+          }
+
+          .charts{
+            display: flex;
+            flex-direction: column;
+          }
+          
+        }
+
+       
+    }
+
+    
 }

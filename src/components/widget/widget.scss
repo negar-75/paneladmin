@@ -1,8 +1,8 @@
 .widget{
     display: flex;
     justify-content: space-between;
-    flex: 1;
-    height: 100px;
+    flex:1;
+    height: 100%;
     padding: 10px;
     box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
     -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
@@ -17,7 +17,7 @@
 
     .title{
         font-weight: bold;
-        font-size: 14px;
+        font-size: 0.9rem;
         color: #3A6B35;
     }
 
@@ -28,7 +28,7 @@
 
     .link{
         width: max-content;
-        font-size: 12px;
+        font-size: 0.7rem;
         border-bottom: 1px solid #E3B448;
         color: #b08b33;
         cursor: pointer;
@@ -49,10 +49,15 @@
     }
 
     .widgetIcon{
-        display: flex;
-        font-size: 30px;
+        font-size:1.2rem;
         align-self: flex-end;
         padding: 5px;
         border-radius: 5px;
     }
+}
+
+@media only screen and (max-width:600px) {
+  .widget{
+    height: 300px;
+  }
 }

@@ -1,7 +1,9 @@
 .home{
     display: flex;
+    
     .homeContainer{
         flex: 6;
+        
     }
 
     .charts, .widgets{
@@ -10,28 +12,15 @@
         padding: 20px;
         
     }
+    
 
     .charts{
     padding: 0px 25px;
     
+    
     }
 
-    .listContainer{
-        margin: 20px;
-        padding: 20px;
-        box-shadow: 6px 13px 17px -6px rgb(200, 189, 189);
-        -webkit-box-shadow: 6px 13px 17px -6px rgb(205, 194, 194);
-        -moz-box-shadow: 6px 13px 17px -6px rgb(204, 190, 190);
-        border-radius: 5px;
-
-        .title{
-            font-size: 15px;
-            margin-bottom: 20px;
-            color: #3A6B35;
-            font-weight: 600;
-            
-        }
-    }
+    
 }
 
 
@@ -48,14 +37,21 @@
          
          .homeContainer{
           flex:15;
+          margin: 0 0.5em;
+
           .widgets{
             display: flex;
             flex-direction: column;
+            // border: 2px solid green;
+            margin-bottom: 1em;
+            height: 40%;
           }
 
           .charts{
+            
             display: flex;
             flex-direction: column;
+            // border: 2px solid rgb(12, 173, 231);
           }
           
         }

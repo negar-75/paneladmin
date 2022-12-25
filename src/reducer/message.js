@@ -1,7 +1,9 @@
-import { SUCCESS_MESSAGE, CLEAR_MESSAGE, FAILED_MESSAGE } from "../actions/type";
+import { SUCCESS_MESSAGE, CLEAR_MESSAGE, FAILED_MESSAGE, HINT_MESSAGE } from "../actions/type";
 
 const initialState = {
-    message: "" ,
+    successMessage: "" ,
+    failedMessage:"",
+    HintMessage:"",
     success:null
 };
 
@@ -11,18 +13,27 @@ const initialState = {
   switch (action.type) {
     case SUCCESS_MESSAGE:
       return { 
-      message: action.payload,
-      success:true
+       ...state,
+       successMessage:action.payload,
+       success:true
     };
 
     case CLEAR_MESSAGE:
-      return { message: "" };
+      return initialState;
 
     case FAILED_MESSAGE:
       return {
-         message: action.payload,
-         success:false
+        ...state,
+        failedMessage:action.payload,
+        success:false
          };
+
+    case HINT_MESSAGE:
+      return {
+        ...state,
+        hintMessage:action.payload,
+        success:false
+          };     
 
     default:
       return state;

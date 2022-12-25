@@ -1,4 +1,5 @@
 import authService from "../services/authService";
+import { Navigate } from "react-router-dom";
 
 import {
     LOGIN_SUCCESS,
@@ -14,7 +15,8 @@ import {
 
 export const login = (userObj) => dispatch => {
     dispatch({
-      type:SET_LOADING
+      type:SET_LOADING,
+      payload:'login'
     })
     authService.login(userObj)
     .then((response) =>{
@@ -64,10 +66,11 @@ export const login = (userObj) => dispatch => {
 
 export const logout = () => (dispatch) => {
     authService.logout();
-  
     dispatch({
       type: LOGOUT,
     });
+    // <Navigate to="/login" />
+
   };
 export const getUser = () =>  async dispatch =>{
     try{

@@ -23,6 +23,7 @@ export const TOGGLE = 'TOGGLE';
 export const SUCCESS_MESSAGE = "SUCCESS_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 export const FAILED_MESSAGE = "FAILED_MESSAGE";
+export const HINT_MESSAGE =  'HINT_MESSAGE';
 
 
 //dropdown type actions 

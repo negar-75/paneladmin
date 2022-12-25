@@ -1,4 +1,4 @@
-import { SUCCESS_MESSAGE, CLEAR_MESSAGE,FAILED_MESSAGE } from "./type";
+import { SUCCESS_MESSAGE, CLEAR_MESSAGE,FAILED_MESSAGE,HINT_MESSAGE } from "./type";
 
 export const setMessage = (message) => {
     return {
@@ -14,6 +14,13 @@ export const clearMessage = () => ({
 export const failedMessage = (message) =>{
   return {
     type:FAILED_MESSAGE,
+    payload: message,
+ }
+}
+
+export const hintMessage = (message) =>{
+  return {
+    type:HINT_MESSAGE,
     payload: message,
  }
 }

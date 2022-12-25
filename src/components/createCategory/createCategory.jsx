@@ -5,35 +5,53 @@ import FastfoodOutlinedIcon from "@mui/icons-material/FastfoodOutlined";
 import ChangePhoto from "../changePhoto/changePhoto";
 import { createCategory } from "../../services/user.service";
 import { createCategoryInput } from "../../formsource";
-import { failedMessage, clearMessage } from "../../actions/message";
+import {
+  failedMessage,
+  clearMessage,
+  hintMessage,
+} from "../../actions/message";
 import store from "../../store";
 import { useSelector } from "react-redux";
 import ReactLoading from "react-loading";
 import { useTheme } from "@mui/material/styles";
+import ErrorPopUp from "../errorPopUp/errorPopUp";
+import { SET_LOADING, CLEAR_LOADING } from "../../actions/type";
 
 function CreateCategory({ setSuccess }) {
   const [categoryName, setCategoryName] = React.useState();
   const [url, setUrl] = React.useState();
   const inputRef = React.useRef();
-  const message = useSelector((state) => state.message.message);
-  const [loading, setLoading] = React.useState(false);
+  const loading = useSelector((state) => state.loading.loading);
+  const failedmessage = useSelector((state) => state.message.failedMessage);
+  const hintmessage = useSelector((state) => state.message.hintMessage);
   const theme = useTheme();
 
   const submitHandler = async () => {
-    setLoading(true);
+    store.dispatch({
+      type: SET_LOADING,
+      payload: "createCategory",
+    });
     try {
       if (categoryName && url) {
         store.dispatch(clearMessage());
         const res = await createCategory(categoryName, url);
         setSuccess(true);
-        setLoading(false);
+        store.dispatch({
+          type: CLEAR_LOADING,
+        });
       } else {
-        store.dispatch(failedMessage("Please fill required fields"));
-        setLoading(false);
+        store.dispatch(hintMessage("Please fill required fields"));
+        store.dispatch({
+          type: CLEAR_LOADING,
+        });
       }
     } catch (err) {
       console.log(err);
       setSuccess(false);
+      store.dispatch({
+        type: CLEAR_LOADING,
+      });
+      store.dispatch(failedMessage("Something is wrong! please try later"));
     }
   };
 
@@ -45,7 +63,12 @@ function CreateCategory({ setSuccess }) {
     <div className="create-category">
       <div className="title">Create new category</div>
       <div className="body">
-        <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "flex-end",
+          }}
+        >
           <FastfoodOutlinedIcon
             sx={{ color: "action.active", mr: 1, my: 0.5 }}
           />
@@ -63,15 +86,17 @@ function CreateCategory({ setSuccess }) {
                   sx={theme.textFieldStyle}
                   inputRef={inputRef}
                 />
-                <span>{message}</span>
+                <span>{hintmessage}</span>
               </div>
             );
           })}
         </Box>
+        <ErrorPopUp message={failedmessage} />
         <ChangePhoto
-          title="Upload your image"
+          title="Upload photo"
           showImage={false}
           setUrl={setUrl}
+          className="change-photo"
         />
       </div>
 

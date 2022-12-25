@@ -20,7 +20,7 @@ function Login() {
 
   const [formValid, setFormValid] = React.useState(false);
   const [isActive, setIsActive] = React.useState(false);
-  const message = useSelector((state) => state.message.message);
+  const message = useSelector((state) => state.message.failedMessage);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const loading = useSelector((state) => state.loading.loading);
   const theme = useTheme();

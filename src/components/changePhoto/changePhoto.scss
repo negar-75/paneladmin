@@ -1,23 +1,21 @@
-.changePhoto{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+.change-photo{
+    
+    
     .upload{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
         
-       
+        text-align: center;
+        padding: 0.5em;
         label {
-            align-items: center;
-            // margin-top: 20px;
-            font-weight: bold;
-            border: 2px solid  #3A6B35;
+            
+            letter-spacing: 0.1px;
             cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 20px;
-            background-color: transparent;
+            padding: 0.3em 0.8em;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            background-color: #3A6B35;
+            color: rgb(255, 255, 255);
+
         }
     }
 }

@@ -3,6 +3,21 @@
     .menuCatalogue-container{
         flex:6 ;
         
+        .up{
+            
+            display: flex;
+            justify-content: center;
+        }
+        .up, .down{
+            display: flex;
+            padding: 20px;
+        }
         
+    }
+}
+
+@media only screen and (max-width:600px){
+    .menuCatalogue{
+        flex-direction: column;
     }
 }

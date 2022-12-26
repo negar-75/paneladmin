@@ -1,36 +1,28 @@
 import React from "react";
-import ReactPaginate from "react-paginate";
+import Pagination from "@mui/material/Pagination";
+import { useTheme } from "@mui/material/styles";
 
-function Pagination({ itemsPerPage, allData, setCurrentPage }) {
+function PaginatedItems({ itemsPerPage, allData, setCurrentPage }) {
   const [itemOffset, setItemOffset] = React.useState(0);
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  //   const currentItems = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(allData / itemsPerPage);
+  const theme = useTheme();
 
-  const handlePageClick = (event) => {
-    console.log("ok");
-    setCurrentPage(event.selected);
-
-    const newOffset = (event.selected * itemsPerPage) % allData;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
+  const handlePageClick = (event, page) => {
+    setCurrentPage(page);
+    const newOffset = (page * itemsPerPage) % allData;
     setItemOffset(newOffset);
   };
   return (
     <>
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        // pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
+      <Pagination
+        count={pageCount}
+        color="secondary"
+        onChange={handlePageClick}
+        sx={theme.pagination}
       />
     </>
   );
 }
 
-export default Pagination;
+export default PaginatedItems;

@@ -10,7 +10,6 @@ function ChangePhoto(props) {
   const [selectedImage, setSelectedImage] = React.useState("");
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
   const editor = React.useRef(null);
-  console.log(editor);
 
   const onCrop = () => {
     try {

@@ -40,6 +40,7 @@ function MenuCatalogue() {
               <Menugrid
                 success={success}
                 setSuccess={setSuccess}
+                itemsPerPage={6}
               />
             </div>
           </div>
@@ -50,11 +51,16 @@ function MenuCatalogue() {
           <MobileNavbar />
           <MobileSidebar />
           <div className="menuCatalogue-container">
-            <CreateCategory setSuccess={setSuccess} />
-            <Menugrid
-              success={success}
-              setSuccess={setSuccess}
-            />
+            <div className="up">
+              <CreateCategory setSuccess={setSuccess} />
+            </div>
+            <div className="down">
+              <Menugrid
+                success={success}
+                setSuccess={setSuccess}
+                itemsPerPage={3}
+              />
+            </div>
           </div>
         </div>
       )}

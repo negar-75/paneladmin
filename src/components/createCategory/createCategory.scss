@@ -1,11 +1,12 @@
 .create-category{
   flex: 0.7;
-  // margin: 2.5em;
   box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
  -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
  -moz-box-shadow: 5px 6px 14px -1px rgba(190, 184, 184, 0.51);
   border-radius: 5px;
   padding: 20px;
+  
+  
   
  
  
@@ -72,4 +73,10 @@
   }
  }
  
+}
+@media only screen and (max-width:600px){
+  .create-category{
+    flex: 1;
+   
+  }
 }

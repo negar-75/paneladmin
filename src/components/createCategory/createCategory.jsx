@@ -74,9 +74,11 @@ function CreateCategory({ setSuccess }) {
           />
           {createCategoryInput.map((item) => {
             return (
-              <div className="input">
+              <div
+                className="input"
+                id={item.id}
+              >
                 <TextField
-                  id={item.id}
                   name={item.name}
                   label={item.lable}
                   variant={item.variant}

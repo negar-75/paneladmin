@@ -1,8 +1,19 @@
 import { createTheme } from "@mui/material"
 
+
 export const theme = createTheme({
   typography:{
     fontFamily:'Nunito',
+ },
+
+ palette:{
+  primary:{
+    main: '#3A6B35'
+  },
+  secondary:{
+    main:'#E3B448',
+    light:'#f2e3b6'
+  },
  },
 
  textFieldStyle :{
@@ -30,6 +41,19 @@ toggleStyle : {
       color: "#3A6B35"
     }
   }
+},
+pagination:{
+  "&.MuiPagination-root": {
+    display: "flex",
+    justifyContent: "flex-end",
+    button: {
+      color: "primary.main",
+    },
+    "& .Mui-selected": {
+      background: "secondary.main",
+      color: "white",
+    },
+  },
 }
  
 })
@@ -55,6 +79,5 @@ const sliderStyle = {
 
 
  export {
-    
     sliderStyle 
- }
+  }

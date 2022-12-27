@@ -6,9 +6,11 @@
         .up{
             display: flex;
             justify-content: center;
+            
            
             
         }
+
         .up, .down{
         padding: 2em;
         }
@@ -24,10 +26,7 @@
         
         .menuCatalogue-container{
             flex:15;
-            .up{
-                height: 30%;
-            }
-            
+           
         }
     }
 }

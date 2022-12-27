@@ -14,11 +14,10 @@ import { useMediaQuery } from "react-responsive";
 
 function MenuCatalogue() {
   const [success, setSuccess] = React.useState(false);
-  const [isSidebarMenuOpen, setIsSidebarMenuOpen] = React.useState(false);
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1224px)",
+    query: "(min-width: 600px)",
   });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
   store.dispatch(getUser());
 

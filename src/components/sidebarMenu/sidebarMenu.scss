@@ -38,6 +38,7 @@
       flex-direction: column;
       position: relative;
       
+      
 
       
       .dropdownlink{
@@ -49,8 +50,8 @@
       }
 
       .collapse.show{
-        height: 20vh;
-        transition: height 0.5s;
+        max-height: 20vh;
+        transition: max-height 0.5s;
       }
       .fa-chevron-down.open{
           transform: rotate(180deg);
@@ -64,13 +65,13 @@
       }    
         
       .collapse{
-        height: 0px;
+        max-height: 0px;
         overflow: hidden;
         color: #3A6B35; 
         display: flex;
         flex-direction: column;
         background-color:#dadfa6ec;
-        transition: height 0.5s;
+        transition: max-height 0.5s ;
 
         .link{
           color: #3A6B35;

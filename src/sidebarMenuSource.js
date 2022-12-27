@@ -38,12 +38,12 @@ export const sidebarMenuItems =[
       activeIndex:1,
       url:'/productList'
     },
-    { 
-      id:5,
-      name:'Add product',
-      activeIndex:2,
-      url:''
-    }
+    // { 
+    //   id:5,
+    //   name:'Add product',
+    //   activeIndex:2,
+    //   url:''
+    // }
    ]
  },
  {

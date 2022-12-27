@@ -4,6 +4,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import "./productList.scss";
 import { productListTabs } from "../../productListTabs";
 import { Link } from "react-router-dom";
+import ProductListTable from "../../components/productListTable/productListTable";
 
 function ProductList() {
   return (
@@ -25,6 +26,7 @@ function ProductList() {
               );
             })}
           </ul>
+          <ProductListTable />
         </div>
       </div>
     </div>

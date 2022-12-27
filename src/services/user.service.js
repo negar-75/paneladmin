@@ -1,10 +1,11 @@
 import axios from "axios";
+import { baseUrl } from "./baseUrl";
 
 
 
 const createUser = (userObj) => {
  return axios.post(
-    'http://localhost:5500/api/v1/user/',
+    `${baseUrl}user/`,
     
     userObj,
     {
@@ -18,7 +19,7 @@ const createUser = (userObj) => {
 }
 
 const deletUser = (id) =>{
-    return axios.delete(`http://localhost:5500/api/v1/user/${id}`, {
+    return axios.delete(`${baseUrl}user/${id}`, {
         headers: {
             'accept': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -29,7 +30,7 @@ const deletUser = (id) =>{
 const updateUser = (userId,userObj) =>{
     console.log('update user ran')
     return axios.put(
-        ` http://localhost:5500/api/v1/user/${userId}`,
+        ` ${baseUrl}user/${userId}`,
          
         userObj,
          {
@@ -44,7 +45,7 @@ const updateUser = (userId,userObj) =>{
 
 
 const getAllUsers = async (pageNum) => {
-    return await axios.get('http://localhost:5500/api/v1/user/', {
+    return await axios.get(`${baseUrl}user/`, {
       params: {
           'skip': `${pageNum*10}`,
           'limit': '10'
@@ -58,7 +59,7 @@ const getAllUsers = async (pageNum) => {
 
 
 const getAllItems = async (pageNum) =>{
-    return await axios.get('http://localhost:5500/api/v1/item/', {
+    return await axios.get(`${baseUrl}item/`, {
         params: {
             'skip': `${pageNum*10}`,
             'limit': '10',
@@ -73,7 +74,7 @@ const getAllItems = async (pageNum) =>{
 }
 
 const deletItem = async (id) =>{
-    return await axios.delete(`http://localhost:5500/api/v1/item/${id}`, {
+    return await axios.delete(`${baseUrl}item/${id}`, {
         headers: {
             'accept': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -82,11 +83,11 @@ const deletItem = async (id) =>{
 }
 
 
-const  getCategory =  (pageNum) =>{
-   return  axios.get('http://localhost:5500/api/v1/category/', {
+const  getCategory =  (pageNum,itemsPerPage) =>{
+   return  axios.get(`${baseUrl}category/`, {
     params: {
         'skip': `${pageNum}`,
-        'limit': '6'
+        'limit': `${itemsPerPage}`
     },
     headers: {
         'accept': 'application/json',
@@ -97,7 +98,7 @@ const  getCategory =  (pageNum) =>{
 
 const createCategory =  (categoryName,url) => {
      return  axios.post(
-        'http://localhost:5500/api/v1/category/',
+        `${baseUrl}category/`,
         
         {
             'category_name':`${categoryName}`,
@@ -116,7 +117,7 @@ const createCategory =  (categoryName,url) => {
 }
 
 const deleteCategory = async(id) => {
-    return await axios.delete(`http://localhost:5500/api/v1/category/${id}`, {
+    return await axios.delete(`${baseUrl}category/${id}`, {
     headers: {
         'accept': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -127,7 +128,7 @@ const deleteCategory = async(id) => {
 
 const updateCategory = (id,obj) => {
     return axios.put(
-        `http://localhost:5500/api/v1/category/${id}`,
+        `${baseUrl}category/${id}`,
         
         obj,
         {

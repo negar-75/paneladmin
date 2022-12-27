@@ -16,7 +16,7 @@ import { useSelector } from 'react-redux'
 
 
 
-import "./style/style.scss"
+import "./style/darkStyle.scss"
 
 
 

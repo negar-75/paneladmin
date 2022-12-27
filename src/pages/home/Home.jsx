@@ -10,21 +10,14 @@ import "./home.scss";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import store from "../../store";
-import { getUser } from "../../actions/auth";
 
 function Home() {
-  const [isSidebarMenuOpen, setIsSidebarMenuOpen] = React.useState(false);
   const isAuth = useSelector((state) => state.user.isAuth);
-  console.log(isSidebarMenuOpen);
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1224px)",
-  });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
-  const toggleSidebar = () => {
-    setIsSidebarMenuOpen((pre) => !pre);
-  };
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 600px)",
+  });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 6004px)" });
 
   if (!isAuth && !localStorage.getItem("token"))
     return <Navigate to="/login" />;
@@ -67,12 +60,9 @@ function Home() {
 
       {isTabletOrMobile && (
         <div className="home">
-          <MobileNavbar toggleSidebar={toggleSidebar} />
-          <MobileSidebar isSidebarMenuOpen={isSidebarMenuOpen} />
-          <div
-            className="homeContainer"
-            onClick={() => setIsSidebarMenuOpen(false)}
-          >
+          <MobileNavbar />
+          <MobileSidebar />
+          <div className="homeContainer">
             <div className="widgets">
               <Widget
                 type="user"

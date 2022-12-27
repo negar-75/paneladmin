@@ -2,21 +2,32 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./mobileNavbar.scss";
 import Avatar from "@mui/material/Avatar";
+import store from "../../store";
+import { OPEN_SIDEBAR } from "../../actions/type";
+import { Link } from "react-router-dom";
 
-function MobileNavbar(props) {
-  const { toggleSidebar } = props;
+function MobileNavbar() {
   return (
     <div className="mobileNavbar">
       <div className="wrapper">
         <MenuIcon
           className="icon"
-          onClick={() => toggleSidebar()}
+          onClick={() =>
+            store.dispatch({
+              type: OPEN_SIDEBAR,
+            })
+          }
         />
-        <div className="logo">
-          <h2>
-            fas<span>Foo</span>
-          </h2>
-        </div>
+        <Link
+          to="/"
+          className="link"
+        >
+          <div className="logo">
+            <h2>
+              fas<span>Foo</span>
+            </h2>
+          </div>
+        </Link>
         <div className="avatar">
           <Avatar
             alt="profile"

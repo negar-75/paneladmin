@@ -1,10 +1,10 @@
 import axios from "axios";
-
+import { baseUrl } from "./baseUrl";
 
 
 const login = (userObj) => {
     return  axios.post(
-        'http://localhost:5500/api/v1/login/access-token',
+        `${baseUrl}login/access-token`,
         new URLSearchParams({
             'grant_type': '',
             'username': userObj.username,
@@ -31,7 +31,7 @@ const logout = () => {
  //checking authorization
 
 const getUser = () =>{
-    return axios.get('http://localhost:5500/api/v1/user/me', {
+    return axios.get(`${baseUrl}user/me`, {
     headers: {
         'accept': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('token')

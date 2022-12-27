@@ -36,7 +36,7 @@ export const sidebarMenuItems =[
       id:4,
       name:'products list',
       activeIndex:1,
-      url:''
+      url:'/menu/productList'
     },
     { 
       id:5,

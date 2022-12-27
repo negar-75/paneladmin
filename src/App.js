@@ -43,11 +43,10 @@ function App() {
           </Route>
           <Route path='new' element={<New  input={userInputs}  title='Add New User'/>} />
          </Route>
-        <Route path='menu'>
           <Route path='menuCatalogue' element={<MenuCatalogue />} />
           <Route path='productList' element={<ProductList/>} />
-          {/* <Route path='new' element={} /> */}
-        </Route>
+          
+        
       </Route>
         </Routes> 
     </BrowserRouter>

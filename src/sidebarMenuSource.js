@@ -30,13 +30,13 @@ export const sidebarMenuItems =[
       id:3,
       name:'Menu Catalogue',
       activeIndex:0,
-      url:'/menu/menuCatalogue'
+      url:'/menuCatalogue'
     },
     { 
       id:4,
       name:'products list',
       activeIndex:1,
-      url:'/menu/productList'
+      url:'/productList'
     },
     { 
       id:5,

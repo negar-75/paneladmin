@@ -11,19 +11,17 @@ import { sidebarMenuItems } from "../../sidebarMenuSource";
 function Menu() {
   const [activeIndex, setActiveIndex] = React.useState(() => {
     const initialIndex =
-      window.location.pathname === "/menu/menuCatalogue"
+      window.location.pathname === "/menuCatalogue"
         ? 0
-        : window.location.pathname === "/FAQ"
+        : window.location.pathname === "/productList"
         ? 1
-        : window.location.pathname === "Search-sec"
-        ? 2
         : " ";
     return initialIndex;
   });
 
   const [activePage, setActivePage] = React.useState(() => {
     const initialIndex =
-      window.location.pathname === "/menu/menuCatalogue"
+      window.location.pathname === "/menuCatalogue" || "/productList"
         ? "/menu"
         : window.location.pathname === "/staffs"
         ? "/staffs"

@@ -36,14 +36,9 @@ export const sidebarMenuItems =[
       id:4,
       name:'products list',
       activeIndex:1,
-      url:'/productList'
+      url:'/productList/items'
     },
-    // { 
-    //   id:5,
-    //   name:'Add product',
-    //   activeIndex:2,
-    //   url:''
-    // }
+  
    ]
  },
  {

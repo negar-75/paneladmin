@@ -29,3 +29,8 @@ export const HINT_MESSAGE =  'HINT_MESSAGE';
 //dropdown type actions 
 
 export const DROP_DOWN = "DROP_DOWN"
+
+
+//sidebarMenu actions
+export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
+export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';

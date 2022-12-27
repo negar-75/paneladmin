@@ -18,7 +18,7 @@ const handleDelet = async(deletId,apiFunc,setState,items) =>{  //to delet item f
        const res = apiFunc(deletId)
        setState(items.filter (item => item.id != deletId ));
     }  
-    catch(err){
+      catch(err){
       console.log(err)
     } 
  }

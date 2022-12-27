@@ -38,7 +38,6 @@ function Login() {
 
   React.useEffect(() => {
     if (person.username.length > 0 && person.password.length >= 12) {
-      console.log("valid");
       setFormValid(true);
     } else {
       setFormValid(false);
@@ -72,7 +71,7 @@ function Login() {
                 variant={item.variant}
                 onChange={inputhandler}
                 sx={theme.textFieldStyle}
-                value={person.name}
+                type={item.type}
               />
             );
           })}

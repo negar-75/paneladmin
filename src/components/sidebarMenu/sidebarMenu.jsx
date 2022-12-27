@@ -13,7 +13,7 @@ function Menu() {
     const initialIndex =
       window.location.pathname === "/menuCatalogue"
         ? 0
-        : window.location.pathname === "/productList"
+        : window.location.pathname === "/productList/items"
         ? 1
         : " ";
     return initialIndex;
@@ -21,7 +21,7 @@ function Menu() {
 
   const [activePage, setActivePage] = React.useState(() => {
     const initialIndex =
-      window.location.pathname === "/menuCatalogue" || "/productList"
+      window.location.pathname === "/menuCatalogue" || "/productList/items"
         ? "/menu"
         : window.location.pathname === "/staffs"
         ? "/staffs"

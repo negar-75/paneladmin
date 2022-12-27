@@ -4,11 +4,30 @@ import { Link } from "react-router-dom";
 import store from "../../store";
 import { logout } from "../../actions/auth";
 import "./mobileSidebar.scss";
+import { useSelector } from "react-redux";
+import { CLOSE_SIDEBAR } from "../../actions/type";
 
-function MobileSidebar(props) {
-  const { isSidebarMenuOpen } = props;
+function MobileSidebar() {
+  const sidebarRef = React.useRef(null);
+  const isSidebarMenuOpen = useSelector(
+    (state) => state.isSidebarMenuOpen.isSidebarMenuOpen
+  );
+
+  const closeOpenMenus = (e) => {
+    if (sidebarRef.current && isSidebarMenuOpen) {
+      store.dispatch({
+        type: CLOSE_SIDEBAR,
+      });
+    }
+  };
+
+  document.addEventListener("mousedown", closeOpenMenus);
+
   return (
-    <div className={isSidebarMenuOpen ? "mobileSidebar open" : "mobileSidebar"}>
+    <div
+      className={isSidebarMenuOpen ? "mobileSidebar open" : "mobileSidebar"}
+      ref={sidebarRef}
+    >
       <ul className="sidebar-nav">
         {sidebarMenuItems.map((item) => {
           if (item.subMenu) {

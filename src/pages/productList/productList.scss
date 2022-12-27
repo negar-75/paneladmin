@@ -2,5 +2,26 @@
     display: flex;
     .product-list-container{
         flex: 6;
+
+        .product-list-tabs{
+            
+            padding: 2em 2em 0 2em;
+            display: flex;
+            justify-content: center;
+            ul{
+                display: flex;
+                
+                justify-content: center;
+                
+                li{
+                    margin: 0 1em;
+                    background-color: #3A6B35;
+                    padding: 0.5em 2.5em;
+                    color: #f5f5f5;
+                    font-weight: 600;
+                    border-radius: 10px 10px 0 0;
+                }
+            }
+        }
     }
 }

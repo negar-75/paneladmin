@@ -72,7 +72,7 @@ export const userInputs = [
 
   export const createCategoryInput = [
     { 
-      id: 1,
+      id: '1',
       lable : "Category name",
       variant : "standard"
     }
@@ -83,14 +83,32 @@ export const userInputs = [
      id:1,
      lable: 'Your username',
      variant : "standard",
-     name : "username"
+     name : "username",
+     type:"text"
+
     },
     {
      id:2,
      lable:"Your password",
      variant : "standard",
-     name:"password"
+     name:"password",
+     type:"password"
      
+    }
+  ]
+
+
+  export const staffInformation =[
+    {
+      id:'1',
+      fieldName:'Email',
+      typeInformation:'email'
+    },
+    {
+      id:'2',
+      fieldName:'Phone',
+      typeInformation:'phone'
+
     }
   ]
   

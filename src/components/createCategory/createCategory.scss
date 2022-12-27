@@ -5,6 +5,9 @@
  -moz-box-shadow: 5px 6px 14px -1px rgba(190, 184, 184, 0.51);
   border-radius: 5px;
   padding: 20px;
+  display:block;
+  height:200px;
+  position: relative;
   
   
   
@@ -25,7 +28,6 @@
  .body{
   
   gap: 0.8em;
-  position: relative;
   display: flex;
   flex-direction: column;
   
@@ -46,19 +48,23 @@
 
   }
  }
-
  .loading{
   font-size: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 2em;
+ 
+  position: absolute;
+  bottom: 12%;
+  right: 3.5%;
+  padding: 0em 2em;
+  
  }
+
  .submit{
   display: flex;
   justify-content: flex-end;
-  // padding-right: 2em;
+ 
+  
+  
   button{
-    margin-top: 20px;
     background-color: transparent;
     border: 2px solid #3a6b35a1;
     border-radius: 20px;
@@ -72,6 +78,9 @@
     }
   }
  }
+
+ 
+ 
  
 }
 @media only screen and (max-width:600px){

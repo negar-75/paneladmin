@@ -2,37 +2,29 @@ import React from "react";
 import "./menugrid.scss";
 import MenuItem from "../menuItem/menuItem";
 import { getCategory } from "../../services/user.service";
-// import Pagination from "@mui/material/Pagination";
 import { firstLetterToUpperCase } from "../../services/functions";
 import PaginatedItems from "../pagination/pagination";
+import useApi from "../../hooks/useApi";
 
 function Menugrid({ success, setSuccess, itemsPerPage }) {
-  const [items, setItems] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [allData, setAllData] = React.useState();
+  const getCategories = useApi(getCategory);
+  const { data, error, loading, request } = getCategories;
+  const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
-    const fetch = async () => {
-      try {
-        setLoading(true);
-        const res = await getCategory((currentPage - 1) * 6);
-        console.log(res);
-        setItems(res.data.records);
-        setAllData(res.data.total_records_count);
-        setSuccess(false);
-        setLoading(false);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetch();
+    request((currentPage - 1) * itemsPerPage, itemsPerPage);
+    setSuccess(false);
   }, [success, currentPage]);
+
+  React.useEffect(() => {
+    setItems(data?.records);
+  }, [data, currentPage]);
 
   return (
     <>
       <div className="grid-container">
-        {items.map((item) => {
+        {items?.map((item) => {
           return (
             <div
               className="grid-item"
@@ -50,14 +42,16 @@ function Menugrid({ success, setSuccess, itemsPerPage }) {
           );
         })}
       </div>
-      <div className="pagination">
-        <PaginatedItems
-          allData={allData}
-          itemsPerPage={itemsPerPage}
-          items={items}
-          setCurrentPage={setCurrentPage}
-        />
-      </div>
+      {data?.total_records_count > 0 && (
+        <div className="pagination">
+          <PaginatedItems
+            allData={data?.total_records_count}
+            itemsPerPage={itemsPerPage}
+            items={items}
+            setCurrentPage={setCurrentPage}
+          />
+        </div>
+      )}
     </>
   );
 }

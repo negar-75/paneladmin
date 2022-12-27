@@ -6,22 +6,24 @@ import DataTable from "react-data-table-component";
 import { getAllUsers, deletUser } from "../../services/user.service";
 import { handleDelet } from "../../services/functions";
 import { theme, customStyles } from "../../style/customDataTableStyle";
-
+import useApi from "../../hooks/useApi";
 function Datatable() {
-  const [data, setData] = React.useState([]);
-
-  const getData = async (page) => {
-    const response = await getAllUsers(page);
-    setData(response.data);
-  };
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const getUsers = useApi(getAllUsers);
+  const { data, error, loading, request } = getUsers;
+  const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
-    getData(0);
+    request(currentPage - 1);
   }, []);
 
   const handlePageChange = (page) => {
-    getData(page - 1);
+    setCurrentPage(page);
   };
+
+  React.useEffect(() => {
+    setItems(data);
+  }, [data]);
 
   const actionCol = [
     {
@@ -43,7 +45,7 @@ function Datatable() {
 
           <div
             className="deletButton"
-            onClick={() => handleDelet(row.id, deletUser, setData, data)}
+            onClick={() => handleDelet(row.id, deletUser, setItems, data)}
           >
             Delet
           </div>
@@ -62,15 +64,17 @@ function Datatable() {
         </Link>
       </div>
 
-      <DataTable
-        title="Users"
-        columns={userColumns.concat(actionCol)}
-        data={data}
-        selectableRows
-        customStyles={customStyles}
-        theme="solarized"
-        onChangePage={handlePageChange}
-      />
+      {items && (
+        <DataTable
+          title="Users"
+          columns={userColumns.concat(actionCol)}
+          data={items}
+          selectableRows
+          customStyles={customStyles}
+          theme="solarized"
+          onChangePage={handlePageChange}
+        />
+      )}
     </div>
   );
 }

@@ -1,0 +1,40 @@
+.product-list-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 5em;
+  background-color: rgb(255, 255, 255);
+  margin:0 2em;
+    .search{
+        display: flex;
+        align-items: center;
+        border: 00.5px solid #dbb039;
+        padding: 3px;
+        
+        
+        input{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            &::placeholder{
+                font-size: 12px;
+            }
+        }
+
+    }
+
+    .add-button{
+
+        button{
+        background-color: #3A6B35;
+        border: none;
+        padding: 0.3em 2em;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        background-color: #E3B448;;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        }
+        
+    }
+}

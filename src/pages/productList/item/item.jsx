@@ -6,7 +6,7 @@ import Tab from "../../../components/productList/tab/tab";
 import Header from "../../../components/productList/header/header";
 import itemTable from "../../../components/productList/itemTable/itemTable";
 
-function ProductList() {
+function Item() {
   return (
     <div className="product-list">
       <Sidebar />
@@ -20,4 +20,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default Item;

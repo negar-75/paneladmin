@@ -1,9 +1,51 @@
+import { WidthFull } from "@mui/icons-material"
 import { createTheme } from "@mui/material"
 
 
 export const theme = createTheme({
   typography:{
     fontFamily:'Nunito',
+ },
+
+ components:{
+  
+  MuiDataGrid:{
+    styleOverrides:{
+      row:{
+         "&.Mui-selected":{
+          backgroundColor:'#f2f2b6',
+          '&:hover' : {
+            backgroundColor:'#f2f2b6'
+          },
+        },
+        '&:hover' : {
+          backgroundColor:'#f2f2b6'
+        },
+        '&:active':{
+          backgroundColor:'#f2f2b6'
+        }
+      },
+      cell:{
+        border:'none',
+        '&:focus': {
+         border:'none',
+         boxShadow: "none",
+         outline:' none !important'
+        }
+      },
+      columnHeaderTitle:{
+        fontWeight: 600,
+        // backgroundColor:'purple',
+       
+      },
+      columnHeader:{
+        display:'flex',
+      },
+      columnSeparator:{
+        display:'none'
+      }
+    }
+  }
  },
 
  palette:{

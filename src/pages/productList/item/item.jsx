@@ -2,8 +2,9 @@ import React from "react";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import "./item.scss";
-import ProductListTable from "../../../components/productList/table/productListTable";
 import Tab from "../../../components/productList/tab/tab";
+import Header from "../../../components/productList/header/header";
+import itemTable from "../../../components/productList/itemTable/itemTable";
 
 function ProductList() {
   return (
@@ -12,7 +13,8 @@ function ProductList() {
       <div className="product-list-container">
         <Navbar />
         <Tab />
-        <ProductListTable />
+        <Header />
+        <itemTable />
       </div>
     </div>
   );

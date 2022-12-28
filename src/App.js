@@ -6,7 +6,7 @@ import New from './pages/new/New';
 import Single from './pages/single/Single';
 import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
-import Item from './pages/productList/item/item';
+import Items from './pages/productList/item/item';
 import {userInputs, } from './formsource'
 import {
   BrowserRouter,
@@ -47,7 +47,7 @@ function App() {
         <Route path='productList'>
            
            <Route path='items' >
-             <Route index element={<Item />} />
+             <Route index element={<Items />} />
              <Route path='add' element />
              <Route path=':id/edit' element />
            </Route>

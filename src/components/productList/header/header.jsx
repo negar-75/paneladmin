@@ -10,7 +10,7 @@ function Header(props) {
           type="text"
           placeholder="Search..."
         />
-        <SearchIcon />
+        <SearchIcon className="icon" />
       </div>
       <div className="add-button">
         <button>Add</button>

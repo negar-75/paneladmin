@@ -21,7 +21,8 @@ function Menu() {
 
   const [activePage, setActivePage] = React.useState(() => {
     const initialIndex =
-      window.location.pathname === "/menuCatalogue" || "/productList/items"
+      window.location.pathname === "/menuCatalogue" ||
+      window.location.pathname === "/productList/items"
         ? "/menu"
         : window.location.pathname === "/staffs"
         ? "/staffs"

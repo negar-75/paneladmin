@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Tab() {
   return (
     <div className="product-list-tabs">
-      <ul>
+      <ul className="tab-names">
         {productListTabs.map((item) => {
           return (
             <Link

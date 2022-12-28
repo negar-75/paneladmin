@@ -6,7 +6,7 @@ import New from './pages/new/New';
 import Single from './pages/single/Single';
 import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
-import Items from './pages/productList/item/item';
+import Items from './pages/productList/items/items';
 import {userInputs, } from './formsource'
 import {
   BrowserRouter,

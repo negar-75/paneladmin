@@ -13,16 +13,16 @@ export const theme = createTheme({
     styleOverrides:{
       row:{
          "&.Mui-selected":{
-          backgroundColor:'#f2f2b6',
+          backgroundColor:'#fafadc',
           '&:hover' : {
-            backgroundColor:'#f2f2b6'
+            backgroundColor:'#fafadc'
           },
         },
         '&:hover' : {
-          backgroundColor:'#f2f2b6'
+          backgroundColor:'#fafadc'
         },
         '&:active':{
-          backgroundColor:'#f2f2b6'
+          backgroundColor:'#fafadc'
         }
       },
       cell:{

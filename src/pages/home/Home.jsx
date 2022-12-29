@@ -17,7 +17,7 @@ function Home() {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 600px)",
   });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 6004px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
   if (!isAuth && !localStorage.getItem("token"))
     return <Navigate to="/login" />;

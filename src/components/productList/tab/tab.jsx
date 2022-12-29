@@ -1,5 +1,5 @@
 import React from "react";
-import { productListTabs } from "../../../productListTabs";
+import { productListTabs } from "../../../productListSource/productListTabs";
 import "./tab.scss";
 import { Link } from "react-router-dom";
 

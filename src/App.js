@@ -7,13 +7,15 @@ import Single from './pages/single/Single';
 import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
-import {userInputs, } from './formsource'
+import Sauce from './pages/productList/sauce/sauce';
+import {userInputs, } from './formsource';
 import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+
 
 
 
@@ -48,6 +50,11 @@ function App() {
            
            <Route path='items' >
              <Route index element={<Items />} />
+             <Route path='add' element />
+             <Route path=':id/edit' element />
+           </Route>
+           <Route path='sauce' >
+             <Route index element={<Sauce />} />
              <Route path='add' element />
              <Route path=':id/edit' element />
            </Route>

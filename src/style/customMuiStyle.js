@@ -2,11 +2,11 @@ import { WidthFull } from "@mui/icons-material"
 import { createTheme } from "@mui/material"
 
 
+
 export const theme = createTheme({
   typography:{
     fontFamily:'Nunito',
  },
-
  components:{
   
   MuiDataGrid:{
@@ -35,15 +35,23 @@ export const theme = createTheme({
       },
       columnHeaderTitle:{
         fontWeight: 600,
-        // backgroundColor:'purple',
+        
        
       },
       columnHeader:{
         display:'flex',
+        '&:focus': {
+          border:'none',
+          boxShadow: "none",
+          outline:' none !important'
+         }
+        
+        
       },
       columnSeparator:{
         display:'none'
-      }
+      },
+     
     }
   }
  },
@@ -103,7 +111,7 @@ pagination:{
 
 
 
-const sliderStyle = {
+export const sliderStyle = {
 
   "& .MuiSlider-track":{
     color: "#3A6B35",
@@ -120,6 +128,3 @@ const sliderStyle = {
 
 
 
- export {
-    sliderStyle 
-  }

@@ -1,5 +1,5 @@
 import React from "react";
-import { sidebarMenuItems } from "../../sidebarMenuSource";
+import { sidebarMenuItems } from "../../sources/sidebarMenuSource";
 import { Link } from "react-router-dom";
 import store from "../../store";
 import { logout } from "../../actions/auth";

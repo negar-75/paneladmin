@@ -8,7 +8,7 @@ import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
 import Sauce from './pages/productList/sauce/sauce';
-import {userInputs, } from './formsource';
+import {userInputs, } from './sources/formsource';
 import {
   BrowserRouter,
   Routes,

@@ -6,7 +6,7 @@ import { logout } from "../../actions/auth";
 import { Link } from "react-router-dom";
 import { handleDropDown } from "../../actions/dropDownMenu";
 import { useSelector } from "react-redux";
-import { sidebarMenuItems } from "../../sidebarMenuSource";
+import { sidebarMenuItems } from "../../sources/sidebarMenuSource";
 
 function Menu() {
   const [activeIndex, setActiveIndex] = React.useState(() => {

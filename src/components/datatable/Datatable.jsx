@@ -1,6 +1,6 @@
 import React from "react";
 import "./datatable.scss";
-import { userColumns } from "../../datatablesource";
+import { userColumns } from "../../sources/datatablesource";
 import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { getAllUsers, deletUser } from "../../services/user.service";

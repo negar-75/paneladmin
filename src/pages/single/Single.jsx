@@ -12,7 +12,7 @@ import store from "../../store";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getUser } from "../../actions/auth";
-import { staffInformation } from "../../formsource";
+import { staffInformation } from "../../sources/formsource";
 import { useMediaQuery } from "react-responsive";
 
 function Single() {

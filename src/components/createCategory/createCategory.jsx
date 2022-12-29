@@ -4,7 +4,7 @@ import "./createCategory.scss";
 import FastfoodOutlinedIcon from "@mui/icons-material/FastfoodOutlined";
 import ChangePhoto from "../changePhoto/changePhoto";
 import { createCategory } from "../../services/user.service";
-import { createCategoryInput } from "../../formsource";
+import { createCategoryInput } from "../../sources/formsource";
 import {
   failedMessage,
   clearMessage,

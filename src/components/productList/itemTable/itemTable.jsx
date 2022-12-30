@@ -1,10 +1,8 @@
 import React from "react";
 import "./itemTable.scss";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
 import { DataGrid } from "@mui/x-data-grid";
 import Switch from "@mui/material/Switch";
+import { itemColumns } from "../../../sources/productListSource/productListColumns";
 
 function ItemTable(props) {
   const columns = [
@@ -63,7 +61,7 @@ function ItemTable(props) {
     <div className="prosuct-list-table">
       <DataGrid
         rows={rows}
-        columns={columns}
+        columns={itemColumns.concat(actionCols)}
         pageSize={5}
         rowsPerPageOptions={[5]}
         hideFooterSelectedRowCount={true}

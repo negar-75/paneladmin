@@ -1,34 +1,17 @@
 import React from "react";
 import "./menuItem.scss";
 import { deleteCategory, updateCategory } from "../../services/user.service";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
+
 import {
   handleDelet,
   firstLetterToUpperCase,
   useDidMountEffect,
 } from "../../services/functions";
-import { useTheme } from "@mui/material/styles";
+
+import StatusSwitch from "../statusSwitch/satusSwitch";
 
 function MenuItem(props) {
   const { image, title, id, items, setItems, status } = props;
-  const [toggleMode, setToggleMode] = React.useState({
-    status: status,
-  });
-  const [elementId, setElementId] = React.useState();
-  const theme = useTheme();
-
-  const fetch = async () => {
-    const res = await updateCategory(elementId, toggleMode);
-    console.log(res);
-  };
-
-  useDidMountEffect(fetch, toggleMode); //not to run useEffect in first render
-
-  const toggleChange = (e) => {
-    setElementId(e.target.id);
-    setToggleMode((pre) => ({ ...pre, status: e.target.checked }));
-  };
 
   return (
     <div className="menu-item">
@@ -38,20 +21,10 @@ function MenuItem(props) {
       <div className="card-body">
         <div className="body-title">
           <h6>{firstLetterToUpperCase(title)}</h6>
-          <FormControlLabel
-            control={
-              <Switch
-                color="success"
-                size="medium"
-                id={id}
-                value={toggleMode.status}
-                checked={toggleMode.status}
-                onChange={toggleChange}
-              />
-            }
-            label={toggleMode.status ? "Enable" : "Disable"}
-            labelPlacement="bottom"
-            sx={theme.toggleStyle.lable}
+          <StatusSwitch
+            elementId={id}
+            apiFunc={updateCategory}
+            status={status}
           />
         </div>
         <button

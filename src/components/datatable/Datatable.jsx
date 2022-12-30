@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { getAllUsers, deletUser } from "../../services/user.service";
 import { handleDelet } from "../../services/functions";
-import { theme, customStyles } from "../../style/customDataTableStyle";
+import { customStyles } from "../../style/customDataTableStyle";
 import useApi from "../../hooks/useApi";
+
 function Datatable() {
   const [currentPage, setCurrentPage] = React.useState(1);
   const getUsers = useApi(getAllUsers);
@@ -28,7 +29,6 @@ function Datatable() {
   const actionCol = [
     {
       name: "Action",
-
       cell: (row) => (
         <div className="actionColumn">
           <Link

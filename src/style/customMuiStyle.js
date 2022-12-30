@@ -8,6 +8,15 @@ export const theme = createTheme({
     fontFamily:'Nunito',
  },
  components:{
+
+  MuiSwitch:{
+    styleOverrides:{
+      track:{
+        backgroundColor: "light green",
+      }
+
+    }
+  },
   
   MuiDataGrid:{
     styleOverrides:{
@@ -83,14 +92,14 @@ toggleStyle : {
     }
   }
  ,
-  switch:{
-    "& .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track": {
-      backgroundColor: "light green"
-    },
-    "& .MuiSwitch-switchBase.Mui-checked": {
-      color: "#3A6B35"
-    }
-  }
+  // switch:{
+  //   "& .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track": {
+  //     backgroundColor: "light green"
+  //   },
+  //   "& .MuiSwitch-switchBase.Mui-checked": {
+  //     color: "#3A6B35"
+  //   }
+  // }
 },
 pagination:{
   "&.MuiPagination-root": {

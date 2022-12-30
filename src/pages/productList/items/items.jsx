@@ -4,7 +4,8 @@ import Sidebar from "../../../components/sidebar/Sidebar";
 import "./items.scss";
 import Tab from "../../../components/productList/tab/tab";
 import Header from "../../../components/productList/header/header";
-import ItemTable from "../../../components/productList/itemTable/itemTable";
+import ItemTable from "../../../components/productList/table/table";
+import { itemColumns } from "../../../sources/productListSource/productListColumns";
 
 function Items() {
   return (
@@ -14,7 +15,7 @@ function Items() {
         <Navbar />
         <Tab />
         <Header />
-        <ItemTable />
+        <ItemTable col={itemColumns} />
       </div>
     </div>
   );

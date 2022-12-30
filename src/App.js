@@ -2,7 +2,7 @@ import React from 'react'
 import Home from './pages/home/Home';
 import Staffs from './pages/staffs/staffs';
 import Login from './pages/login/Login';
-import New from './pages/new/New';
+import User from './pages/addPages/user';
 import Single from './pages/single/Single';
 import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
@@ -43,7 +43,7 @@ function App() {
             <Route index element={<Single/>} />
             <Route path='editprofile' element={<EditProfile/>} />
           </Route>
-          <Route path='new' element={<New  input={userInputs}  title='Add New User'/>} />
+          <Route path='new' element={<User  input={userInputs}  title='Add New User'/>} />
         </Route>
         <Route path='menuCatalogue' element={<MenuCatalogue />} />
         <Route path='productList'>
@@ -55,8 +55,9 @@ function App() {
            </Route>
            <Route path='sauces' >
              <Route index element={<Sauces />} />
-             <Route path='add' element />
+             <Route path='add' />
              <Route path=':id/edit' element />
+
            </Route>
         </Route>
           

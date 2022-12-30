@@ -144,6 +144,21 @@ const updateCategory = (id,obj) => {
     );
 }
 
+
+const updateItem = (id,obj) => {
+    return axios.put(`${baseUrl}item/${id}`,
+    obj,
+    {
+        headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          
+        },
+    }
+    )
+}
+
 export {
     createUser,
     deletUser,
@@ -154,6 +169,7 @@ export {
     getCategory,
     createCategory,
     deleteCategory,
-    updateCategory
+    updateCategory,
+    updateItem
     
 }

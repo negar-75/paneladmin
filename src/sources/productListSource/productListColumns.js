@@ -74,14 +74,14 @@ const sauceColumns =[
     {
         field: "sauce_name",
         headerName: "ITEM NAME",
-        width: 300,
+        width: 450,
         headerAlign: "center",
         align: "center",
       },
       {
         field: "status",
         headerName: "STATUS",
-        width: 200,
+        width: 450,
         headerAlign: "center",
         align: "center",
         sortable: false,

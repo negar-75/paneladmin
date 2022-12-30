@@ -47,7 +47,6 @@ function MenuItem(props) {
                 value={toggleMode.status}
                 checked={toggleMode.status}
                 onChange={toggleChange}
-                sx={theme.toggleStyle.switch}
               />
             }
             label={toggleMode.status ? "Enable" : "Disable"}

@@ -9,6 +9,16 @@ export const theme = createTheme({
  },
  components:{
 
+  MuiFormControlLabel:{
+    
+    styleOverrides:{
+      label:{
+        fontSize:12
+      }
+    
+    }
+  },
+
   MuiSwitch:{
     styleOverrides:{
       track:{

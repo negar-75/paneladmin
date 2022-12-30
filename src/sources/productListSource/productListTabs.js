@@ -12,17 +12,17 @@ export const productListTabs =[
     {
     id:'3',
     tabName : 'Desserts',
-    url:'/productList/dessert',
+    url:'/productList/desserts',
     },
     {
     id:'4',
     tabName : 'Sauces',
-    url:'/productList/sauce',
+    url:'/productList/sauces',
     },
     {
     id:'5',
     tabName : 'Combos',
-    url:'/productList/combo',
+    url:'/productList/combos',
     },
     {
     id:'6',    

@@ -9,7 +9,7 @@ function Tab() {
       case "/productList/items": {
         return "Items";
       }
-      case "/productList/sauce": {
+      case "/productList/sauces": {
         return "Sauces";
       }
       default:

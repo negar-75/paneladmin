@@ -7,7 +7,7 @@ import Single from './pages/single/Single';
 import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
-import Sauce from './pages/productList/sauce/sauce';
+import Sauces from './pages/productList/sauces/sauces';
 import {userInputs, } from './sources/formsource';
 import {
   BrowserRouter,
@@ -53,8 +53,8 @@ function App() {
              <Route path='add' element />
              <Route path=':id/edit' element />
            </Route>
-           <Route path='sauce' >
-             <Route index element={<Sauce />} />
+           <Route path='sauces' >
+             <Route index element={<Sauces />} />
              <Route path='add' element />
              <Route path=':id/edit' element />
            </Route>

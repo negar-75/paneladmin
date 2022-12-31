@@ -57,7 +57,7 @@ function Datatable() {
     <div className="dataTable">
       <div className="dataTableTitle">
         <Link
-          to="/staffs/new"
+          to="/staffs/addUser"
           className="link"
         >
           Add new

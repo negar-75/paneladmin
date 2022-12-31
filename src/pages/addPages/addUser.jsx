@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
-import "./user.scss";
+import "./addUser.scss";
 import Navbar from "../../components/navbar/Navbar";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
 import ChangePhoto from "../../components/changePhoto/changePhoto";
 
-function User(props) {
+function AddUser(props) {
   const message = useSelector((state) => state.message.message);
   const success = useSelector((state) => state.message.success);
   store.dispatch(getUser());
@@ -92,4 +92,4 @@ function User(props) {
   );
 }
 
-export default User;
+export default AddUser;

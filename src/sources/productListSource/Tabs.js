@@ -16,8 +16,8 @@ export const productListTabs =[
     },
     {
     id:'4',
-    tabName : 'Sauces',
-    url:'/productList/sauces',
+    tabName : 'Stations',
+    url:'/productList/stations',
     },
     {
     id:'5',

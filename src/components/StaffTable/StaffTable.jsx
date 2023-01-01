@@ -6,11 +6,11 @@ import DataTable from "react-data-table-component";
 import { getAllUsers, deletUser } from "../../services/user.service";
 import { handleDelet } from "../../services/functions";
 import { customStyles } from "../../style/customDataTableStyle";
-import useApi from "../../hooks/useApi";
+import useGetApi from "../../hooks/useGetApi";
 
 function StaffTable() {
   const [currentPage, setCurrentPage] = React.useState(1);
-  const getUsers = useApi(getAllUsers);
+  const getUsers = useGetApi(getAllUsers);
   const { data, error, loading, request } = getUsers;
   const [items, setItems] = React.useState([]);
 

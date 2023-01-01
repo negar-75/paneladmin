@@ -1,10 +1,10 @@
 import React from 'react'
 import Home from './pages/home/Home';
-import Staffs from './pages/staffs/staffs';
+import StaffsTable from './pages/staff/staffsTable/staffsTable';
 import Login from './pages/login/Login';
 import AddUser from './pages/addPages/addUser';
-import Single from './pages/single/single';
-import EditProfile from './pages/editProfile/editProfile';
+import SingleStaff from './pages/staff/singleStaff/singleStaff'
+import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
 import {StaffInputs } from './sources/staffSources/staffAddForm';
@@ -41,13 +41,13 @@ function App() {
         
          <Route path='staffs'>
         
-          <Route index element={<Staffs />}/> 
+          <Route index element={<StaffsTable />}/> 
         
           <Route path=':staffId'>
         
-            <Route index element={<Single/>} />
+            <Route index element={<SingleStaff/>} />
         
-            <Route path='editprofile' element={<EditProfile/>} />
+            <Route path='editprofile' element={<EditStaff/>} />
         
           </Route>
         

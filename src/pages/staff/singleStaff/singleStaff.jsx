@@ -1,21 +1,21 @@
 import React from "react";
-import "./single.scss";
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
-import MobileNavbar from "../../components/mobileNavbar/mobileNavbar";
-import MobileSidebar from "../../components/mobileSidebar/mobileSidebar";
-import Chart from "../../components/chart/chart";
+import "./singleStaff.scss";
+import Navbar from "../../../components/navbar/Navbar";
+import Sidebar from "../../../components/sidebar/Sidebar";
+import MobileNavbar from "../../../components/mobileNavbar/mobileNavbar";
+import MobileSidebar from "../../../components/mobileSidebar/mobileSidebar";
+import Chart from "../../../components/chart/chart";
 import { Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import store from "../../store";
+import store from "../../../store";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { getUser } from "../../actions/auth";
-import { singleStaffInformation } from "../../sources/staffSources/singleStaffInformation";
+import { getUser } from "../../../actions/auth";
+import { singleStaffInformation } from "../../../sources/staffSources/singleStaffInformation";
 import { useMediaQuery } from "react-responsive";
 
-function Single() {
+function SingleStaff() {
   const viewUser = useLocation().state;
   let { staffId } = useParams();
   const isDesktopOrLaptop = useMediaQuery({
@@ -139,4 +139,4 @@ function Single() {
   );
 }
 
-export default Single;
+export default SingleStaff;

@@ -1,17 +1,17 @@
 import React from "react";
-import "./staffs.scss";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
-import MobileNavbar from "../../components/mobileNavbar/mobileNavbar";
-import MobileSidebar from "../../components/mobileSidebar/mobileSidebar";
-import StaffTable from "../../components/StaffTable/StaffTable";
+import "./staffsTable.scss";
+import Sidebar from "../../../components/sidebar/Sidebar";
+import Navbar from "../../../components/navbar/Navbar";
+import MobileNavbar from "../../../components/mobileNavbar/mobileNavbar";
+import MobileSidebar from "../../../components/mobileSidebar/mobileSidebar";
+import StaffTable from "../../../components/StaffTable/StaffTable";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import store from "../../store";
-import { getUser } from "../../actions/auth";
+import store from "../../../store";
+import { getUser } from "../../../actions/auth";
 import { useMediaQuery } from "react-responsive";
 
-function Staffs() {
+function StaffsTable() {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 600px)",
   });
@@ -45,4 +45,4 @@ function Staffs() {
   );
 }
 
-export default Staffs;
+export default StaffsTable;

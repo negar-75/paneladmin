@@ -7,6 +7,7 @@ import SingleStaff from './pages/staff/singleStaff/singleStaff'
 import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
+import Stations from './pages/productList/stations/stations';
 import {StaffInputs } from './sources/staffSources/staffAddForm';
 import {
   BrowserRouter,
@@ -69,11 +70,11 @@ function App() {
          
           </Route>
          
-          {/* <Route path='sauces' >
+          <Route path='stations' >
          
-             <Route index element={<Sauces />} />
+             <Route index element={<Stations />} />
          
-          </Route> */}
+          </Route>
 
         </Route>
           

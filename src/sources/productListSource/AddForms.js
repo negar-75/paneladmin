@@ -10,11 +10,12 @@ export const AddItem = [
       },
       {
         id: 2,
-        label: "description",
+        label: "Description",
         type: "text",
         placeholder: " ",
         name:"description",
-        required: true
+        required: true,
+        multiline:true
         
       },
       {
@@ -22,14 +23,17 @@ export const AddItem = [
         label: "Category",
         type: "text",
         placeholder: "",
-        name:"category_id"
+        name:"category_id",
+        selection:true
       },
       {
         id: 4,
         label: "Stations",
         type: "text",
         placeholder: " ",
-        name: "station_id"
+        name: "station_id",
+        selection:true
+
         
       },
       {
@@ -37,7 +41,9 @@ export const AddItem = [
         label: "Sauce",
         type: "text",
         placeholder: " ",
-        name:  "sauces"
+        name:  "sauces",
+        selection:true,
+
         
       },
       {
@@ -45,7 +51,7 @@ export const AddItem = [
         label: "Size",
         type: "text",
         placeholder: " ",
-        name: "size"
+        name: "size",
         
       },
       {
@@ -53,7 +59,7 @@ export const AddItem = [
         label: "Price",
         type: "number",
         placeholder: " ",
-        name: "price"
+        name: "price",
         
       },
 ]

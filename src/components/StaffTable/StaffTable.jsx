@@ -1,6 +1,6 @@
 import React from "react";
-import "./datatable.scss";
-import { userColumns } from "../../sources/datatablesource";
+import "./StaffTable.scss";
+import { userColumns } from "../../sources/staffSources/staffTable";
 import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import { getAllUsers, deletUser } from "../../services/user.service";
@@ -8,7 +8,7 @@ import { handleDelet } from "../../services/functions";
 import { customStyles } from "../../style/customDataTableStyle";
 import useApi from "../../hooks/useApi";
 
-function Datatable() {
+function StaffTable() {
   const [currentPage, setCurrentPage] = React.useState(1);
   const getUsers = useApi(getAllUsers);
   const { data, error, loading, request } = getUsers;
@@ -30,7 +30,7 @@ function Datatable() {
     {
       name: "Action",
       cell: (row) => (
-        <div className="actionColumn">
+        <div className="action-column">
           <Link
             to={`/staffs/${row.id}`}
             params={{ userId: row.id }}
@@ -39,12 +39,13 @@ function Datatable() {
               phone: row.phone,
               email: row.email,
             }}
+            className=" view-button link"
           >
-            <div className="viewButton">View</div>
+            View
           </Link>
 
           <div
-            className="deletButton"
+            className="delete-button"
             onClick={() => handleDelet(row.id, deletUser, setItems, data)}
           >
             Delet
@@ -54,8 +55,8 @@ function Datatable() {
     },
   ];
   return (
-    <div className="dataTable">
-      <div className="dataTableTitle">
+    <div className="data-table">
+      <div className="data-table-title">
         <Link
           to="/staffs/addUser"
           className="link"
@@ -66,7 +67,7 @@ function Datatable() {
 
       {items && (
         <DataTable
-          title="Users"
+          title="Staffs"
           columns={userColumns.concat(actionCol)}
           data={items}
           selectableRows
@@ -79,4 +80,4 @@ function Datatable() {
   );
 }
 
-export default Datatable;
+export default StaffTable;

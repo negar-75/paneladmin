@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/fontawesome-free-solid";
 import { useNavigate } from "react-router-dom";
-import { loginInputs } from "../../sources/formsource";
+import { loginInputs } from "../../sources/loginInputs";
 import ReactLoading from "react-loading";
 import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
 import { useTheme } from "@mui/material/styles";

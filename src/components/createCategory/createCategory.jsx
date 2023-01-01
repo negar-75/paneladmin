@@ -4,7 +4,6 @@ import "./createCategory.scss";
 import FastfoodOutlinedIcon from "@mui/icons-material/FastfoodOutlined";
 import ChangePhoto from "../changePhoto/changePhoto";
 import { createCategory } from "../../services/user.service";
-import { createCategoryInput } from "../../sources/formsource";
 import {
   failedMessage,
   clearMessage,
@@ -72,26 +71,19 @@ function CreateCategory({ setSuccess }) {
           <FastfoodOutlinedIcon
             sx={{ color: "action.active", mr: 1, my: 0.5 }}
           />
-          {createCategoryInput.map((item) => {
-            return (
-              <div
-                className="input"
-                id={item.id}
-              >
-                <TextField
-                  name={item.name}
-                  label={item.lable}
-                  variant={item.variant}
-                  onChange={(e) => {
-                    setCategoryName(e.target.value);
-                  }}
-                  sx={theme.textFieldStyle}
-                  inputRef={inputRef}
-                />
-                <span>{hintmessage}</span>
-              </div>
-            );
-          })}
+          <div className="input">
+            <TextField
+              name="category_name"
+              label="Category name"
+              variant="standard"
+              onChange={(e) => {
+                setCategoryName(e.target.value);
+              }}
+              sx={theme.textFieldStyle}
+              inputRef={inputRef}
+            />
+            <span>{hintmessage}</span>
+          </div>
         </Box>
         <ErrorPopUp message={failedmessage} />
         <ChangePhoto

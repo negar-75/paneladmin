@@ -1,9 +1,9 @@
 import React from "react";
-import { productListTabs } from "../../../sources/productListSource/productListTabs";
-import "./tab.scss";
+import { productListTabs } from "../../sources/productListSource/Tabs";
+import "./productListTab.scss";
 import { Link } from "react-router-dom";
 
-function Tab() {
+function ProductListTabs() {
   const [activeTab, setActiveTab] = React.useState(() => {
     switch (window.location.pathname) {
       case "/productList/items": {
@@ -39,4 +39,4 @@ function Tab() {
   );
 }
 
-export default Tab;
+export default ProductListTabs;

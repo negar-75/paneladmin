@@ -1,10 +1,10 @@
 import React from "react";
-import "./table.scss";
+import "./ProductListTable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import Switch from "@mui/material/Switch";
-import { itemColumns } from "../../../sources/productListSource/productListColumns";
+import { itemColumns } from "../../sources/productListSource/productListColumns";
 
-function ItemTable({ cols, rows }) {
+function ProductListTable({ cols, rows }) {
   return (
     <div className="prosuct-list-table">
       <DataGrid
@@ -18,4 +18,4 @@ function ItemTable({ cols, rows }) {
   );
 }
 
-export default ItemTable;
+export default ProductListTable;

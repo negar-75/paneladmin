@@ -23,7 +23,7 @@ function Sidebar() {
       </div>
       <div className="bottom">
         <div
-          className="colorOption"
+          className="color-option"
           onClick={() => {
             store.dispatch({ type: LIGHT });
           }}

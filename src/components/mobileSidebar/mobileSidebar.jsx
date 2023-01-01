@@ -1,5 +1,5 @@
 import React from "react";
-import { sidebarMenuItems } from "../../sources/sidebarMenuSource";
+import { sidebarMenuItems } from "../../sources/sidebarMenu";
 import { Link } from "react-router-dom";
 import store from "../../store";
 import { logout } from "../../actions/auth";
@@ -25,7 +25,7 @@ function MobileSidebar() {
 
   return (
     <div
-      className={isSidebarMenuOpen ? "mobileSidebar open" : "mobileSidebar"}
+      className={isSidebarMenuOpen ? "mobile-sidebar open" : "mobile-sidebar"}
       ref={sidebarRef}
     >
       <ul className="sidebar-nav">

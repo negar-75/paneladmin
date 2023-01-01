@@ -1,8 +1,8 @@
 import React from "react";
-import "./header.scss";
+import "./TableHeader.scss";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Header(props) {
+function TableHeader(props) {
   return (
     <div className="product-list-header">
       <div className="search">
@@ -19,4 +19,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default TableHeader;

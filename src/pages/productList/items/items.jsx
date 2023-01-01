@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import "./items.scss";
-import Tab from "../../../components/productList/tab/tab";
-import Header from "../../../components/productList/header/header";
-import ItemTable from "../../../components/productList/table/table";
+import ProductListTabs from "../../../components/productListTab/productListTab";
+import TableHeader from "../../../components/TableHeader/TableHeader";
+import ProductListTable from "../../../components/ProductListTable/ProductListTable";
 import { itemColumns } from "../../../sources/productListSource/productListColumns";
 
 function Items() {
@@ -13,9 +13,9 @@ function Items() {
       <Sidebar />
       <div className="product-list-container">
         <Navbar />
-        <Tab />
-        <Header />
-        <ItemTable col={itemColumns} />
+        <ProductListTabs />
+        <TableHeader />
+        <ProductListTable cols={itemColumns} />
       </div>
     </div>
   );

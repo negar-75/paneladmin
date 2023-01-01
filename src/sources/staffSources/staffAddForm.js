@@ -1,5 +1,5 @@
 
-export const userInputs = [
+export const StaffInputs = [
     {
       id: 1,
       label: "Username",
@@ -39,45 +39,15 @@ export const userInputs = [
   
 
 
-  export const createCategoryInput = [
-    { 
-      id: '1',
-      lable : "Category name",
-      variant : "standard"
-    }
-  ]
+  // export const createCategoryInput = [
+  //   { 
+  //     id: '1',
+  //     lable : "Category name",
+  //     variant : "standard"
+  //   }
+  // ]
 
-  export const loginInputs =[
-    {
-     id:1,
-     lable: 'Your username',
-     variant : "standard",
-     name : "username",
-     type:"text"
+ 
 
-    },
-    {
-     id:2,
-     lable:"Your password",
-     variant : "standard",
-     name:"password",
-     type:"password"
-     
-    }
-  ]
-
-
-  export const staffInformation =[
-    {
-      id:'1',
-      fieldName:'Email',
-      typeInformation:'email'
-    },
-    {
-      id:'2',
-      fieldName:'Phone',
-      typeInformation:'phone'
-
-    }
-  ]
+ 
   

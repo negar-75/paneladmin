@@ -1,9 +1,9 @@
-.dataTable{
+.data-table{
     
     padding: 25px;
     
 
-    .dataTableTitle{
+    .data-table-title{
       display: flex;
        justify-content:end;
        
@@ -21,21 +21,21 @@
 
 
 
-    .actionColumn{
+    .action-column{
         
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
         
-        .viewButton{
+        .view-button{
           padding: 2px 5px;
           border-radius: 5px;
           color: darkblue;
           border: 1px double rgba(0, 0, 139, 0.289);
           cursor: pointer;
         }
-        .deletButton{
+        .delete-button{
             padding: 2px 5px;
             border-radius: 5px;
             color: rgb(208, 31, 31);

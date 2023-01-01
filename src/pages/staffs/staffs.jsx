@@ -4,7 +4,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import MobileNavbar from "../../components/mobileNavbar/mobileNavbar";
 import MobileSidebar from "../../components/mobileSidebar/mobileSidebar";
-import Datatable from "../../components/datatable/datatable";
+import StaffTable from "../../components/StaffTable/StaffTable";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import store from "../../store";
@@ -28,7 +28,7 @@ function Staffs() {
           <Sidebar />
           <div className="listContainer">
             <Navbar />
-            <Datatable />
+            <StaffTable />
           </div>
         </div>
       )}
@@ -37,7 +37,7 @@ function Staffs() {
           <MobileNavbar />
           <MobileSidebar />
           <div className="listContainer">
-            <Datatable />
+            <StaffTable />
           </div>
         </div>
       )}

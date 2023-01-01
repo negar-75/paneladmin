@@ -1,7 +1,6 @@
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import GroupIcon from '@mui/icons-material/Group';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import TocIcon from '@mui/icons-material/Toc';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';

@@ -22,23 +22,7 @@ export const userColumns =[
     
 ]
 
-export const productColumns =[
-  {
-    name: 'name',
-    selector: row => row.name,
-    sortable: true,
-  },
-  {
-    name: 'Discription',
-    selector: row => row.description,
-    sortable: true,
-  },
-  {
-    name: 'Category Id',
-    selector: row => row.category_id,
-    sortable: true,
-  },
-]
+
 
 
 

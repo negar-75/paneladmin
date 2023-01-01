@@ -12,7 +12,7 @@ import store from "../../store";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getUser } from "../../actions/auth";
-import { staffInformation } from "../../sources/formsource";
+import { singleStaffInformation } from "../../sources/staffSources/singleStaffInformation";
 import { useMediaQuery } from "react-responsive";
 
 function Single() {
@@ -56,7 +56,7 @@ function Single() {
 
                   <div className="details">
                     <h1 className="itemTitle">{viewUser.username}</h1>
-                    {staffInformation.map((item) => {
+                    {singleStaffInformation.map((item) => {
                       return (
                         <div
                           className="detailItem"
@@ -108,7 +108,7 @@ function Single() {
                   </div>
                   <div className="details">
                     <h1 className="itemTitle">{viewUser.username}</h1>
-                    {staffInformation.map((item) => {
+                    {singleStaffInformation.map((item) => {
                       return (
                         <div
                           className="detailItem"

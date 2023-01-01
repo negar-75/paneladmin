@@ -3,12 +3,11 @@ import Home from './pages/home/Home';
 import Staffs from './pages/staffs/staffs';
 import Login from './pages/login/Login';
 import AddUser from './pages/addPages/addUser';
-import Single from './pages/single/Single';
+import Single from './pages/single/single';
 import EditProfile from './pages/editProfile/editProfile';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
-import Sauces from './pages/productList/sauces/sauces';
-import {userInputs, } from './sources/formsource';
+import {StaffInputs } from './sources/staffSources/staffAddForm';
 import {
   BrowserRouter,
   Routes,
@@ -52,7 +51,7 @@ function App() {
         
           </Route>
         
-          <Route path='addUser' element={<AddUser  input={userInputs}  title='Add New User'/>} />
+          <Route path='addUser' element={<AddUser  input={StaffInputs}  title='Add New User'/>} />
         
         </Route>
         
@@ -70,11 +69,11 @@ function App() {
          
           </Route>
          
-          <Route path='sauces' >
+          {/* <Route path='sauces' >
          
              <Route index element={<Sauces />} />
          
-          </Route>
+          </Route> */}
 
         </Route>
           

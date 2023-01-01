@@ -11,6 +11,7 @@ import { setMessage, failedMessage } from "../../actions/message";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
 import ChangePhoto from "../../components/changePhoto/changePhoto";
+import SelectOptionInput from "../../components/selectOptionInput/selectOptionInput";
 
 function AddUser(props) {
   const message = useSelector((state) => state.message.message);
@@ -38,9 +39,9 @@ function AddUser(props) {
   };
 
   return (
-    <div className="new">
+    <div className="add">
       <Sidebar />
-      <div className="newContainer">
+      <div className="add-container">
         <Navbar />
         <div className="top">{props.title}</div>
         <div className="bottom">
@@ -53,22 +54,28 @@ function AddUser(props) {
           <div className="right">
             <form onSubmit={handleSubmit}>
               {props.input.map((item) => {
-                return (
-                  <div
-                    className="formElement"
-                    key={item.id}
-                  >
-                    <label>{item.label}</label>
-                    <input
-                      type={item.type}
-                      placeholder={item.placeholder}
-                      name={item.name}
-                      required={item.required}
-                    />
-                    <span>{item.errorMessage}</span>
-                  </div>
-                );
+                if (item?.selection) {
+                  return <SelectOptionInput />;
+                } else if (item.name === "sauce") {
+                  return;
+                }
               })}
+
+              {/* //     <div
+              //       className="formElement"
+              //       key={item.id}
+              //     >
+              //       <label>{item.label}</label>
+              //       <input
+              //         type={item.type}
+              //         placeholder={item.placeholder}
+              //         name={item.name}
+              //         required={item.required}
+              //       />
+              //       <span>{item.errorMessage}</span>
+              //     </div>
+              //   );
+              // })} */}
 
               {message && (
                 <Stack

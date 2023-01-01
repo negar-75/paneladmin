@@ -74,7 +74,7 @@ function ChangePhoto(props) {
         <label htmlFor="upload">{title}</label>
         <input
           type="file"
-          name="profilePicBtn"
+          name="profile-pic-button"
           accept="image/png, image/jpeg"
           onChange={inputHandler}
           id="upload"

@@ -1,5 +1,4 @@
 import React from "react";
-import "./errorPopUp.scss";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -21,7 +20,7 @@ function ErrorPopUp(props) {
     }
   }, [message]);
   return (
-    <div className="errorPopUp">
+    <div className="error-pop-up">
       <Dialog
         open={openDialog}
         aria-labelledby="alert-dialog-title"

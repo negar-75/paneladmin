@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function MobileNavbar() {
   return (
-    <div className="mobileNavbar">
+    <div className="mobile-navbar">
       <div className="wrapper">
         <MenuIcon
           className="icon"

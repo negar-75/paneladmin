@@ -62,37 +62,30 @@ import { updateItem } from '../../services/user.service';
 
   ];
 
-const sauceColumns =[
+const stationColumns =[
     {
         field: "id",
-        headerName: "SAUCE ID",
+        headerName: "STATION ID",
         width: 0,
         headerAlign: "center",
         align: "center",
         hide: true,
     },
     {
-        field: "sauce_name",
-        headerName: "ITEM NAME",
+        field: "station_name",
+        headerName: "STATION NAME",
         width: 450,
         headerAlign: "center",
         align: "center",
       },
       {
-        field: "status",
-        headerName: "STATUS",
+        field:  "max_time",
+        headerName: "MAX TIME",
         width: 450,
         headerAlign: "center",
         align: "center",
         sortable: false,
-        renderCell: (param) => {
-          return (
-            <>
-              <StatusSwitch status={param?.row?.status} id={param?.row?.id} apiFunc={updateItem}  />
-            </>
-          );
-        },
-    },
+      },
     {
         field: "edit",
         headerName: "Edit",
@@ -113,17 +106,14 @@ const sauceColumns =[
 ]  
 
 
-const actionCols = [
-   
-    
-]
 
 
 
 
-itemColumns.concat(actionCols)
+
+
 export {
     itemColumns,
-    sauceColumns,
-    actionCols
+    stationColumns,
+    
 }

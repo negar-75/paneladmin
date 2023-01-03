@@ -9,18 +9,13 @@ import { customStyles } from "../../style/customDataTableStyle";
 import useGetApi from "../../hooks/useGetApi";
 
 function StaffTable() {
-  const [currentPage, setCurrentPage] = React.useState(1);
   const getUsers = useGetApi(getAllUsers);
   const { data, error, loading, request } = getUsers;
   const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
-    request(currentPage - 1);
+    request(0);
   }, []);
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
 
   React.useEffect(() => {
     setItems(data);
@@ -46,7 +41,7 @@ function StaffTable() {
 
           <div
             className="delete-button"
-            onClick={() => handleDelet(row.id, deletUser, setItems, data)}
+            onClick={() => handleDelet(row.id, deletUser, setItems, items)}
           >
             Delet
           </div>
@@ -72,8 +67,6 @@ function StaffTable() {
           data={items}
           selectableRows
           customStyles={customStyles}
-          theme="solarized"
-          onChangePage={handlePageChange}
         />
       )}
     </div>

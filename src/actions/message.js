@@ -1,6 +1,6 @@
 import { SUCCESS_MESSAGE, CLEAR_MESSAGE,FAILED_MESSAGE,HINT_MESSAGE } from "./type";
 
-export const setMessage = (message) => {
+export const successMessage = (message) => {
     return {
        type: SUCCESS_MESSAGE,
        payload: message,

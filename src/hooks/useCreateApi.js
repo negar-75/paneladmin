@@ -15,11 +15,11 @@ export default (apiFunc) => {
       setLoading(true);
       try {
         const result = await apiFunc(...args);
-        setMessage('User has been created')
+        setMessage('Done')
       } catch (err) {
         console.log(err)
         if(err.response.status === 400) {
-          setError('User already exist')
+          setError('It is already exist')
         }else setError('Unexpected error!')
       } finally {
         setLoading(false);

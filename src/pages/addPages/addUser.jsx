@@ -7,35 +7,53 @@ import { useSelector } from "react-redux";
 import store from "../../store";
 import { getUser } from "../../actions/auth";
 import { createUser } from "../../services/user.service";
-import { setMessage, failedMessage } from "../../actions/message";
-import Alert from "@mui/material/Alert";
-import Stack from "@mui/material/Stack";
 import ChangePhoto from "../../components/changePhoto/changePhoto";
-import SelectOptionInput from "../../components/selectOptionInput/selectOptionInput";
+import useCreateApi from "../../hooks/useCreateApi";
+import TextField from "@mui/material/TextField";
+import { validateField } from "../../validation/validationFunc";
+import AlertMessage from "../../components/alert/alert";
+import SubmitButton from "../../components/submitButton/submitButton";
 
-function AddUser(props) {
-  const message = useSelector((state) => state.message.message);
-  const success = useSelector((state) => state.message.success);
+function AddStaff(props) {
+  const createStaff = useCreateApi(createUser);
+
+  const { loading, request, message, error } = createStaff;
+
+  const [staff, setStaff] = React.useState({
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+
+  const [errMessage, setErrMessage] = React.useState({
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
+    emailValid: false,
+    passwordValid: false,
+    formValid: false,
+  });
+
   store.dispatch(getUser());
+
   const isAuth = useSelector((state) => state.user.isAuth);
+
   if (!isAuth && !localStorage.getItem("token"))
     return <Navigate to="/login" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    console.log(Object.fromEntries(data.entries()));
+    request(JSON.stringify(staff));
+  };
 
-    createUser(Object.fromEntries(data.entries()))
-      .then((res) => {
-        console.log(res);
-        store.dispatch(setMessage("User has been created."));
-      })
-
-      .catch((err) => {
-        console.log(err);
-        store.dispatch(failedMessage("Action has failed"));
-      });
+  const handleChange = (e) => {
+    setStaff({
+      ...staff,
+      [e.target.name]: e.target.value,
+    });
+    validateField(e.target.name, e.target.value, errMessage);
   };
 
   return (
@@ -52,46 +70,34 @@ function AddUser(props) {
             />
           </div>
           <div className="right">
-            <form onSubmit={handleSubmit}>
+            <form>
               {props.input.map((item) => {
-                if (item?.selection) {
-                  return <SelectOptionInput />;
-                } else if (item.name === "sauce") {
-                  return;
-                }
+                return (
+                  <div className="form-element">
+                    <TextField
+                      key={item.id}
+                      error={errMessage[item.name]?.length === 0 ? false : true}
+                      {...item}
+                      sx={{ width: "100%" }}
+                      required={true}
+                      value={staff[item.name]}
+                      onChange={handleChange}
+                      helperText={errMessage[item.name]}
+                    />
+                  </div>
+                );
               })}
-
-              {/* //     <div
-              //       className="formElement"
-              //       key={item.id}
-              //     >
-              //       <label>{item.label}</label>
-              //       <input
-              //         type={item.type}
-              //         placeholder={item.placeholder}
-              //         name={item.name}
-              //         required={item.required}
-              //       />
-              //       <span>{item.errorMessage}</span>
-              //     </div>
-              //   );
-              // })} */}
-
-              {message && (
-                <Stack
-                  sx={{ width: "100%" }}
-                  spacing={2}
-                >
-                  {success === true && (
-                    <Alert severity="success">{message}</Alert>
-                  )}
-                  {success === false && (
-                    <Alert severity="error">{message}</Alert>
-                  )}
-                </Stack>
-              )}
-              <button>Submit</button>
+              <SubmitButton
+                loading={loading}
+                formValid={errMessage.formValid}
+                handleSubmit={handleSubmit}
+              />
             </form>
+
+            <AlertMessage
+              message={message}
+              error={error}
+            />
           </div>
         </div>
       </div>
@@ -99,4 +105,4 @@ function AddUser(props) {
   );
 }
 
-export default AddUser;
+export default AddStaff;

@@ -56,7 +56,7 @@ function StaffTable() {
           to="/staffs/addUser"
           className="link"
         >
-          Add new
+          Add
         </Link>
       </div>
 

@@ -66,7 +66,7 @@ function ChangePhoto(props) {
                 : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
             }
             alt="Profile"
-            className="formImage"
+            className="form-image"
           />
         </div>
       )}

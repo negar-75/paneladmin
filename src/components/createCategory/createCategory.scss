@@ -6,7 +6,7 @@
   border-radius: 5px;
   padding: 20px;
   display:block;
-  height:200px;
+  
   position: relative;
   
   
@@ -36,53 +36,26 @@
   .change-photo{
     display: flex;
     margin-left: 1em;
+   
    }
-  .input{
-    span{
-      position: absolute;
-      bottom: 40%;
-      left: 4%;
-      font-size: 0.8rem;
-      color: red;
-    }
 
+   .button-wrapper{
+    background-color: rgb(233, 229, 19);
+   } 
+  
   }
  }
- .loading{
-  font-size: 1rem;
- 
-  position: absolute;
-  bottom: 12%;
-  right: 3.5%;
-  padding: 0em 2em;
   
- }
+ 
+  
+  
 
- .submit{
-  display: flex;
-  justify-content: flex-end;
  
-  
-  
-  button{
-    background-color: transparent;
-    border: 2px solid #3a6b35a1;
-    border-radius: 20px;
-    padding: 0.4em 2em;
-    font-weight: 700;
-    color: #3A6B35;
-    text-transform: uppercase;
-    cursor: pointer;
-    &:hover{
-      color:  #E3B448;
-    }
-  }
- }
 
  
  
  
-}
+
 @media only screen and (max-width:600px){
   .create-category{
     flex: 1;

@@ -21,7 +21,6 @@ function ProductListTabs() {
     <div className="product-list-tabs">
       <ul className="tab-names">
         {productListTabs.map((item) => {
-          console.log(activeTab == item.tabName);
           return (
             <Link
               className="link"

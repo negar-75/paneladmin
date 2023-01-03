@@ -20,7 +20,7 @@ export const login = (userObj) => dispatch => {
     })
     authService.login(userObj)
     .then((response) =>{
-    console.log(response)
+    
     localStorage.setItem('token',response.data.access_token)
     localStorage.setItem('username',userObj.username)
     dispatch(
@@ -79,7 +79,7 @@ export const getUser = () =>  async dispatch =>{
       type:GET_USER,
       payload: res.data
      })
-    //  console.log('get user ok')
+    
     }
     catch(error){
       console.log(error)

@@ -47,8 +47,8 @@ const updateUser = (userId,userObj) =>{
 const getAllUsers = async (pageNum) => {
     return await axios.get(`${baseUrl}user/`, {
       params: {
-          'skip': `${pageNum*10}`,
-          'limit': '10'
+          'skip': `0`,
+          'limit': '100'
       },
       headers: {
           'accept': 'application/json',

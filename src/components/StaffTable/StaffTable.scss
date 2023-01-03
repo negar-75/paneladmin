@@ -8,10 +8,15 @@
        justify-content:end;
        
         .link{
-            text-transform:uppercase ;
-            color: rgba(41, 133, 43, 0.512);
-            font-size: 12px;
-            font-weight: 700;
+          background-color: #3A6B35;
+          border: none;
+          padding: 0.5em 2.2em;
+          font-weight: 600;
+          font-size: 0.9rem;
+          border-radius: 5px;
+          background-color: #E3B448;;
+          color: rgb(255, 255, 255);
+          cursor: pointer;
             &:hover{
                 color: rgba(41, 133, 43, 0.888);
             }

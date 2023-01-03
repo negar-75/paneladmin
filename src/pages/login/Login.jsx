@@ -4,13 +4,11 @@ import "./login.scss";
 import store from "../../store";
 import { login } from "../../actions/auth";
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/fontawesome-free-solid";
 import { useNavigate } from "react-router-dom";
 import { loginInputs } from "../../sources/loginInputs";
-import ReactLoading from "react-loading";
 import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
 import { useTheme } from "@mui/material/styles";
+import SubmitButton from "../../components/submitButton/submitButton";
 
 function Login() {
   const [person, setPerson] = React.useState({
@@ -18,7 +16,6 @@ function Login() {
     password: "",
   });
 
-  const [formValid, setFormValid] = React.useState(false);
   const [isActive, setIsActive] = React.useState(false);
   const message = useSelector((state) => state.message.failedMessage);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
@@ -35,14 +32,6 @@ function Login() {
       };
     });
   };
-
-  React.useEffect(() => {
-    if (person.username.length > 0 && person.password.length >= 12) {
-      setFormValid(true);
-    } else {
-      setFormValid(false);
-    }
-  }, [person]);
 
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -75,37 +64,15 @@ function Login() {
               />
             );
           })}
-          <div className="wrapper ">
-            {loading ? (
-              <div className="loading">
-                <ReactLoading
-                  type="spinningBubbles"
-                  color="green"
-                  height={20}
-                  width={20}
-                />
-              </div>
-            ) : (
-              <button
-                className={
-                  formValid ? `submit ${isActive ? "active" : " "}` : "disable"
-                }
-                type="button"
-                onClick={() => {
-                  store.dispatch(login(person));
-                }}
-                disabled={!formValid}
-              >
-                <span>Submit</span>
-                <div className="success">
-                  <FontAwesomeIcon
-                    icon={faCheck}
-                    className="icon"
-                  />
-                </div>
-              </button>
-            )}
-          </div>
+
+          <SubmitButton
+            loading={loading}
+            isActive={isActive}
+            formValid={
+              person.username.length > 0 && person.password.length >= 12
+            }
+            handleSubmit={() => store.dispatch(login(person))}
+          />
         </div>
       </div>
       <div className="imageContainer">

@@ -9,8 +9,8 @@ function ProductListTabs() {
       case "/productList/items": {
         return "Items";
       }
-      case "/productList/sauces": {
-        return "Sauces";
+      case "/productList/stations": {
+        return "Stations";
       }
       default:
         return " ";

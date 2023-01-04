@@ -19,6 +19,21 @@ export const theme = createTheme({
     }
   },
 
+  MuiDialog: {
+  styleOverrides:{
+    paper:{
+      height: 350,
+      width: {
+        xs: 300,
+        sm: 300,
+        md: 400,
+        lg: 500,
+        xl: 500,
+      },
+    }
+  }
+  },
+
   MuiSwitch:{
     styleOverrides:{
       track:{

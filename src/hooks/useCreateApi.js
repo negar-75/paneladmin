@@ -1,5 +1,5 @@
 import { useState } from "react";
-import store from "../store";
+
 
 
 
@@ -17,7 +17,7 @@ export default (apiFunc) => {
         const result = await apiFunc(...args);
         setMessage('Done')
       } catch (err) {
-        console.log('err')
+        console.log(err)
         if(err?.response?.status === 400) {
           setError('It is already exist')
         }else{ 

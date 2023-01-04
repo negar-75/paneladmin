@@ -17,10 +17,14 @@ export default (apiFunc) => {
         const result = await apiFunc(...args);
         setMessage('Done')
       } catch (err) {
-        console.log(err)
-        if(err.response.status === 400) {
+        console.log('err')
+        if(err?.response?.status === 400) {
           setError('It is already exist')
-        }else setError('Unexpected error!')
+        }else{ 
+          
+          setError('Unexpected error!')
+        }
+        
       } finally {
         setLoading(false);
        

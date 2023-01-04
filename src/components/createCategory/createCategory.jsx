@@ -5,8 +5,6 @@ import FastfoodOutlinedIcon from "@mui/icons-material/FastfoodOutlined";
 import ChangePhoto from "../changePhoto/changePhoto";
 import { createCategory } from "../../services/user.service";
 import useCreateApi from "../../hooks/useCreateApi";
-
-import { useTheme } from "@mui/material/styles";
 import ErrorPopUp from "../errorPopUp/errorPopUp";
 import SubmitButton from "../submitButton/submitButton";
 import AlertMessage from "../alert/alert";
@@ -17,7 +15,6 @@ function CreateCategory({ setSuccess }) {
   const inputRef = React.useRef();
   const createCat = useCreateApi(createCategory);
   const { loading, request, message, error } = createCat;
-  const theme = useTheme();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,12 +48,11 @@ function CreateCategory({ setSuccess }) {
               onChange={(e) => {
                 setCategoryName(e.target.value);
               }}
-              sx={theme.textFieldStyle}
               inputRef={inputRef}
             />
           </div>
         </Box>
-        <ErrorPopUp message={error} />
+
         <ChangePhoto
           title="Upload photo"
           showImage={false}

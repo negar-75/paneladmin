@@ -2,7 +2,7 @@ import React from "react";
 import "./TableHeader.scss";
 import SearchIcon from "@mui/icons-material/Search";
 
-function TableHeader(props) {
+function TableHeader({ setIsModalOpen }) {
   return (
     <div className="product-list-header">
       <div className="search">
@@ -13,7 +13,7 @@ function TableHeader(props) {
         <SearchIcon className="icon" />
       </div>
       <div className="add-button">
-        <button>Add</button>
+        <button onClick={() => setIsModalOpen(true)}>Add</button>
       </div>
     </div>
   );

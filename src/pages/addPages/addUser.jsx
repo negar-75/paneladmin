@@ -72,6 +72,7 @@ function AddStaff(props) {
                       value={staff[item.name]}
                       onChange={handleChange}
                       helperText={errMessage[item.name]}
+                      name={item.name}
                     />
                   </div>
                 );

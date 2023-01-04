@@ -2,7 +2,7 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
-    GET_USER
+    
   } from "../actions/type";
 
   const initialState = {
@@ -36,15 +36,7 @@ import {
 
             case LOGOUT :
                 return initialState
-            case GET_USER :  
-            return{
-                ...state,
-                profileName:action.payload,
-                isLoggedIn:true,
-                loginError:false,
-                isAuth:true
-                
-            }  
+           
 
             default:
                  return state

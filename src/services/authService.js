@@ -23,25 +23,12 @@ const login = (userObj) => {
   };
 
  
-const logout = () => {
-    localStorage.removeItem("token");
-  };
 
 
- //checking authorization
 
-const getUser = () =>{
-    return axios.get(`${baseUrl}user/me`, {
-    headers: {
-        'accept': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-        
-    }
-    })
-} 
+ 
+
+
 
 export default{
-    login,
-    logout,
-    getUser
-  }
+    login}

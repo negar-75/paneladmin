@@ -4,20 +4,13 @@ import Input from "@mui/material/Input";
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import "./editStaff.scss";
-import { useLocation, Navigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { getUser } from "../../../actions/auth";
-import store from "../../../store";
 import { updateUser } from "../../../services/user.service";
 
 function EditStaff() {
   let { staffId } = useParams();
   const viewUser = useLocation().state;
-  store.dispatch(getUser());
-  const isAuth = useSelector((state) => state.user.isAuth);
-  if (!isAuth && !localStorage.getItem("token"))
-    return <Navigate to="/login" />;
 
   let editedUser = {};
 

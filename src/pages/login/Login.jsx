@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginInputs } from "../../sources/loginInputs";
 import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
-import { useTheme } from "@mui/material/styles";
 import SubmitButton from "../../components/submitButton/submitButton";
 
 function Login() {
@@ -17,10 +16,9 @@ function Login() {
   });
 
   const [isActive, setIsActive] = React.useState(false);
-  const message = useSelector((state) => state.message.failedMessage);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  const loading = useSelector((state) => state.loading.loading);
-  const theme = useTheme();
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
 
   let navigate = useNavigate();
 
@@ -59,7 +57,6 @@ function Login() {
                 label={item.lable}
                 variant={item.variant}
                 onChange={inputhandler}
-                sx={theme.textFieldStyle}
                 type={item.type}
               />
             );
@@ -71,7 +68,9 @@ function Login() {
             formValid={
               person.username.length > 0 && person.password.length >= 12
             }
-            handleSubmit={() => store.dispatch(login(person))}
+            handleSubmit={() =>
+              store.dispatch(login(person, setLoading, setError))
+            }
           />
         </div>
       </div>
@@ -82,7 +81,7 @@ function Login() {
         />
       </div>
 
-      <ErrorPopUp message={message} />
+      <ErrorPopUp message={error} />
     </div>
   );
 }

@@ -5,13 +5,12 @@ import Sidebar from "../../../components/sidebar/Sidebar";
 import MobileNavbar from "../../../components/mobileNavbar/mobileNavbar";
 import MobileSidebar from "../../../components/mobileSidebar/mobileSidebar";
 import Chart from "../../../components/chart/chart";
-import { Navigate } from "react-router-dom";
+
 import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-import store from "../../../store";
+
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { getUser } from "../../../actions/auth";
+
 import { singleStaffInformation } from "../../../sources/staffSources/singleStaffInformation";
 import { useMediaQuery } from "react-responsive";
 
@@ -22,11 +21,6 @@ function SingleStaff() {
     query: "(min-width: 600px)",
   });
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
-
-  store.dispatch(getUser());
-  const isAuth = useSelector((state) => state.user.isAuth);
-  if (!isAuth && !localStorage.getItem("token"))
-    return <Navigate to="/login" />;
 
   return (
     <>

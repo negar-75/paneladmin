@@ -7,20 +7,14 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Widget from "../../components/widget/widget";
 import Chart from "../../components/chart/chart";
 import "./home.scss";
-import { Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 import { useMediaQuery } from "react-responsive";
 
 function Home() {
-  const isAuth = useSelector((state) => state.user.isAuth);
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 600px)",
   });
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
-
-  if (!isAuth && !localStorage.getItem("token"))
-    return <Navigate to="/login" />;
 
   return (
     <>

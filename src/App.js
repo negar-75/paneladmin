@@ -15,6 +15,7 @@ import {
   Route
 } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import PrivateRoutes from './routes/privateRoutes';
 
 
 
@@ -35,56 +36,58 @@ function App() {
         <Routes>
         
         <Route path='/' >
+
+        <Route path='login' element={<Login />} />
         
-         <Route index element={<Home />}/>
+        <Route element={<PrivateRoutes />}>
+
+          <Route  element={<Home />}  path='/' exact/>
+
+          <Route path='staffs'>
         
-         <Route path='login' element={<Login />} />
-        
-         <Route path='staffs'>
-        
-          <Route index element={<StaffsTable />}/> 
-        
-          <Route path=':staffId'>
-        
-            <Route index element={<SingleStaff/>} />
-        
-            <Route path='editprofile' element={<EditStaff/>} />
-        
-          </Route>
-        
-          <Route path='addUser' element={<AddUser  input={StaffInputs}  title='Add New User'/>} />
-        
-        </Route>
-        
-        <Route path='menuCatalogue' element={<MenuCatalogue />} />
-        
-        <Route path='productList'>
-         
+            <Route index element={<StaffsTable />}/> 
+      
+            <Route path=':staffId'>
+      
+             <Route index element={<SingleStaff/>} />
+      
+             <Route path='editprofile' element={<EditStaff/>} />
+      
+           </Route>
+       
+           <Route path='addUser' element={<AddUser  input={StaffInputs}  title='Add New User'/>} />
+      
+         </Route>
+      
+         <Route path='menuCatalogue' element={<MenuCatalogue />} />
+      
+         <Route path='productList'>
+       
          <Route path='items' >
-         
-             <Route index element={<Items />} />
-         
-             <Route path='add' element />
-         
-             <Route path=':id/edit' element />
-         
-          </Route>
-         
-          <Route path='stations' >
-         
-             <Route index element={<Stations />} />
-         
-          </Route>
+       
+           <Route index element={<Items />} />
+       
+           <Route path='add' element />
+       
+           <Route path=':id/edit' element />
+       
+         </Route>
+       
+         <Route path='stations' >
+       
+           <Route index element={<Stations />} />
+       
+         </Route>
 
         </Route>
-          
-        
 
       </Route>
 
-        </Routes> 
+    </Route>
 
-    </BrowserRouter>
+</Routes> 
+
+</BrowserRouter>
 
     </div>
   )

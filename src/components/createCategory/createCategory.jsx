@@ -5,7 +5,6 @@ import FastfoodOutlinedIcon from "@mui/icons-material/FastfoodOutlined";
 import ChangePhoto from "../changePhoto/changePhoto";
 import { createCategory } from "../../services/user.service";
 import useCreateApi from "../../hooks/useCreateApi";
-import ErrorPopUp from "../errorPopUp/errorPopUp";
 import SubmitButton from "../submitButton/submitButton";
 import AlertMessage from "../alert/alert";
 

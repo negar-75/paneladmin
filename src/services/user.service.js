@@ -159,6 +159,20 @@ const updateItem = (id,obj) => {
     )
 }
 
+const createStation = (obj) => {
+    return axios.post(`${baseUrl}station/` , 
+    obj,
+    {
+        headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          
+        },
+    }
+    )
+}
+
 export {
     createUser,
     deletUser,
@@ -170,6 +184,7 @@ export {
     createCategory,
     deleteCategory,
     updateCategory,
-    updateItem
+    updateItem,
+    createStation
     
 }

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { handleDropDown } from "../../actions/dropDownMenu";
 import { useSelector } from "react-redux";
 import { sidebarMenuItems } from "../../sources/sidebarMenu";
+import { useNavigate } from "react-router-dom";
 
 function Menu() {
   const [activeIndex, setActiveIndex] = React.useState(() => {
@@ -31,7 +32,7 @@ function Menu() {
         : " ";
     return initialIndex;
   });
-
+  const navigate = useNavigate();
   const open = useSelector((state) => state.dropDown.open);
   const menuItemName = useSelector((state) => state.dropDown.menuItemName);
 
@@ -113,7 +114,10 @@ function Menu() {
               <li
                 className="sidebar-menu-item"
                 id={item.name}
-                onClick={() => store.dispatch(logout())}
+                onClick={() => {
+                  store.dispatch(logout());
+                  navigate("/login");
+                }}
               >
                 {item.icon}
                 <span>{item.name}</span>

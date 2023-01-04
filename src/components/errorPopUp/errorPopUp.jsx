@@ -8,8 +8,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import Typography from "@mui/material/Typography";
 import { amber } from "@mui/material/colors";
-import store from "../../store";
-import { clearMessage } from "../../actions/message";
 
 function ErrorPopUp(props) {
   const [openDialog, setOpenDialog] = React.useState(false);
@@ -92,7 +90,6 @@ function ErrorPopUp(props) {
             }}
             onClick={() => {
               setOpenDialog(false);
-              store.dispatch(clearMessage());
             }}
           >
             OK

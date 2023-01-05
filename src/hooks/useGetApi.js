@@ -1,18 +1,36 @@
+
 import { useState } from "react";
 
-export default (apiFunc) => {
+export default (apiFunc,keyName) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [selectOptionItems, setSelectoptionItems] = useState([])
   
+  
+
 
   const request = async (...args) => {
     
     setLoading(true);
     try {
       const result = await apiFunc(...args);
-      
       setData(result.data);
+      console.table(result.data.records)
+      const test = await result.data.records.map((item) => {
+        return {
+          name:item[keyName],
+          id:item.id
+        }
+
+      })
+      setSelectoptionItems(test)
+      
+      
+      
+      
+
+      
       
     } catch (err) {
       setError(err.message || "Unexpected Error!");
@@ -28,6 +46,7 @@ export default (apiFunc) => {
     error,
     loading,
     request,
+    selectOptionItems,
     
   };
 };

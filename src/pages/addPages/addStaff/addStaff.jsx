@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../../../components/sidebar/Sidebar";
-import "./addUser.scss";
+import "./addStaff.scss";
 import Navbar from "../../../components/navbar/Navbar";
 import { createUser } from "../../../services/user.service";
 import ChangePhoto from "../../../components/changePhoto/changePhoto";

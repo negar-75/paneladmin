@@ -1,3 +1,5 @@
+import {getCategory} from '../../services/user.service'
+
 export const AddItemInputs = [
     {
         id: 1,
@@ -29,11 +31,13 @@ export const AddItemInputs = [
         label: "Category",
         type: "text",
         placeholder: "",
-        name:"category_id",
+        name:"category_name",
         required: true,
         selection:true,
         multiline:false,
-        variant:'standard'
+        variant:'standard',
+        func: () => getCategory(0,100)
+
       },
       {
         id: 4,

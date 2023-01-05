@@ -11,6 +11,7 @@ export default (apiFunc) => {
     setLoading(true);
     try {
       const result = await apiFunc(...args);
+      
       setData(result.data);
       
     } catch (err) {
@@ -19,6 +20,8 @@ export default (apiFunc) => {
       setLoading(false);
     }
   };
+
+  
   
   return {
     data,

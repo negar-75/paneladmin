@@ -19,18 +19,18 @@ const MenuProps = {
   },
 };
 
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
+// const names = [
+//   "Oliver Hansen",
+//   "Van Henry",
+//   "April Tucker",
+//   "Ralph Hubbard",
+//   "Omar Alexander",
+//   "Carlos Abbott",
+//   "Miriam Wagner",
+//   "Bradley Wilkerson",
+//   "Virginia Andrews",
+//   "Kelly Snyder",
+// ];
 
 function getStyles(name, personName, theme) {
   return {
@@ -41,7 +41,7 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function SelectOptionInput(props) {
+export default function SelectOptionInput({ label, items }) {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
@@ -54,8 +54,8 @@ export default function SelectOptionInput(props) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 400 }}>
-        <InputLabel id="demo-multiple-chip-label">Chip</InputLabel>
+      <FormControl sx={{ width: 400 }}>
+        <InputLabel id="demo-multiple-chip-label">{label}</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
@@ -63,12 +63,19 @@ export default function SelectOptionInput(props) {
           onChange={handleChange}
           input={
             <OutlinedInput
+              sx={{ height: 50 }}
               id="select-multiple-chip"
               label="Chip"
             />
           }
           renderValue={(selected) => (
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 0.5,
+              }}
+            >
               {selected.map((value) => (
                 <Chip
                   key={value}
@@ -79,7 +86,7 @@ export default function SelectOptionInput(props) {
           )}
           MenuProps={MenuProps}
         >
-          {names.map((name) => (
+          {items?.map((name) => (
             <MenuItem
               key={name}
               value={name}

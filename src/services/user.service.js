@@ -58,29 +58,29 @@ const getAllUsers = async (pageNum) => {
 }
 
 
-const getAllItems = async (pageNum) =>{
-    return await axios.get(`${baseUrl}item/`, {
-        params: {
-            'skip': `${pageNum*10}`,
-            'limit': '10',
-            'column': 'name',
-            'is_archived': 'false'
-        },
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token')
-        }
-    });
-}
+// const getAllItems = async (pageNum) =>{
+//     return await axios.get(`${baseUrl}item/`, {
+//         params: {
+//             'skip': `${pageNum*10}`,
+//             'limit': '10',
+//             'column': 'name',
+//             'is_archived': 'false'
+//         },
+//         headers: {
+//             'accept': 'application/json',
+//             'Authorization': 'Bearer ' + localStorage.getItem('token')
+//         }
+//     });
+// }
 
-const deletItem = async (id) =>{
-    return await axios.delete(`${baseUrl}item/${id}`, {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token')
-        }
-    });
-}
+// const deletItem = async (id) =>{
+//     return await axios.delete(`${baseUrl}item/${id}`, {
+//         headers: {
+//             'accept': 'application/json',
+//             'Authorization': 'Bearer ' + localStorage.getItem('token')
+//         }
+//     });
+// }
 
 
 const  getCategory =  (pageNum,itemsPerPage) =>{
@@ -173,18 +173,42 @@ const createStation = (obj) => {
     )
 }
 
+const getStations = (pageNum) => {
+    return axios.get(`${baseUrl}station/`,{
+        params: {
+            'skip': `${pageNum}`,
+            'limit': '10'
+        },
+        headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+    })
+}
+
+const deletStation = (id) => {
+    return axios.delete(`${baseUrl}station/${id}`, {
+        headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+    })
+}
+
 export {
     createUser,
     deletUser,
     updateUser,
     getAllUsers,
-    getAllItems,
-    deletItem,
+    // getAllItems,
+    // deletItem,
     getCategory,
     createCategory,
     deleteCategory,
     updateCategory,
     updateItem,
-    createStation
+    createStation,
+    getStations,
+    deletStation
     
 }

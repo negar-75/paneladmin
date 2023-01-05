@@ -7,8 +7,9 @@ import SingleStaff from './pages/staff/singleStaff/singleStaff'
 import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
 import Items from './pages/productList/items/items';
+import AddItem from './pages/addPages/addItem/addItem';
 import Stations from './pages/productList/stations/stations';
-import {StaffInputs } from './sources/staffSources/staffAddForm';
+
 import {
   BrowserRouter,
   Routes,
@@ -55,7 +56,7 @@ function App() {
       
            </Route>
        
-           <Route path='addUser' element={<AddUser  input={StaffInputs}  title='Add New User'/>} />
+           <Route path='addUser' element={<AddUser />} />
       
          </Route>
       
@@ -67,7 +68,7 @@ function App() {
        
            <Route index element={<Items />} />
        
-           <Route path='add' element />
+           <Route path='add' element={<AddItem />} />
        
            <Route path=':id/edit' element />
        

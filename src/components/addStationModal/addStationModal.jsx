@@ -31,6 +31,7 @@ function AddStationModal({ isModalOpen, setIsModalOpen }) {
 
   const handleSubmit = () => {
     request(station);
+    setIsModalOpen(false);
   };
 
   return (

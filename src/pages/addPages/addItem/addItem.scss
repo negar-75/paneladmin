@@ -1,0 +1,38 @@
+.add-item{
+    display: flex;
+    height: 100vh;
+
+    .right{
+     background-color:#fafadc ;
+     flex: 1;
+     display: flex;
+     align-items: center;
+     padding: 2em 0;
+     flex-direction: column;
+     
+     .add-item-form{
+       
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        margin-bottom: 2em;
+
+     }
+     
+    }
+
+    .left{
+        
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 2em 0em;
+        
+       
+    } 
+
+   
+
+   
+}

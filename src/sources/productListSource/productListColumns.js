@@ -5,6 +5,7 @@ import StatusSwitch from '../../components/statusSwitch/satusSwitch';
 import { updateItem } from '../../services/user.service';
 
 
+
  const itemColumns = [
     {
       field: "id",
@@ -86,22 +87,24 @@ const stationColumns =[
         align: "center",
         sortable: false,
       },
-    {
-        field: "edit",
-        headerName: "Edit",
-        width: 200,
-        headerAlign: "right",
-        align: "right",
-        sortable: false,
-        renderCell: (param) => {
-          return (
-           <div className='edit-container'>
-            <EditIcon />
-            <DeleteIcon/>
-           </div>
-          );
-        },
-      },
+    // {
+    //     field: "edit",
+    //     headerName: "Edit",
+    //     width: 300,
+    //     headerAlign: "center",
+    //     align: "center",
+    //     sortable: false,
+    //     renderCell: (param) => {
+    //       return (
+    //       <Box sx={{width:'50%',display:'flex',gap:5 }}>
+    //         <EditIcon sx={{color:'primary.main',cursor:'pointer'}}/>
+    //         <DeleteIcon sx={{color:'crimson',cursor:'pointer'}} />
+    //       </Box>
+           
+    //       );
+    //     },
+        
+    //   },
 
 ]  
 

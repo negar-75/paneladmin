@@ -9,8 +9,9 @@ import TextField from "@mui/material/TextField";
 import { validateField } from "../../../validation/validationFunc";
 import AlertMessage from "../../../components/alert/alert";
 import SubmitButton from "../../../components/submitButton/submitButton";
+import { StaffInputs } from "../../../sources/staffSources/staffAddForm";
 
-function AddStaff(props) {
+function AddStaff() {
   const createStaff = useCreateApi(createUser);
 
   const { loading, request, message, error } = createStaff;
@@ -50,7 +51,7 @@ function AddStaff(props) {
       <Sidebar />
       <div className="add-container">
         <Navbar />
-        <div className="top">{props.title}</div>
+        <div className="top">Staffs</div>
         <div className="bottom">
           <div className="left">
             <ChangePhoto
@@ -60,7 +61,7 @@ function AddStaff(props) {
           </div>
           <div className="right">
             <form>
-              {props.input.map((item) => {
+              {StaffInputs.map((item) => {
                 return (
                   <div className="form-element">
                     <TextField

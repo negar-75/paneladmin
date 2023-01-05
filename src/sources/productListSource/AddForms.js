@@ -1,11 +1,14 @@
-export const AddItem = [
+export const AddItemInputs = [
     {
         id: 1,
         label: "Item name",
         type: "text",
-        placeholder: "Ketchup",
+        placeholder: " ",
         name:"name",
-        required: true
+        required: true,
+        multiline:false,
+        selection:false,
+        variant:'standard'
         
       },
       {
@@ -15,7 +18,10 @@ export const AddItem = [
         placeholder: " ",
         name:"description",
         required: true,
-        multiline:true
+        multiline:true,
+        selection:false,
+        variant:'standard'
+        
         
       },
       {
@@ -24,7 +30,10 @@ export const AddItem = [
         type: "text",
         placeholder: "",
         name:"category_id",
-        selection:true
+        required: true,
+        selection:true,
+        multiline:false,
+        variant:'standard'
       },
       {
         id: 4,
@@ -32,7 +41,10 @@ export const AddItem = [
         type: "text",
         placeholder: " ",
         name: "station_id",
-        selection:true
+        required: true,
+        multiline:false,
+        selection:true,
+        variant:'standard'
 
         
       },
@@ -42,7 +54,10 @@ export const AddItem = [
         type: "text",
         placeholder: " ",
         name:  "sauces",
+        required: true,
         selection:true,
+        multiline:false,
+        variant:'standard'
 
         
       },
@@ -52,6 +67,10 @@ export const AddItem = [
         type: "text",
         placeholder: " ",
         name: "size",
+        required: true,
+        selection:false,
+        multiline:false,
+        variant:'standard'
         
       },
       {
@@ -60,6 +79,10 @@ export const AddItem = [
         type: "number",
         placeholder: " ",
         name: "price",
+        required: true,
+        selection:false,
+        multiline:false,
+        variant:'standard'
         
       },
 ]

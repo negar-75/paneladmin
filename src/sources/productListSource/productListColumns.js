@@ -44,22 +44,6 @@ import { updateItem } from '../../services/user.service';
           );
         },
     },
-    {
-        field: "edit",
-        headerName: "Edit",
-        width: 200,
-        headerAlign: "right",
-        align: "right",
-        sortable: false,
-        renderCell: (param) => {
-          return (
-           <div className='edit-container'>
-            <EditIcon />
-            <DeleteIcon/>
-           </div>
-          );
-        },
-      },
 
   ];
 

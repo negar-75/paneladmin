@@ -1,0 +1,24 @@
+.preveiw-item-form{
+   
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    
+    .title{
+        margin-bottom: 1em;
+    }
+
+    .preview-item-form-container{
+        .preveiw-form-element{
+            h3{
+                margin-bottom: 1em;
+            }
+            .upload-section{
+              display: flex;
+              gap: 2em;
+            }
+        }
+    }
+}

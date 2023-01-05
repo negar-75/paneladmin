@@ -18,6 +18,8 @@ function AddItem() {
                 <SelectOptionInput
                   key={item.id}
                   label={item.label}
+                  func={item.func}
+                  name={item.name}
                 />
               );
             } else {

@@ -1,14 +1,14 @@
 import React from "react";
-import Sidebar from "../../components/sidebar/Sidebar";
+import Sidebar from "../../../components/sidebar/Sidebar";
 import "./addUser.scss";
-import Navbar from "../../components/navbar/Navbar";
-import { createUser } from "../../services/user.service";
-import ChangePhoto from "../../components/changePhoto/changePhoto";
-import useCreateApi from "../../hooks/useCreateApi";
+import Navbar from "../../../components/navbar/Navbar";
+import { createUser } from "../../../services/user.service";
+import ChangePhoto from "../../../components/changePhoto/changePhoto";
+import useCreateApi from "../../../hooks/useCreateApi";
 import TextField from "@mui/material/TextField";
-import { validateField } from "../../validation/validationFunc";
-import AlertMessage from "../../components/alert/alert";
-import SubmitButton from "../../components/submitButton/submitButton";
+import { validateField } from "../../../validation/validationFunc";
+import AlertMessage from "../../../components/alert/alert";
+import SubmitButton from "../../../components/submitButton/submitButton";
 
 function AddStaff(props) {
   const createStaff = useCreateApi(createUser);

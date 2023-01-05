@@ -46,7 +46,7 @@ export const theme = createTheme({
   MuiDataGrid:{
     styleOverrides:{
       row:{
-         "&.Mui-selected":{
+        "&.Mui-selected":{
           backgroundColor:'#fafadc',
           '&:hover' : {
             backgroundColor:'#fafadc'
@@ -57,14 +57,21 @@ export const theme = createTheme({
         },
         '&:active':{
           backgroundColor:'#fafadc'
-        }
+        },
+        
+        
+        display:'flex',
+        gap:10
       },
       cell:{
         border:'none',
+        
+
         '&:focus': {
          border:'none',
          boxShadow: "none",
-         outline:' none !important'
+         outline:' none !important',
+         
         }
       },
       columnHeaderTitle:{

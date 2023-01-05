@@ -15,7 +15,7 @@ function Stations() {
   const getStationsApi = useGetApi(getStations);
   const [pageNumber, setPageNumber] = React.useState(0);
   const { loading, request, data, error } = getStationsApi;
-  // console.log(data);
+
   React.useEffect(() => {
     request(pageNumber);
   }, [isModalOpen]);
@@ -26,7 +26,7 @@ function Stations() {
       <div className="product-list-container">
         <Navbar />
         <ProductListTabs />
-        <TableHeader setIsModalOpen={setIsModalOpen} />
+        <TableHeader onClickFunc={() => setIsModalOpen(true)} />
         <ProductListTable
           cols={stationColumns}
           rowsArr={data}

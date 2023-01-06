@@ -2,15 +2,15 @@ import {OPEN_SIDEBAR, CLOSE_SIDEBAR} from '../actions/type';
 
 
 const initialState = {
-    isSidebarMenuOpen:false
+    isMobileSidebarMenuOpen:false
 }
 
-const sidebarMenuHandle = (state=initialState, action) =>{
+const mobileSidebarMenuHandle = (state=initialState, action) =>{
     switch (action.type){
         case OPEN_SIDEBAR :
             return{
                 ...state,
-                isSidebarMenuOpen:true
+                isMobileSidebarMenuOpen:true
             }
         case CLOSE_SIDEBAR :
             return initialState;
@@ -20,4 +20,4 @@ const sidebarMenuHandle = (state=initialState, action) =>{
     } 
 }
 
-export default sidebarMenuHandle
+export default mobileSidebarMenuHandle

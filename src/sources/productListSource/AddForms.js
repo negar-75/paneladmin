@@ -1,90 +1,92 @@
-import {getCategory} from '../../services/user.service'
+import {getCategory, getStations} from '../../services/user.service';
+import useGetApi from "../../hooks/useGetApi";
+
 
 export const AddItemInputs = [
     {
-        id: 1,
+        id: '1',
         label: "Item name",
         type: "text",
         placeholder: " ",
         name:"name",
         required: true,
         multiline:false,
-        selection:false,
         variant:'standard'
         
       },
       {
-        id: 2,
+        id: '2',
         label: "Description",
         type: "text",
         placeholder: " ",
         name:"description",
         required: true,
         multiline:true,
-        selection:false,
         variant:'standard'
         
         
       },
       {
-        id: 3,
+        id: '3',
         label: "Category",
         type: "text",
         placeholder: "",
-        name:"category_name",
+        name:"category_id",
+        keyName :'category_name',
         required: true,
-        selection:true,
+        selectable:'true',
         multiline:false,
         variant:'standard',
-        func: () => getCategory(0,100)
+        func: () => getCategory(0,100),
+        
 
       },
       {
-        id: 4,
+        id: '4',
         label: "Stations",
         type: "text",
         placeholder: " ",
         name: "station_id",
         required: true,
         multiline:false,
-        selection:true,
-        variant:'standard'
+        keyName :'station_name',
+        selectable:'true',
+        variant:'standard',
+        func: () => getStations(0,100)
 
         
       },
       {
-        id: 5,
+        id: '5',
         label: "Sauce",
         type: "text",
         placeholder: " ",
         name:  "sauces",
         required: true,
-        selection:true,
+        selectable:'true',
         multiline:false,
         variant:'standard'
 
         
       },
       {
-        id: 6,
+        id: '6',
         label: "Size",
         type: "text",
         placeholder: " ",
         name: "size",
         required: true,
-        selection:false,
         multiline:false,
         variant:'standard'
         
       },
       {
-        id: 7,
+        id: '7',
         label: "Price",
         type: "number",
         placeholder: " ",
         name: "price",
         required: true,
-        selection:false,
         multiline:false,
         variant:'standard'
         

@@ -16,7 +16,7 @@ export default (apiFunc,keyName) => {
     try {
       const result = await apiFunc(...args);
       setData(result.data);
-      console.table(result.data.records)
+      
       const test = await result.data.records.map((item) => {
         return {
           name:item[keyName],

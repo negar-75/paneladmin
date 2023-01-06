@@ -19,6 +19,6 @@ export const TOGGLE = 'TOGGLE';
 export const DROP_DOWN = "DROP_DOWN"
 
 
-//sidebarMenu actions
+//mobileSidebarMenu actions
 export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
 export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';

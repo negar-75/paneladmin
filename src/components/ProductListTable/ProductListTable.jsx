@@ -8,6 +8,7 @@ import { handleDelet } from "../../services/functions";
 
 function ProductListTable({ cols, rowsArr, deletFun }) {
   const [rowsInTable, setRowsInTable] = React.useState([]);
+  console.log(rowsInTable);
   React.useEffect(() => {
     setRowsInTable(rowsArr);
   }, [rowsArr]);

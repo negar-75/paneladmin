@@ -173,11 +173,11 @@ const createStation = (obj) => {
     )
 }
 
-const getStations = (pageNum) => {
+const getStations = (pageNum,itemsPerPage) => {
     return axios.get(`${baseUrl}station/`,{
         params: {
             'skip': `${pageNum}`,
-            'limit': '10'
+            'limit': `${itemsPerPage}`
         },
         headers: {
             'accept': 'application/json',
@@ -195,6 +195,20 @@ const deletStation = (id) => {
     })
 }
 
+const createSauce = (obj) =>{
+    return axios.post(`${baseUrl}sauce/` , 
+    obj,
+    {
+        headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token'),
+            'Content-Type': 'application/json'
+          
+        },
+    }
+    )
+}
+
 export {
     createUser,
     deletUser,
@@ -209,6 +223,7 @@ export {
     updateItem,
     createStation,
     getStations,
-    deletStation
+    deletStation,
+    createSauce
     
 }

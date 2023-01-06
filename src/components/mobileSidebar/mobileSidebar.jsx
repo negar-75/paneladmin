@@ -10,7 +10,7 @@ import { CLOSE_SIDEBAR } from "../../actions/type";
 function MobileSidebar() {
   const sidebarRef = React.useRef(null);
   const isSidebarMenuOpen = useSelector(
-    (state) => state.isSidebarMenuOpen.isSidebarMenuOpen
+    (state) => state.isMobileSidebarMenuOpen.isMobileSidebarMenuOpen
   );
 
   const closeOpenMenus = (e) => {

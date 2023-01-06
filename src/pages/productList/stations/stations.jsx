@@ -17,7 +17,7 @@ function Stations() {
   const { loading, request, data, error } = getStationsApi;
 
   React.useEffect(() => {
-    request(pageNumber);
+    request(pageNumber, 10);
   }, [isModalOpen]);
 
   return (

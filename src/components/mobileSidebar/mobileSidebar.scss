@@ -9,6 +9,7 @@
     background-color:#3A6B35;
     z-index: 20;
     
+    
     .sidebar-nav{
         color: #ffffff;
         margin-top: 2.5em;
@@ -40,6 +41,6 @@
     }
     
 }
- .mobileSidebar.open{
+ .mobile-sidebar.open{
     transform: translateX(0%);
 }

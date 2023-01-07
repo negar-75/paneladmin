@@ -7,7 +7,7 @@ import MobileSidebar from "../../../components/mobileSidebar/mobileSidebar";
 import StaffTable from "../../../components/StaffTable/StaffTable";
 import { useMediaQuery } from "react-responsive";
 
-function StaffsTable() {
+function StaffsTableDesktop() {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 600px)",
   });
@@ -37,4 +37,4 @@ function StaffsTable() {
   );
 }
 
-export default StaffsTable;
+export default StaffsTableDesktop;

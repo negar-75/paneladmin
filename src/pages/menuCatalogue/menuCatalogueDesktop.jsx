@@ -9,7 +9,7 @@ import CreateCategory from "../../components/createCategory/createCategory";
 
 import { useMediaQuery } from "react-responsive";
 
-function MenuCatalogue() {
+function MenuCatalogueDesktop() {
   const [success, setSuccess] = React.useState(false);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 600px)",
@@ -58,4 +58,4 @@ function MenuCatalogue() {
   );
 }
 
-export default MenuCatalogue;
+export default MenuCatalogueDesktop;

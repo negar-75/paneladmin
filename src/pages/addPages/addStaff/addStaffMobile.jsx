@@ -1,8 +1,6 @@
 import React from "react";
-import Sidebar from "../../../components/sidebar/Sidebar";
-import "./addStaff.scss";
-import Navbar from "../../../components/navbar/Navbar";
-import { createUser } from "../../../services/user.service";
+import MobileNavbar from "../../../components/mobileNavbar/mobileNavbar";
+import MobileSidebar from "../../../components/mobileSidebar/mobileSidebar";
 import ChangePhoto from "../../../components/changePhoto/changePhoto";
 import useCreateApi from "../../../hooks/useCreateApi";
 import TextField from "@mui/material/TextField";
@@ -10,12 +8,9 @@ import { validateField } from "../../../validation/validationFunc";
 import AlertMessage from "../../../components/alert/alert";
 import SubmitButton from "../../../components/submitButton/submitButton";
 import { StaffInputs } from "../../../sources/staffSources/staffAddForm";
+import { createUser } from "../../../services/user.service";
 
-function AddStaff() {
-  const createStaff = useCreateApi(createUser);
-
-  const { loading, request, message, error } = createStaff;
-
+function AddStaffMobile() {
   const [staff, setStaff] = React.useState({
     username: "",
     email: "",
@@ -33,6 +28,10 @@ function AddStaff() {
     formValid: false,
   });
 
+  const createStaff = useCreateApi(createUser);
+
+  const { loading, request, message, error } = createStaff;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     request(JSON.stringify(staff));
@@ -48,9 +47,9 @@ function AddStaff() {
 
   return (
     <div className="add">
-      <Sidebar />
+      <MobileNavbar />
+      <MobileSidebar />
       <div className="add-container">
-        <Navbar />
         <div className="top">Staffs</div>
         <div className="bottom">
           <div className="left">
@@ -96,4 +95,4 @@ function AddStaff() {
   );
 }
 
-export default AddStaff;
+export default AddStaffMobile;

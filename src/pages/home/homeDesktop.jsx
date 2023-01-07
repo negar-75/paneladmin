@@ -10,7 +10,7 @@ import "./home.scss";
 
 import { useMediaQuery } from "react-responsive";
 
-function Home() {
+function HomeDesktop() {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 600px)",
   });
@@ -21,7 +21,7 @@ function Home() {
       {isDesktopOrLaptop && (
         <div className="home">
           <Sidebar />
-          <div className="homeContainer">
+          <div className="home-container">
             <Navbar />
             <div className="widgets">
               <Widget
@@ -56,7 +56,7 @@ function Home() {
         <div className="home">
           <MobileNavbar />
           <MobileSidebar />
-          <div className="homeContainer">
+          <div className="home-container">
             <div className="widgets">
               <Widget
                 type="user"
@@ -89,4 +89,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeDesktop;

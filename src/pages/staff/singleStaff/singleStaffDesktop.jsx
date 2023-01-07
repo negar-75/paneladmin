@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { singleStaffInformation } from "../../../sources/staffSources/singleStaffInformation";
 import { useMediaQuery } from "react-responsive";
 
-function SingleStaff() {
+function SingleStaffDesktop() {
   const viewUser = useLocation().state;
   let { staffId } = useParams();
   const isDesktopOrLaptop = useMediaQuery({
@@ -133,4 +133,4 @@ function SingleStaff() {
   );
 }
 
-export default SingleStaff;
+export default SingleStaffDesktop;

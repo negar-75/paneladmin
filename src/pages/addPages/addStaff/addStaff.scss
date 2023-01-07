@@ -19,10 +19,7 @@
         margin: 2em 2.5em;
         
        }
-      
-       
-
-        .left{
+       .left{
           
           flex: 1;
           display: flex;
@@ -30,9 +27,6 @@
           justify-content: center;
          
         }
-
-        
-
         .right{
           flex: 2;
           
@@ -63,4 +57,36 @@
             
         }
     }
+}
+@media only screen and (max-width:600px) {
+  .add{
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+    
+    .add-container{
+      flex:15;
+      margin: 0 0.5em;
+
+      .top{
+        
+        padding: 0.5;
+      }
+      .bottom{
+        padding: 0;
+        flex-direction: column;
+        box-shadow: none;
+        form{
+          
+          padding: 1em 0;
+          .form-element{
+           
+            width: 100%;
+            margin-bottom: 1em;
+          }
+        }
+      }
+   
+  }
+}
 }

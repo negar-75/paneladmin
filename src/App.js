@@ -1,11 +1,11 @@
 import React from 'react'
-import Home from './pages/home/Home';
-import StaffsTable from './pages/staff/staffsTable/staffsTable';
-import Login from './pages/login/Login';
-import AddUser from './pages/addPages/addStaff/addStaff';
-import SingleStaff from './pages/staff/singleStaff/singleStaff'
+import HomeDesktop from './pages/home/homeDesktop';
+import StaffsTableDesktop from './pages/staff/staffsTable/staffsTableDesktop';
+import  LoginDesktop from './pages/login/loginDesktop';
+import AddStaffDesktop from './pages/addPages/addStaff/addStaffDesktop';
+import SingleStaffDesktop from './pages/staff/singleStaff/singleStaffDesktop'
 import EditStaff from './pages/staff/editStaff/editStaff';
-import MenuCatalogue from './pages/menuCatalogue/menuCatalogue';
+import MenuCatalogueDesktop from './pages/menuCatalogue/menuCatalogueDesktop';
 import Items from './pages/productList/items/items';
 import AddItem from './pages/addPages/addItem/addItem';
 import Stations from './pages/productList/stations/stations';
@@ -38,29 +38,29 @@ function App() {
         
         <Route path='/' >
 
-        <Route path='login' element={<Login />} />
+        <Route path='login' element={< LoginDesktop />} />
         
         <Route element={<PrivateRoutes />}>
 
-          <Route  element={<Home />}  path='/' exact/>
+          <Route  element={<HomeDesktop />}  path='/' exact/>
 
           <Route path='staffs'>
         
-            <Route index element={<StaffsTable />}/> 
+            <Route index element={<StaffsTableDesktop />}/> 
       
             <Route path=':staffId'>
       
-             <Route index element={<SingleStaff/>} />
+             <Route index element={<SingleStaffDesktop/>} />
       
              <Route path='editprofile' element={<EditStaff/>} />
       
            </Route>
        
-           <Route path='addUser' element={<AddUser />} />
+           <Route path='addUser' element={<AddStaffDesktop />} />
       
          </Route>
       
-         <Route path='menuCatalogue' element={<MenuCatalogue />} />
+         <Route path='menuCatalogue' element={<MenuCatalogueDesktop />} />
       
          <Route path='productList'>
        

@@ -9,7 +9,7 @@ import { loginInputs } from "../../sources/loginInputs";
 import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
 import SubmitButton from "../../components/submitButton/submitButton";
 
-function Login() {
+function LoginDesktop() {
   const [person, setPerson] = React.useState({
     username: "",
     password: "",
@@ -86,4 +86,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginDesktop;

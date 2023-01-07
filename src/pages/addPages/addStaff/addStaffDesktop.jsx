@@ -10,15 +10,8 @@ import { validateField } from "../../../validation/validationFunc";
 import AlertMessage from "../../../components/alert/alert";
 import SubmitButton from "../../../components/submitButton/submitButton";
 import { StaffInputs } from "../../../sources/staffSources/staffAddForm";
-import AddStaffMobile from "./addStaffMobile";
-import { useMediaQuery } from "react-responsive";
 
 function AddStaffDesktop() {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 600px)",
-  });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
-
   const createStaff = useCreateApi(createUser);
 
   const { loading, request, message, error } = createStaff;
@@ -54,59 +47,52 @@ function AddStaffDesktop() {
   };
 
   return (
-    <>
-      {isDesktopOrLaptop && (
-        <div className="add">
-          <Sidebar />
-          <div className="add-container">
-            <Navbar />
-            <div className="top">Staffs</div>
-            <div className="bottom">
-              <div className="left">
-                <ChangePhoto
-                  title="Upload photo"
-                  showImage={true}
-                />
-              </div>
-              <div className="right">
-                <form>
-                  {StaffInputs.map((item) => {
-                    return (
-                      <div className="form-element">
-                        <TextField
-                          key={item.id}
-                          error={
-                            errMessage[item.name]?.length === 0 ? false : true
-                          }
-                          {...item}
-                          sx={{ width: "100%" }}
-                          required={true}
-                          value={staff[item.name]}
-                          onChange={handleChange}
-                          helperText={errMessage[item.name]}
-                          name={item.name}
-                        />
-                      </div>
-                    );
-                  })}
-                  <SubmitButton
-                    loading={loading}
-                    formValid={errMessage.formValid}
-                    handleSubmit={handleSubmit}
-                  />
-                </form>
+    <div className="add">
+      <Sidebar />
+      <div className="add-container">
+        <Navbar />
+        <div className="top">Staffs</div>
+        <div className="bottom">
+          <div className="left">
+            <ChangePhoto
+              title="Upload photo"
+              showImage={true}
+            />
+          </div>
+          <div className="right">
+            <form>
+              {StaffInputs.map((item) => {
+                return (
+                  <div className="form-element">
+                    <TextField
+                      key={item.id}
+                      error={errMessage[item.name]?.length === 0 ? false : true}
+                      {...item}
+                      sx={{ width: "100%" }}
+                      required={true}
+                      value={staff[item.name]}
+                      onChange={handleChange}
+                      helperText={errMessage[item.name]}
+                      name={item.name}
+                    />
+                  </div>
+                );
+              })}
+              <SubmitButton
+                loading={loading}
+                formValid={errMessage.formValid}
+                handleSubmit={handleSubmit}
+              />
+            </form>
 
-                <AlertMessage
-                  message={message}
-                  error={error}
-                />
-              </div>
-            </div>
+            <AlertMessage
+              message={message}
+              error={error}
+            />
           </div>
         </div>
-      )}
-      {isTabletOrMobile && <AddStaffMobile />}
-    </>
+      </div>
+    </div>
   );
 }
 

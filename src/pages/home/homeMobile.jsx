@@ -1,17 +1,16 @@
 import React from "react";
-import Featured from "../../components/featured/featured";
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
 import Widget from "../../components/widget/widget";
+import MobileNavbar from "../../components/mobileNavbar/mobileNavbar";
+import MobileSidebar from "../../components/mobileSidebar/mobileSidebar";
 import Chart from "../../components/chart/chart";
-import "./home.scss";
+import Featured from "../../components/featured/featured";
 
-function HomeDesktop() {
+function HomeMobile() {
   return (
     <div className="home">
-      <Sidebar />
+      <MobileNavbar />
+      <MobileSidebar />
       <div className="home-container">
-        <Navbar />
         <div className="widgets">
           <Widget
             type="user"
@@ -42,4 +41,4 @@ function HomeDesktop() {
   );
 }
 
-export default HomeDesktop;
+export default HomeMobile;

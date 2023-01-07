@@ -1,7 +1,4 @@
 import React from "react";
-import "./singleStaff.scss";
-import Navbar from "../../../components/navbar/Navbar";
-import Sidebar from "../../../components/sidebar/Sidebar";
 import MobileNavbar from "../../../components/mobileNavbar/mobileNavbar";
 import MobileSidebar from "../../../components/mobileSidebar/mobileSidebar";
 import Chart from "../../../components/chart/chart";
@@ -10,16 +7,15 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { singleStaffInformation } from "../../../sources/staffSources/singleStaffInformation";
 
-function SingleStaffDesktop() {
+function SingleStaffMobile() {
   const viewUser = useLocation().state;
   let { staffId } = useParams();
-
   return (
     <div className="single">
-      <Sidebar />
+      <MobileNavbar />
+      <MobileSidebar />
 
       <div className="singleContainer">
-        <Navbar />
         <div className="top">
           <div className="left">
             <Link
@@ -37,7 +33,6 @@ function SingleStaffDesktop() {
                   className="itemImg"
                 />
               </div>
-
               <div className="details">
                 <h1 className="itemTitle">{viewUser.username}</h1>
                 {singleStaffInformation.map((item) => {
@@ -59,7 +54,7 @@ function SingleStaffDesktop() {
 
           <div className="right">
             <Chart
-              aspect={3 / 1}
+              aspect={3 / 2}
               title="User spending ( last 6 month )"
             />
           </div>
@@ -69,4 +64,4 @@ function SingleStaffDesktop() {
   );
 }
 
-export default SingleStaffDesktop;
+export default SingleStaffMobile;

@@ -1,20 +1,16 @@
 import React from "react";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
-import "./menuCatalogue.scss";
+import MobileNavbar from "../../components/mobileNavbar/mobileNavbar";
+import MobileSidebar from "../../components/mobileSidebar/mobileSidebar";
 import Menugrid from "../../components/menuGrid/menugrid";
 import CreateCategory from "../../components/createCategory/createCategory";
 
-import { useMediaQuery } from "react-responsive";
-
-function MenuCatalogueDesktop() {
+function MenuCatalogueMobile() {
   const [success, setSuccess] = React.useState(false);
-
   return (
     <div className="menuCatalogue">
-      <Sidebar />
+      <MobileNavbar />
+      <MobileSidebar />
       <div className="menuCatalogue-container">
-        <Navbar />
         <div className="up">
           <CreateCategory setSuccess={setSuccess} />
         </div>
@@ -22,7 +18,7 @@ function MenuCatalogueDesktop() {
           <Menugrid
             success={success}
             setSuccess={setSuccess}
-            itemsPerPage={6}
+            itemsPerPage={3}
           />
         </div>
       </div>
@@ -30,4 +26,4 @@ function MenuCatalogueDesktop() {
   );
 }
 
-export default MenuCatalogueDesktop;
+export default MenuCatalogueMobile;

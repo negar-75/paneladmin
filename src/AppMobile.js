@@ -1,11 +1,8 @@
 import React from 'react'
-import HomeDesktop from './pages/home/homeDesktop';
-import StaffsTableDesktop from './pages/staff/staffsTable/staffsTableDesktop';
-import  LoginDesktop from './pages/login/loginDesktop';
-import AddStaffDesktop from './pages/addPages/addStaff/addStaffDesktop';
-import SingleStaffDesktop from './pages/staff/singleStaff/singleStaffDesktop'
+import StaffsTableMobile from './pages/staff/staffsTable/staffsTableMobile';
+import LoginDesktop from './pages/login/loginDesktop';
 import EditStaff from './pages/staff/editStaff/editStaff';
-import MenuCatalogueDesktop from './pages/menuCatalogue/menuCatalogueDesktop';
+import MenuCatalogueMobile from './pages/menuCatalogue/menuCatalogueMobile';
 import Items from './pages/productList/items/items';
 import AddItem from './pages/addPages/addItem/addItem';
 import Stations from './pages/productList/stations/stations';
@@ -17,15 +14,14 @@ import {
 } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import PrivateRoutes from './routes/privateRoutes';
-
-
-
-
 import "./style/darkStyle.scss"
+import SingleStaffMobile from './pages/staff/singleStaff/singleStaffMobile';
+import HomeMobile from './pages/home/homeMobile';
+import AddStaffMobile from './pages/addPages/addStaff/addStaffMobile';
 
 
 
-function App() {
+function AppMobile() {
 
   
   const darkMode = useSelector(state => state.darkMode.darkMode)
@@ -42,25 +38,25 @@ function App() {
         
         <Route element={<PrivateRoutes />}>
 
-          <Route  element={<HomeDesktop />}  path='/' exact/>
+          <Route  element={<HomeMobile />}  path='/' exact/>
 
           <Route path='staffs'>
         
-            <Route index element={<StaffsTableDesktop />}/> 
+            <Route index element={<StaffsTableMobile />}/> 
       
             <Route path=':staffId'>
       
-             <Route index element={<SingleStaffDesktop/>} />
+             <Route index element={<SingleStaffMobile/>} />
       
              <Route path='editprofile' element={<EditStaff/>} />
       
            </Route>
        
-           <Route path='addUser' element={<AddStaffDesktop />} />
+           <Route path='addUser' element={<AddStaffMobile />} />
       
          </Route>
       
-         <Route path='menuCatalogue' element={<MenuCatalogueDesktop />} />
+         <Route path='menuCatalogue' element={<MenuCatalogueMobile />} />
       
          <Route path='productList'>
        
@@ -94,4 +90,4 @@ function App() {
   )
 }
 
-export default App
+export default AppMobile

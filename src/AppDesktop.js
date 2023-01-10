@@ -6,7 +6,7 @@ import AddStaffDesktop from './pages/addPages/addStaff/addStaffDesktop';
 import SingleStaffDesktop from './pages/staff/singleStaff/singleStaffDesktop'
 import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogueDesktop from './pages/menuCatalogue/menuCatalogueDesktop';
-import Items from './pages/productList/items/items';
+import ItemsDesktop from './pages/productList/items/itemsDesktop';
 import AddItem from './pages/addPages/addItem/addItem';
 import Stations from './pages/productList/stations/stations';
 
@@ -66,7 +66,7 @@ function AppDesktop() {
        
          <Route path='items' >
        
-           <Route index element={<Items />} />
+           <Route index element={<ItemsDesktop />} />
        
            <Route path='add' element={<AddItem />} />
        

@@ -3,7 +3,7 @@ import StaffsTableMobile from './pages/staff/staffsTable/staffsTableMobile';
 import LoginDesktop from './pages/login/loginDesktop';
 import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogueMobile from './pages/menuCatalogue/menuCatalogueMobile';
-import Items from './pages/productList/items/items';
+import ItemsMobile from './pages/productList/items/itemsMobile';
 import AddItem from './pages/addPages/addItem/addItem';
 import Stations from './pages/productList/stations/stations';
 
@@ -62,7 +62,7 @@ function AppMobile() {
        
          <Route path='items' >
        
-           <Route index element={<Items />} />
+           <Route index element={<ItemsMobile />} />
        
            <Route path='add' element={<AddItem />} />
        

@@ -4,7 +4,7 @@ import LoginDesktop from './pages/login/loginDesktop';
 import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogueMobile from './pages/menuCatalogue/menuCatalogueMobile';
 import ItemsMobile from './pages/productList/items/itemsMobile';
-import AddItem from './pages/addPages/addItem/addItem';
+import AddItemMobile from './pages/addPages/addItem/addItemMobile';
 import StationsMobile from './pages/productList/stations/stationsMobile';
 
 import {
@@ -64,7 +64,7 @@ function AppMobile() {
        
            <Route index element={<ItemsMobile />} />
        
-           <Route path='add' element={<AddItem />} />
+           <Route path='add' element={<AddItemMobile />} />
        
            <Route path=':id/edit' element />
        

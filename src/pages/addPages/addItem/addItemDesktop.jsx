@@ -9,7 +9,7 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import Box from "@mui/material/Box";
 import AddSauceModal from "../../../components/addSauceModal/addSauceModal";
 
-function AddItem() {
+function AddItemDesktop() {
   const [itemForm, setItemForm] = React.useState({
     name: "",
     description: "",
@@ -93,4 +93,4 @@ function AddItem() {
   );
 }
 
-export default AddItem;
+export default AddItemDesktop;

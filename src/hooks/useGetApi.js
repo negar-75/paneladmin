@@ -17,13 +17,13 @@ export default (apiFunc,keyName) => {
       const result = await apiFunc(...args);
       
       setData(result.data);
-      const test = await  result.data.records ? result.data.records.map((item) => {
+      const test = await  result?.data?.records ? result?.data?.records?.map((item) => {
         return {
           name:item[keyName],
           id:item.id
         }
 
-      }): result.data.map((item) => {
+      }): result?.data?.map((item) => {
         return {
           name:item[keyName],
           id:item.id

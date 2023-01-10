@@ -1,14 +1,6 @@
 .prosuct-list-table{
     margin:0 2em;
     border-radius: 0  0  10px 10px;
-    // padding: 0 1em;
-    background-color: rgb(255, 255, 255);
     height: 400px;
 }
 
-@media only screen and (max-width:600px) {
-    .product-list-table{
-    background-color: rgb(247, 9, 9);
-   
-   }
-}

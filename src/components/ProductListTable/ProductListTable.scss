@@ -5,3 +5,10 @@
     background-color: rgb(255, 255, 255);
     height: 400px;
 }
+
+@media only screen and (max-width:600px) {
+    .product-list-table{
+    background-color: rgb(247, 9, 9);
+   
+   }
+}

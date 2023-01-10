@@ -5,7 +5,7 @@ import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogueMobile from './pages/menuCatalogue/menuCatalogueMobile';
 import ItemsMobile from './pages/productList/items/itemsMobile';
 import AddItem from './pages/addPages/addItem/addItem';
-import Stations from './pages/productList/stations/stations';
+import StationsMobile from './pages/productList/stations/stationsMobile';
 
 import {
   BrowserRouter,
@@ -72,7 +72,7 @@ function AppMobile() {
        
          <Route path='stations' >
        
-           <Route index element={<Stations />} />
+           <Route index element={<StationsMobile />} />
        
          </Route>
 

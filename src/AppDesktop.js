@@ -8,7 +8,7 @@ import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogueDesktop from './pages/menuCatalogue/menuCatalogueDesktop';
 import ItemsDesktop from './pages/productList/items/itemsDesktop';
 import AddItem from './pages/addPages/addItem/addItem';
-import Stations from './pages/productList/stations/stations';
+import StationsDesktop from './pages/productList/stations/stationsDesktop';
 
 import {
   BrowserRouter,
@@ -76,7 +76,7 @@ function AppDesktop() {
        
          <Route path='stations' >
        
-           <Route index element={<Stations />} />
+           <Route index element={<StationsDesktop />} />
        
          </Route>
 

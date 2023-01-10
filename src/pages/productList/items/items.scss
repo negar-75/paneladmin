@@ -6,3 +6,18 @@
        
     }
 }
+
+@media only screen and (max-width:600px) {
+    .product-list{
+        height: 100vh;
+        flex-direction: column;
+        position: relative;
+        
+        .product-list-container{
+         overflow-x: scroll;
+         flex:15;
+         margin: 0 ;
+        }
+
+    }
+}

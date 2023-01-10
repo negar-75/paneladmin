@@ -1,23 +1,29 @@
 import axios from "axios";
-import { baseUrl } from "./baseUrl";
+import { axiosClient } from "../common/axiosClient";
+
 
 
 const login = (userObj) => {
+  // const params = new URLSearchParams();
+  // params.append( 'username', userObj.username);
+  // params.append('password', userObj.password);
+  
+ 
+  //   return axiosClient.post('/login/access-token',{},params)
+
+
     return  axios.post(
-        `${baseUrl}login/access-token`,
+        `http://83.229.85.92:5500/api/v1/login/access-token`,
         new URLSearchParams({
-            'grant_type': '',
             'username': userObj.username,
             'password': userObj.password,
-            'scope': '',
-            'client_id': '',
-            'client_secret': ''
+           
         }),
         {
             headers: {
                 'accept': 'application/json'
             },
-            timeout: 10000
+            
         }
     )
   };

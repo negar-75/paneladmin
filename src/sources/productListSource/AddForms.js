@@ -1,4 +1,4 @@
-import {getCategory, getStations} from '../../services/user.service';
+import {getCategories, getStations} from '../../services/user.service';
 import useGetApi from "../../hooks/useGetApi";
 
 
@@ -37,7 +37,7 @@ export const AddItemInputs = [
         selectable:'true',
         multiline:false,
         variant:'standard',
-        func: () => getCategory(0,100),
+        func: () => getCategories(0,100),
         
 
       },

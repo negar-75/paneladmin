@@ -10,7 +10,7 @@ import AddStationModal from "../../../components/addStationModal/addStationModal
 import useGetApi from "../../../hooks/useGetApi";
 import { getStations, deletStation } from "../../../services/user.service";
 
-function Stations() {
+function StationsDesktop() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const getStationsApi = useGetApi(getStations);
   const [pageNumber, setPageNumber] = React.useState(0);
@@ -41,4 +41,4 @@ function Stations() {
   );
 }
 
-export default Stations;
+export default StationsDesktop;

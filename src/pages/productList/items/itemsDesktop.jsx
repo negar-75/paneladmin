@@ -8,7 +8,7 @@ import ProductListTable from "../../../components/ProductListTable/ProductListTa
 import { itemColumns } from "../../../sources/productListSource/productListColumns";
 import { useNavigate } from "react-router-dom";
 
-function Items() {
+function ItemsDesktop() {
   const navigate = useNavigate();
   return (
     <div className="product-list">
@@ -23,4 +23,4 @@ function Items() {
   );
 }
 
-export default Items;
+export default ItemsDesktop;

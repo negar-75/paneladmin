@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import "./addStaff.scss";
 import Navbar from "../../../components/navbar/Navbar";
-import { createUser } from "../../../services/user.service";
+import { createStuff } from "../../../services/user.service";
 import ChangePhoto from "../../../components/changePhoto/changePhoto";
 import useCreateApi from "../../../hooks/useCreateApi";
 import TextField from "@mui/material/TextField";
@@ -12,9 +12,9 @@ import SubmitButton from "../../../components/submitButton/submitButton";
 import { StaffInputs } from "../../../sources/staffSources/staffAddForm";
 
 function AddStaffDesktop() {
-  const createStaff = useCreateApi(createUser);
+  const createStaffApi = useCreateApi(createStuff);
 
-  const { loading, request, message, error } = createStaff;
+  const { loading, request, message, error } = createStaffApi;
 
   const [staff, setStaff] = React.useState({
     username: "",

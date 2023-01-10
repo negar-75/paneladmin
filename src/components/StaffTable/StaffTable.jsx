@@ -3,14 +3,14 @@ import "./StaffTable.scss";
 import { userColumns } from "../../sources/staffSources/staffTable";
 import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
-import { getAllUsers, deletUser } from "../../services/user.service";
+import { getAllStaffs, deleteStaff } from "../../services/user.service";
 import { handleDelet } from "../../services/functions";
 import { customStyles } from "../../style/customDataTableStyle";
 import useGetApi from "../../hooks/useGetApi";
 
 function StaffTable() {
-  const getUsers = useGetApi(getAllUsers);
-  const { data, error, loading, request } = getUsers;
+  const getAllStaffsApi = useGetApi(getAllStaffs);
+  const { data, error, loading, request } = getAllStaffsApi;
   const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
@@ -41,7 +41,7 @@ function StaffTable() {
 
           <div
             className="delete-button"
-            onClick={() => handleDelet(row.id, deletUser, setItems, items)}
+            onClick={() => handleDelet(row.id, deleteStaff, setItems, items)}
           >
             Delet
           </div>

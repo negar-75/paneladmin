@@ -1,15 +1,16 @@
 import React from "react";
 import "./menugrid.scss";
 import MenuItem from "../menuItem/menuItem";
-import { getCategory } from "../../services/user.service";
+import { getCategories } from "../../services/user.service";
 import { firstLetterToUpperCase } from "../../services/functions";
 import PaginatedItems from "../pagination/pagination";
 import useGetApi from "../../hooks/useGetApi";
 
 function Menugrid({ success, setSuccess, itemsPerPage }) {
   const [currentPage, setCurrentPage] = React.useState(1);
-  const getCategories = useGetApi(getCategory);
-  const { data, error, loading, request } = getCategories;
+  const getCategoriesApi = useGetApi(getCategories);
+
+  const { data, error, loading, request } = getCategoriesApi;
   const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {

@@ -8,7 +8,7 @@ import { validateField } from "../../../validation/validationFunc";
 import AlertMessage from "../../../components/alert/alert";
 import SubmitButton from "../../../components/submitButton/submitButton";
 import { StaffInputs } from "../../../sources/staffSources/staffAddForm";
-import { createUser } from "../../../services/user.service";
+import { createStuff } from "../../../services/user.service";
 
 function AddStaffMobile() {
   const [staff, setStaff] = React.useState({
@@ -28,9 +28,9 @@ function AddStaffMobile() {
     formValid: false,
   });
 
-  const createStaff = useCreateApi(createUser);
+  const createStaffApi = useCreateApi(createStuff);
 
-  const { loading, request, message, error } = createStaff;
+  const { loading, request, message, error } = createStaffApi;
 
   const handleSubmit = (e) => {
     e.preventDefault();

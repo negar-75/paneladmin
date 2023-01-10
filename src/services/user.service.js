@@ -1,222 +1,94 @@
 import axios from "axios";
-import { baseUrl } from "./baseUrl";
+
+import {axiosClient} from '../common/axiosClient'
 
 
 
-const createUser = (userObj) => {
- return axios.post(
-    `${baseUrl}user/`,
-    
-    userObj,
-    {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-        }
-    }
-)
-}
 
-const deletUser = (id) =>{
-    return axios.delete(`${baseUrl}user/${id}`, {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token')
-        }
-      })
-}
 
-const updateUser = (userId,userObj) =>{
-    console.log('update user ran')
-    return axios.put(
-        ` ${baseUrl}user/${userId}`,
-         
-        userObj,
-         {
-             headers: {
-                 'accept': 'application/json',
-                 'Authorization': 'Bearer ' + localStorage.getItem('token'),
-                 'Content-Type': 'application/json'
-             }
-         }
-     )
+const createStuff = (userObj) => {
+   return axiosClient.post('/user/',userObj)
 }
 
 
-const getAllUsers = async (pageNum) => {
-    return await axios.get(`${baseUrl}user/`, {
-      params: {
-          'skip': `0`,
-          'limit': '100'
-      },
-      headers: {
-          'accept': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
-      }
-  })
+
+const deleteStaff = (id) =>{
+    return axiosClient.delete(`/user/${id}`)
+}
+
+const updateStaff = (userId,userObj) => {
+    return axios.put(`/user/${userId}`,userObj)
 }
 
 
-// const getAllItems = async (pageNum) =>{
-//     return await axios.get(`${baseUrl}item/`, {
-//         params: {
-//             'skip': `${pageNum*10}`,
-//             'limit': '10',
-//             'column': 'name',
-//             'is_archived': 'false'
-//         },
-//         headers: {
-//             'accept': 'application/json',
-//             'Authorization': 'Bearer ' + localStorage.getItem('token')
-//         }
-//     });
-// }
-
-// const deletItem = async (id) =>{
-//     return await axios.delete(`${baseUrl}item/${id}`, {
-//         headers: {
-//             'accept': 'application/json',
-//             'Authorization': 'Bearer ' + localStorage.getItem('token')
-//         }
-//     });
-// }
 
 
-const  getCategory =  (pageNum,itemsPerPage) =>{
-   return  axios.get(`${baseUrl}category/`, {
-    params: {
-        'skip': `${pageNum}`,
-        'limit': `${itemsPerPage}`
-    },
-    headers: {
-        'accept': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-    }
-});
+const getAllStaffs = (pageNum) =>{
+   return axiosClient.get(`/user/`, {params: {'skip': `0`,'limit': '100'}})
 }
+
+
+const getCategories =  (pageNum,itemsPerPage) => {
+    return axiosClient.get('/category/',{params: {'skip': `${pageNum}`,'limit': `${itemsPerPage}`}})
+}
+
 
 const createCategory =  (categoryName,url) => {
-     return  axios.post(
-        `${baseUrl}category/`,
-        
-        {
-            'category_name':`${categoryName}`,
-            'logo_url':`${url}`,
-            'status': true
-        },
-        {
-            headers: {
-                'accept': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
-                'Content-Type': 'application/json'
-            },
-            timeout: 10000
-        }
-    );
+    return axiosClient.post('/category/',{'category_name':`${categoryName}`,'logo_url':`${url}`, 'status': true})
 }
 
-const deleteCategory = async(id) => {
-    return await axios.delete(`${baseUrl}category/${id}`, {
-    headers: {
-        'accept': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-    }
-});
+
+
+const deleteCategory = (id) => {
+    return axiosClient.delete(`/category/${id}`)
 }
+
+
 
 
 const updateCategory = (id,obj) => {
-    return axios.put(
-        `${baseUrl}category/${id}`,
-        
-        obj,
-        {
-            headers: {
-                'accept': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
-                'Content-Type': 'application/json'
-              
-            },
-            
-            
-        }
-    );
+    return axiosClient.put(`/category/${id}`,obj)
 }
+
+
 
 
 const updateItem = (id,obj) => {
-    return axios.put(`${baseUrl}item/${id}`,
-    obj,
-    {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          
-        },
-    }
-    )
+    return axiosClient.put(`/item/${id}`,obj)
 }
+
 
 const createStation = (obj) => {
-    return axios.post(`${baseUrl}station/` , 
-    obj,
-    {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          
-        },
-    }
-    )
+    return axiosClient.post('/station/',obj)
 }
+
+
 
 const getStations = (pageNum,itemsPerPage) => {
-    return axios.get(`${baseUrl}station/`,{
-        params: {
-            'skip': `${pageNum}`,
-            'limit': `${itemsPerPage}`
-        },
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token')
-        }
-    })
+    return axiosClient.get('/station',{params:{'skip': `${pageNum}`,'limit': `${itemsPerPage}`}})
 }
+
+
+
 
 const deletStation = (id) => {
-    return axios.delete(`${baseUrl}station/${id}`, {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token')
-        }
-    })
+    return axiosClient.delete(`/station/${id}`)
 }
+
+
 
 const createSauce = (obj) =>{
-    return axios.post(`${baseUrl}sauce/` , 
-    obj,
-    {
-        headers: {
-            'accept': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            'Content-Type': 'application/json'
-          
-        },
-    }
-    )
+    return axiosClient.post('/sauce/',obj)
 }
 
+
+
 export {
-    createUser,
-    deletUser,
-    updateUser,
-    getAllUsers,
-    // getAllItems,
-    // deletItem,
-    getCategory,
+    createStuff,
+    deleteStaff,
+    updateStaff,
+    getAllStaffs,
+    getCategories,
     createCategory,
     deleteCategory,
     updateCategory,

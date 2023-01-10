@@ -6,7 +6,7 @@ import Sidebar from "../../../components/sidebar/Sidebar";
 import "./editStaff.scss";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { updateUser } from "../../../services/user.service";
+import { updateStaff } from "../../../services/user.service";
 
 function EditStaff() {
   let { staffId } = useParams();
@@ -19,7 +19,7 @@ function EditStaff() {
     const data = new FormData(e.target);
     console.log(Object.fromEntries(data.entries()));
     console.log(staffId);
-    updateUser(staffId, Object.fromEntries(data.entries()))
+    updateStaff(staffId, Object.fromEntries(data.entries()))
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

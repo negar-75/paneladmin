@@ -41,9 +41,12 @@ function AddItemMobile() {
                   key={item.id}
                   sx={{
                     display: "flex",
-
                     alignItems: "center",
-                    gap: 2,
+                    position: "relative",
+                    width: {
+                      xs: "280px",
+                      sm: "280px",
+                    },
                   }}
                 >
                   <SelectOptionInput
@@ -57,7 +60,12 @@ function AddItemMobile() {
                   />
                   {item.label === "Sauce" && (
                     <AddCircleOutlineIcon
-                      sx={{ cursor: "pointer", color: "primary.main" }}
+                      sx={{
+                        cursor: "pointer",
+                        color: "primary.main",
+                        position: "absolute",
+                        right: 0,
+                      }}
                       onClick={() => setIsModalOpen(true)}
                     />
                   )}
@@ -70,7 +78,7 @@ function AddItemMobile() {
                   {...item}
                   sx={{
                     " &.MuiTextField-root": {
-                      width: "100%",
+                      width: "70%",
                     },
                   }}
                   value={itemForm[item.name]}
@@ -80,10 +88,10 @@ function AddItemMobile() {
             }
           })}
         </form>
-        <SubmitButton />
       </div>
       <div className="left">
         <PreviewItemForm />
+        <SubmitButton />
       </div>
       <AddSauceModal
         isModalOpen={isModalOpen}

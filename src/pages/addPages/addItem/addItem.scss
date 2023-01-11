@@ -11,7 +11,7 @@
      flex-direction: column;
      
      .add-item-form{
-       
+        
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -35,4 +35,24 @@
    
 
    
+}
+
+@media only screen and (max-width:600px) {
+     .add-item{
+        flex-direction: column;
+        overflow-x: scroll;
+       
+        .right{
+           
+        .add-item-form{
+            align-items: center;
+            width: 400px;
+        }
+        }
+
+        .left{
+            flex-direction: column;
+            gap: 1em;
+        }
+     }
 }

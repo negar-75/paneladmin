@@ -45,6 +45,13 @@ export default function SelectOptionInput({
           name={name}
           defaultValue=""
           onChange={(event, obj) => onChange(event, obj)}
+          sx={{
+            width: {
+              xs: " 250px",
+              sm: " 250px",
+              md: "400px",
+            },
+          }}
           input={
             <OutlinedInput
               sx={{ height: 50 }}

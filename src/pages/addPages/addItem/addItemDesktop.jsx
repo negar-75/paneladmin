@@ -41,7 +41,6 @@ function AddItemDesktop() {
                   key={item.id}
                   sx={{
                     display: "flex",
-
                     alignItems: "center",
                     gap: 2,
                   }}
@@ -57,7 +56,10 @@ function AddItemDesktop() {
                   />
                   {item.label === "Sauce" && (
                     <AddCircleOutlineIcon
-                      sx={{ cursor: "pointer", color: "primary.main" }}
+                      sx={{
+                        cursor: "pointer",
+                        color: "primary.main",
+                      }}
                       onClick={() => setIsModalOpen(true)}
                     />
                   )}
@@ -68,11 +70,6 @@ function AddItemDesktop() {
                 <TextField
                   key={item.id}
                   {...item}
-                  sx={{
-                    " &.MuiTextField-root": {
-                      width: "100%",
-                    },
-                  }}
                   value={itemForm[item.name]}
                   onChange={handleChange}
                 />

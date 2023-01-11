@@ -50,7 +50,11 @@ function AddSauceModal({ isModalOpen, setIsModalOpen }) {
         >
           Add new sauce
         </DialogTitle>
-        <DialogContent>
+        <DialogContent
+          sx={{
+            overflowX: "hidden",
+          }}
+        >
           <TextField
             autoFocus
             id="name"

@@ -7,7 +7,7 @@ import SingleStaffDesktop from './pages/staff/singleStaff/singleStaffDesktop'
 import EditStaff from './pages/staff/editStaff/editStaff';
 import MenuCatalogueDesktop from './pages/menuCatalogue/menuCatalogueDesktop';
 import ItemsDesktop from './pages/productList/items/itemsDesktop';
-import addItemDesktop from './pages/addPages/addItem/addItemDesktop';
+import AddItemDesktop from './pages/addPages/addItem/addItemDesktop';
 import StationsDesktop from './pages/productList/stations/stationsDesktop';
 
 import {
@@ -68,7 +68,7 @@ function AppDesktop() {
        
            <Route index element={<ItemsDesktop />} />
        
-           <Route path='add' element={<addItemDesktop />} />
+           <Route path='add' element={< AddItemDesktop />} />
        
            <Route path=':id/edit' element />
        

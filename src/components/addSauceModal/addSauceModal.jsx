@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import { createStation } from "../../services/user.service";
 import useCreateApi from "../../hooks/useCreateApi";
 import SelectOptionInput from "../selectOptionInput/selectOptionInput";
-import { createSauce, getStations } from "../../services/user.service";
+import { getStations } from "../../services/user.service";
 
 function AddSauceModal({ isModalOpen, setIsModalOpen }) {
   const [station, setStation] = React.useState({

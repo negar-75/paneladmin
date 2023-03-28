@@ -2,11 +2,7 @@ import React from "react";
 import "./menuItem.scss";
 import { deleteCategory, updateCategory } from "../../services/user.service";
 
-import {
-  handleDelet,
-  firstLetterToUpperCase,
-  useDidMountEffect,
-} from "../../services/functions";
+import { handleDelet, firstLetterToUpperCase } from "../../services/functions";
 
 import StatusSwitch from "../statusSwitch/satusSwitch";
 
@@ -16,7 +12,10 @@ function MenuItem(props) {
   return (
     <div className="menu-item">
       <div className="card-img">
-        <img src={image} />
+        <img
+          src={image}
+          alt={title}
+        />
       </div>
       <div className="card-body">
         <div className="body-title">

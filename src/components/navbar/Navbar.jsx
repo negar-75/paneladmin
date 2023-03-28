@@ -1,7 +1,7 @@
 import React from "react";
 import "./navbar.scss";
 import SearchIcon from "@mui/icons-material/Search";
-import LanguageIcon from "@mui/icons-material/Language";
+
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";

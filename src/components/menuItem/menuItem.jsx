@@ -31,7 +31,6 @@ function MenuItem(props) {
           className="delet-category"
           onClick={() => handleDelet(id, deleteCategory, setItems, items)}
         >
-          {" "}
           Delet category
         </button>
         <button className="edit-category"> Edit category</button>

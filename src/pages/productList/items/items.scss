@@ -1,22 +1,9 @@
-.product-list{
-    display: flex;
-    .product-list-container{
-        flex: 6;
-        background-color:#fafadc  ;
-       
-    }
+.product-list {
+  background-color: #fafadc;
 }
 
-@media only screen and (max-width:600px){
-    .product-list{
-        height: 100vh;
-        flex-direction: column;
-        position: relative;
-        
-        .product-list-container{
-            flex:15;
-            overflow-x: scroll;
-           
-        }
-    }
+@media only screen and (max-width: 600px) {
+  .product-list {
+    overflow-x: scroll;
+  }
 }

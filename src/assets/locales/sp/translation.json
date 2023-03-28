@@ -1,0 +1,10 @@
+{
+    "users": "usuarios",
+    "orders": "pedidos",
+    "earning": "ganador",
+    "balance": "balance",
+    "see_all_users":"Ver todos los usuarios",
+    "see_all_orders":"Ver todos los pedidos",
+    "see_all_earning":"Ver todas las ganancias",
+    "see_balance":"Ver balance"
+  }

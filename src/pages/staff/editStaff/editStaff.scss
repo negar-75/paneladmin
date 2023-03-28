@@ -1,69 +1,54 @@
-.editProfile{
-    display: flex;
-    .editProfileContainer{
-        flex: 6;
-        
-        
-        .formContainer{
-            
-            height:100vh ;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-           
-            
+.editProfile {
+  .editProfileContainer {
+    .formContainer {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-            form{
-                display: flex;
-                box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
-                -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
-                -moz-box-shadow: 5px 6px 14px -1px rgba(190, 184, 184, 0.51);
-                border-radius: 5px;
-                display: flex;
-                flex-direction: column;
-                gap: 35px;
-                width: 40%;
-                justify-content: center;
-                align-items: center;
-                padding-bottom: 40px;
-               
-                .title{
-                    font-weight: bold;
-                    font-size: 25px;
-                    color:#3A6B35;
-                    text-align: center;
-                    border-bottom: 0.5px solid rgb(229, 225, 225);
-                    width: 100%;
-                    padding: 10px;
-    
-                }
-                .inputs{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 30px;
-                    margin: 50px ;
-                    width: 80%;
-                    
-                }
-                .submit{
-                    width: 25%;
-                    background-color: transparent;
-                    border: 2px solid #3A6B35;
-                    border-radius: 20px;
-                    padding: 6px 12px;
-                    font-weight: 700;
-                    color: #E3B448;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    text-align: center;
-    
-                    }
+      form {
+        display: flex;
+        box-shadow: 5px 6px 14px -1px rgba(196, 189, 189, 0.495);
+        -webkit-box-shadow: 5px 6px 14px -1px rgba(185, 179, 179, 0.516);
+        -moz-box-shadow: 5px 6px 14px -1px rgba(190, 184, 184, 0.51);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 40px;
 
-                
-                
-            }
+        .title {
+          font-weight: bold;
+          font-size: 25px;
+          color: #3a6b35;
+          text-align: center;
+          border-bottom: 0.5px solid rgb(229, 225, 225);
+          width: 100%;
+          padding: 10px;
         }
-        
+        .inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          margin: 50px;
+          width: 80%;
+        }
+        .submit {
+          width: 25%;
+          background-color: transparent;
+          border: 2px solid #3a6b35;
+          border-radius: 20px;
+          padding: 6px 12px;
+          font-weight: 700;
+          color: #e3b448;
+          text-transform: uppercase;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
     }
+  }
 }

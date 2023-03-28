@@ -4,6 +4,7 @@
   padding: 1.5em 5em;
   background-color: rgb(255, 255, 255);
   margin:0 2em;
+  width: 80%;
     .search{
         display: flex;
         align-items: center;
@@ -45,6 +46,6 @@
 
 @media only screen and (max-width:600px){
     .product-list-header{
-       width: 795px;
+       width: 50em;
     }
 }

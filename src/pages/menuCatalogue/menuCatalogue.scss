@@ -1,32 +1,11 @@
-.menuCatalogue{
+.menuCatalogue {
+  .up {
     display: flex;
-    .menuCatalogue-container{
-        flex:6 ;
-        
-        .up{
-            display: flex;
-            justify-content: center;
-            
-           
-            
-        }
+    justify-content: center;
+  }
 
-        .up, .down{
-        padding: 2em;
-        }
-        
-    }
-}
-
-@media only screen and (max-width:600px){
-    .menuCatalogue{
-         height: 100vh;
-         flex-direction: column;
-         position: relative;
-        
-        .menuCatalogue-container{
-            flex:15;
-           
-        }
-    }
+  .up,
+  .down {
+    padding: 2em;
+  }
 }

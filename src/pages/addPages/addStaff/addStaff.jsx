@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "../../../components/sidebar/Sidebar";
+
 import "./addStaff.scss";
-import Navbar from "../../../components/navbar/Navbar";
+
 import { createStuff } from "../../../services/user.service";
 import ChangePhoto from "../../../components/changePhoto/changePhoto";
 import useCreateApi from "../../../hooks/useCreateApi";
@@ -48,48 +48,44 @@ function AddStaffDesktop() {
 
   return (
     <div className="add">
-      <Sidebar />
-      <div className="add-container">
-        <Navbar />
-        <div className="top">Staffs</div>
-        <div className="bottom">
-          <div className="left">
-            <ChangePhoto
-              title="Upload photo"
-              showImage={true}
+      <div className="top">Staffs</div>
+      <div className="bottom">
+        <div className="left">
+          <ChangePhoto
+            title="Upload photo"
+            showImage={true}
+          />
+        </div>
+        <div className="right">
+          <form>
+            {StaffInputs.map((item) => {
+              return (
+                <div className="form-element">
+                  <TextField
+                    key={item.id}
+                    error={errMessage[item.name]?.length === 0 ? false : true}
+                    {...item}
+                    sx={{ width: "100%" }}
+                    required={true}
+                    value={staff[item.name]}
+                    onChange={handleChange}
+                    helperText={errMessage[item.name]}
+                    name={item.name}
+                  />
+                </div>
+              );
+            })}
+            <SubmitButton
+              loading={loading}
+              formValid={errMessage.formValid}
+              handleSubmit={handleSubmit}
             />
-          </div>
-          <div className="right">
-            <form>
-              {StaffInputs.map((item) => {
-                return (
-                  <div className="form-element">
-                    <TextField
-                      key={item.id}
-                      error={errMessage[item.name]?.length === 0 ? false : true}
-                      {...item}
-                      sx={{ width: "100%" }}
-                      required={true}
-                      value={staff[item.name]}
-                      onChange={handleChange}
-                      helperText={errMessage[item.name]}
-                      name={item.name}
-                    />
-                  </div>
-                );
-              })}
-              <SubmitButton
-                loading={loading}
-                formValid={errMessage.formValid}
-                handleSubmit={handleSubmit}
-              />
-            </form>
+          </form>
 
-            <AlertMessage
-              message={message}
-              error={error}
-            />
-          </div>
+          <AlertMessage
+            message={message}
+            error={error}
+          />
         </div>
       </div>
     </div>

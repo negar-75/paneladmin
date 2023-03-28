@@ -49,10 +49,11 @@ function LoginDesktop() {
         </h2>
         <div className="loginForm">
           <div className="title">Login</div>
-          {loginInputs.map((item) => {
+          {loginInputs.map((item, index) => {
             return (
               <TextField
-                id={item.id}
+                key={index}
+                id={item.id.toString()}
                 name={item.name}
                 label={item.lable}
                 variant={item.variant}

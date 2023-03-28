@@ -39,12 +39,13 @@ function Menu() {
   return (
     <div className="menu">
       <ul className="sidebar-menu">
-        {sidebarMenuItems.map((item) => {
+        {sidebarMenuItems.map((item, index) => {
           if (item.subMenu) {
             return (
               <li
                 className="sidebar-menu-accordion"
                 id={item.id}
+                key={index}
               >
                 <a
                   className={`dropdownlink  ${
@@ -67,11 +68,12 @@ function Menu() {
                     menuItemName === `${item.name}` && open ? "show" : " "
                   }`}
                 >
-                  {item.subItems.map((sub) => {
+                  {item.subItems.map((sub, index) => {
                     return (
                       <Link
                         to={sub.url}
                         className="link"
+                        key={index}
                       >
                         <li
                           className={
@@ -91,6 +93,7 @@ function Menu() {
               <Link
                 to={item.url}
                 className="link"
+                key={index}
               >
                 <li
                   className={`sidebar-menu-item ${
@@ -114,6 +117,7 @@ function Menu() {
               <li
                 className="sidebar-menu-item"
                 id={item.name}
+                key={index}
                 onClick={() => {
                   store.dispatch(logout());
                   navigate("/login");

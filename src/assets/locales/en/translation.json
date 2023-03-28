@@ -1,0 +1,10 @@
+ {
+    "users": "USERS",
+    "orders": "ORDERS",
+    "earning": "EARNING",
+    "balance": "BALANCE",
+    "see_all_users":"see all users",
+    "see_all_orders":"See all orders",
+    "see_all_earning":"See all earning",
+    "see_balance":"See balance"
+  }

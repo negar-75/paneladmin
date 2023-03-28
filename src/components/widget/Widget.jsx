@@ -6,17 +6,19 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import { useTranslation } from "react-i18next";
 
 function Widget(props) {
+  const { t } = useTranslation();
   let data;
   let money = 500;
   let diff = 30;
 
   if (props.type === "user") {
     data = {
-      title: "USERS",
+      title: t("users"),
       isMoney: false,
-      link: "See all users",
+      link: t("see_all_users"),
       icon: (
         <PersonOutlineOutlinedIcon
           className="widget-icon"
@@ -26,9 +28,9 @@ function Widget(props) {
     };
   } else if (props.type === "order") {
     data = {
-      title: "ORDERS",
+      title: t("orders"),
       isMoney: false,
-      link: "See all orders",
+      link: t("see_all_orders"),
       icon: (
         <AddShoppingCartOutlinedIcon
           className="widget-icon"
@@ -41,9 +43,9 @@ function Widget(props) {
     };
   } else if (props.type === "earning") {
     data = {
-      title: "EARNING",
+      title: t("earning"),
       isMoney: true,
-      link: "See all earnings",
+      link: t("see_all_earning"),
       icon: (
         <MonetizationOnOutlinedIcon
           className="widget-icon"
@@ -53,9 +55,9 @@ function Widget(props) {
     };
   } else {
     data = {
-      title: "BALANCE",
+      title: t("balance"),
       isMoney: true,
-      link: "See balance",
+      link: t("see_balance"),
       icon: (
         <AccountBalanceWalletOutlinedIcon
           className="widget-icon"
@@ -68,7 +70,7 @@ function Widget(props) {
   return (
     <div className="widget">
       <div className="left">
-        <span className="title">{data.title}</span>
+        <span className="title">{data.title.toUpperCase()}</span>
         <span className="counter">
           {data.isMoney && "$"}
           {money}

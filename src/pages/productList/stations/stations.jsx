@@ -1,7 +1,5 @@
 import React from "react";
-import Navbar from "../../../components/navbar/Navbar";
-import Sidebar from "../../../components/sidebar/Sidebar";
-import "./stations.scss";
+
 import ProductListTabs from "../../../components/productListTab/productListTab";
 import TableHeader from "../../../components/TableHeader/TableHeader";
 import ProductListTable from "../../../components/ProductListTable/ProductListTable";
@@ -22,21 +20,17 @@ function StationsDesktop() {
 
   return (
     <div className="product-list">
-      <Sidebar />
-      <div className="product-list-container">
-        <Navbar />
-        <ProductListTabs />
-        <TableHeader onClickFunc={() => setIsModalOpen(true)} />
-        <ProductListTable
-          cols={stationColumns}
-          rowsArr={data}
-          deletFun={deletStation}
-        />
-        <AddStationModal
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-        />
-      </div>
+      <ProductListTabs />
+      <TableHeader onClickFunc={() => setIsModalOpen(true)} />
+      <ProductListTable
+        cols={stationColumns}
+        rowsArr={data}
+        deletFun={deletStation}
+      />
+      <AddStationModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
     </div>
   );
 }

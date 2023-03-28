@@ -1,19 +1,5 @@
-.list{
-    display: flex;
-    .listContainer{
-        flex: 6; 
-
-    }
-}
-
-@media only screen and (max-width : 600px){
-    .list{
-        height: 100vh;
-        flex-direction: column;
-        position: relative;
-        .listContainer{
-            flex:15;
-            margin: 0 0.5em;
-        }
-    }
+@media only screen and (max-width: 600px) {
+  .list {
+    margin: 0 0.5em;
+  }
 }

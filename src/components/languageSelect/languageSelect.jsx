@@ -18,9 +18,7 @@ function LanguageSelect() {
   const { t } = useTranslation();
   const [menuAnchor, setMenuAnchor] = React.useState(false);
   const selected = localStorage.getItem("i18nextLng") || " English";
-  // React.useEffect(() => {
-  //   document.body.dir = languageMap[selected].dir;
-  // }, [menuAnchor, selected]);
+
   return (
     <div className="item">
       <Button onClick={({ currentTarget }) => setMenuAnchor(currentTarget)}>
@@ -50,7 +48,7 @@ function LanguageSelect() {
                 i18next.changeLanguage(item);
                 setMenuAnchor(null);
               }}
-              sx={{ backgroundColor: "darkgrey", cursor: "pointer" }}
+              sx={{ cursor: "pointer" }}
             >
               {languageMap[item].label}
             </ListItem>

@@ -47,11 +47,9 @@ function ProductListTable({ cols, rowsArr, deletFun }) {
         hideFooterSelectedRowCount={true}
         sx={{
           width: {
-            xs: "955px",
-            sm: "955px",
-            md: "795px",
-            lg: "1230px",
-            xl: "1200px",
+            xs: "960px",
+            sm: "960px",
+            md: "100%",
           },
           backgroundColor: "white",
         }}

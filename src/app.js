@@ -24,7 +24,7 @@ function App() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const loggedIn = useSelector((state) => state.user.isLoggedIn);
   const [isloggedIn, setIsLoggedIn] = useState(false);
-  const isOrLaptop = useMediaQuery({
+  const isLaptop = useMediaQuery({
     query: "(min-width: 600px)",
   });
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
@@ -48,12 +48,12 @@ function App() {
         </Routes>
 
         {isloggedIn && (
-          <div className="screens-container">
+          <div className="screen-container">
             {isTabletOrMobile && <MobileNavbar />}
             {isTabletOrMobile && <MobileSidebar />}
-            {isOrLaptop && <Sidebar />}
-            <div className="screens-section-container">
-              {isOrLaptop && <Navbar />}
+            {isLaptop && <Sidebar />}
+            <div className="screen-section-container">
+              {isLaptop && <Navbar />}
               <Routes>
                 <Route element={<PrivateRoutes />}>
                   <Route

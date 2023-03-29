@@ -1,5 +1,12 @@
 .product-list {
   background-color: #fafadc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+  .table {
+    width: 95%;
+  }
 }
 
 @media only screen and (max-width: 600px) {

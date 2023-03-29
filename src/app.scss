@@ -1,30 +1,19 @@
-.screens-container{
-    display: flex;
-    .screens-section-container{
-        flex: 6;
-    }
+.screen-container {
+  display: flex;
+  .screen-section-container {
+    flex: 6;
+  }
 }
 
+@media only screen and (max-width: 600px) {
+  .screen-container {
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
 
-@media only screen and (max-width:600px) {
-
-    .screens-container{
-         height: 100vh;
-         flex-direction: column;
-         position: relative;
-         
-         .screens-section-container{
-          flex:15;
-          margin: 0 0.5em;
-
-          
-
-          
-          
-        }
-
-       
+    .screen-section-container {
+      flex: 15;
+      //   margin: 0 0.5em;
     }
-
-    
+  }
 }

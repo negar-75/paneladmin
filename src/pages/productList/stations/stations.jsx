@@ -1,5 +1,4 @@
 import React from "react";
-
 import ProductListTabs from "../../../components/productListTab/productListTab";
 import TableHeader from "../../../components/TableHeader/TableHeader";
 import ProductListTable from "../../../components/ProductListTable/ProductListTable";
@@ -20,13 +19,16 @@ function StationsDesktop() {
 
   return (
     <div className="product-list">
-      <ProductListTabs />
-      <TableHeader onClickFunc={() => setIsModalOpen(true)} />
-      <ProductListTable
-        cols={stationColumns}
-        rowsArr={data}
-        deletFun={deletStation}
-      />
+      <div className="table">
+        <ProductListTabs />
+        <TableHeader onClickFunc={() => setIsModalOpen(true)} />
+        <ProductListTable
+          cols={stationColumns}
+          rowsArr={data}
+          deletFun={deletStation}
+        />
+      </div>
+
       <AddStationModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}

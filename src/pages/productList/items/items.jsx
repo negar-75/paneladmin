@@ -10,9 +10,11 @@ function ItemsDesktop() {
   const navigate = useNavigate();
   return (
     <div className="product-list">
-      <ProductListTabs />
-      <TableHeader onClickFunc={() => navigate("/productList/items/add")} />
-      <ProductListTable cols={itemColumns} />
+      <div className="table">
+        <ProductListTabs />
+        <TableHeader onClickFunc={() => navigate("/productList/items/add")} />
+        <ProductListTable cols={itemColumns} />
+      </div>
     </div>
   );
 }

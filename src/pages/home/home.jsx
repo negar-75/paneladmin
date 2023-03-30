@@ -1,8 +1,8 @@
 import React from "react";
-import Widget from "../../components/widget/widget";
 import Chart from "../../components/chart/chart";
 import "./home.scss";
 import Featured from "../../components/featured/featured";
+import Widget from "../../components/widget/widget";
 
 function HomeDesktop() {
   return (

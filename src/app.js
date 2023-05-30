@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import PrivateRoutes from "./routes/privateRoutes";
 import Home from "./pages/home/home";
 import StaffsTable from "./pages/staff/staffsTable/staffsTable";
 import Login from "./pages/login/login";
@@ -6,28 +9,17 @@ import AddStaff from "./pages/addPages/addStaff/addStaff";
 import SingleStaff from "./pages/staff/singleStaff/singleStaff";
 import EditStaff from "./pages/staff/editStaff/editStaff";
 import MenuCatalogue from "./pages/menuCatalogue/menuCatalogue";
+
 import Items from "./pages/productList/items/items";
 import AddItem from "./pages/addPages/addItem/addItem";
 import Stations from "./pages/productList/stations/stations";
+import Layout from "./layout/layout";
 import "./app.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
-import PrivateRoutes from "./routes/privateRoutes";
 import "./style/darkStyle.scss";
-import Sidebar from "./components/sidebar/Sidebar";
-import Navbar from "./components/navbar/Navbar";
-import { useMediaQuery } from "react-responsive";
-import MobileNavbar from "./components/mobileNavbar/mobileNavbar";
-import MobileSidebar from "./components/mobileSidebar/mobileSidebar";
 
 function App() {
-  const darkMode = useSelector((state) => state.darkMode.darkMode);
   const loggedIn = useSelector((state) => state.user.isLoggedIn);
   const [isloggedIn, setIsLoggedIn] = useState(false);
-  const isLaptop = useMediaQuery({
-    query: "(min-width: 600px)",
-  });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -38,91 +30,74 @@ function App() {
   }, [loggedIn]);
 
   return (
-    <div className={`app ${darkMode ? "dark" : ""}`}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/login"
-            element={<Login />}
-          />
-        </Routes>
+    <>
+      <Routes>
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+      </Routes>
+      {isloggedIn && (
+        <Layout>
+          <Routes>
+            <Route element={<PrivateRoutes />}>
+              <Route
+                path="/"
+                element={<Home />}
+              />
 
-        {isloggedIn && (
-          <div className="screen-container">
-            {isTabletOrMobile && <MobileNavbar />}
-            {isTabletOrMobile && <MobileSidebar />}
-            {isLaptop && <Sidebar />}
-            <div className="screen-section-container">
-              {isLaptop && <Navbar />}
-              <Routes>
-                <Route element={<PrivateRoutes />}>
+              <Route path="/staffs">
+                <Route
+                  index
+                  element={<StaffsTable />}
+                />
+
+                <Route path=":staffId">
                   <Route
-                    element={<Home />}
-                    path="/"
-                    exact
+                    index
+                    element={<SingleStaff />}
                   />
 
-                  <Route path="/staffs">
-                    <Route
-                      index
-                      element={<StaffsTable />}
-                    />
-
-                    <Route path=":staffId">
-                      <Route
-                        index
-                        element={<SingleStaff />}
-                      />
-
-                      <Route
-                        path="editprofile"
-                        element={<EditStaff />}
-                      />
-                    </Route>
-
-                    <Route
-                      path="addUser"
-                      element={<AddStaff />}
-                    />
-                  </Route>
-
                   <Route
-                    path="/menuCatalogue"
-                    element={<MenuCatalogue />}
+                    path="editprofile"
+                    element={<EditStaff />}
                   />
-
-                  <Route path="/productList">
-                    <Route path="items">
-                      <Route
-                        index
-                        element={<Items />}
-                      />
-
-                      <Route
-                        path="add"
-                        element={<AddItem />}
-                      />
-
-                      <Route
-                        path=":id/edit"
-                        element
-                      />
-                    </Route>
-
-                    <Route path="stations">
-                      <Route
-                        index
-                        element={<Stations />}
-                      />
-                    </Route>
-                  </Route>
                 </Route>
-              </Routes>
-            </div>
-          </div>
-        )}
-      </BrowserRouter>
-    </div>
+
+                <Route
+                  path="addUser"
+                  element={<AddStaff />}
+                />
+              </Route>
+
+              <Route
+                path="/menuCatalogue"
+                element={<MenuCatalogue />}
+              />
+
+              <Route path="/productList">
+                <Route path="items">
+                  <Route
+                    index
+                    element={<Items />}
+                  />
+
+                  <Route
+                    path="add"
+                    element={<AddItem />}
+                  />
+                </Route>
+
+                <Route
+                  path="stations"
+                  element={<Stations />}
+                />
+              </Route>
+            </Route>
+          </Routes>
+        </Layout>
+      )}
+    </>
   );
 }
 

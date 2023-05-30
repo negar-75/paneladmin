@@ -1,5 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./index.scss";
 import App from "./app";
 import store from "./store";
@@ -14,12 +15,14 @@ function Page() {
   //  store.subscribe(() => console.log(store.getState()))
 
   return (
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
-ReactDOM.render(<Page />, document.getElementById("root"));
+ReactDOM.createRoot(document.getElementById("root")).render(<Page />);

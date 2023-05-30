@@ -27,13 +27,13 @@ export const sidebarMenuItems = [
     subItems: [
       {
         id: 3,
-        name: "Menu_Catalogue",
+        name: "Menu Catalogue",
         activeIndex: 0,
         url: "/menuCatalogue",
       },
       {
         id: 4,
-        name: "products_list",
+        name: "products list",
         activeIndex: 1,
         url: "/productList/items",
       },
@@ -57,19 +57,19 @@ export const sidebarMenuItems = [
     subItems: [
       {
         id: 8,
-        name: "Invoice_1",
+        name: "Invoice 1",
         activeIndex: 3,
         url: "",
       },
       {
         id: 9,
-        name: "Invoice_2",
+        name: "Invoice 2",
         activeIndex: 4,
         url: "",
       },
       {
         id: 10,
-        name: "Invoice_3",
+        name: "Invoice 3",
         activeIndex: 5,
         url: "",
       },
@@ -93,19 +93,19 @@ export const sidebarMenuItems = [
     subItems: [
       {
         id: 13,
-        name: "Customer_1",
+        name: "Customer 1",
         activeIndex: 6,
         url: "",
       },
       {
         id: 14,
-        name: "Customer_2",
+        name: "Customer 2",
         activeIndex: 7,
         url: "",
       },
       {
         id: 15,
-        name: "Customer_3",
+        name: "Customer 3",
         activeIndex: 8,
         url: "",
       },

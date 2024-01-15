@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { loginInputs } from "../../sources/loginInputs";
 import ErrorPopUp from "../../components/errorPopUp/errorPopUp";
 import SubmitButton from "../../components/submitButton/submitButton";
-import { LOGIN_SUCCESS} from "../../actions/type";
+
 function LoginDesktop() {
   const [person, setPerson] = React.useState({
     username: "",
@@ -67,21 +67,10 @@ function LoginDesktop() {
             loading={loading}
             isActive={isActive}
             formValid={
-              person.username.length > 0 && person.password.length >= 5
+              person.username.length > 0 && person.password.length >= 12
             }
             handleSubmit={() =>
-              {
-                if(person.username ==='admin'&&person.password === '12345'){
-                  localStorage.setItem("token", person.username);
-                  localStorage.setItem("username", person.username);     
-                  setLoading(false);
-                  store.dispatch({
-                    type: LOGIN_SUCCESS,
-                    payload: person.username,
-                  });
-                 
-                }
-              }
+              store.dispatch(login(person, setLoading, setError))
             }
           />
         </div>
